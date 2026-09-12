@@ -1,0 +1,67 @@
+{
+  "file": "CWA-DATA toast.CWA",
+  "header": {
+    "device_id": 117142,
+    "session_id": 1,
+    "logging_start": [
+      2026,
+      8,
+      30,
+      13,
+      38,
+      0
+    ],
+    "logging_end": [
+      2026,
+      9,
+      6,
+      13,
+      38,
+      0
+    ],
+    "config_rate_hz": 25.0,
+    "config_range_g": 8,
+    "firmware": 48,
+    "annotation": "_s=toast",
+    "invalid_packets": 0,
+    "checksum_failures": 0,
+    "trailing_bytes": 0,
+    "timing_segments": 2,
+    "gaps": [
+      {
+        "start": 1788194270.6065757,
+        "end": 1788194347.5899963,
+        "seconds": 76.98342061042786
+      }
+    ],
+    "median_actual_rate_hz": 24.855123031645377,
+    "packing": 0,
+    "samples_per_packet": 120,
+    "n_packets": 125275
+  },
+  "first_sample": "2026-08-30 13:40:13.458618164",
+  "last_sample": "2026-09-06 13:38:04.989857435",
+  "samples": 15033000,
+  "median_sample_rate_hz": 24.855134814814814,
+  "sequence_breaks": 1,
+  "gaps": [
+    {
+      "start": "2026-08-31 16:37:50.606808901",
+      "end": "2026-08-31 16:39:07.589996338",
+      "seconds": 76.9831874370575
+    }
+  ],
+  "epoch_count": 120935,
+  "valid_epoch_count": 120918,
+  "rms_percentiles_mg": {
+    "0.01": 2.4139672455336556,
+    "0.05": 4.154445948043955,
+    "0.25": 7.778893313539201,
+    "0.5": 10.219090888579249,
+    "0.75": 58.93382140611246,
+    "0.9": 210.25354908014998,
+    "0.95": 314.09896916560956,
+    "0.99": 627.4182622688348
+  },
+  "stillest_5pct_median_norm_g": 0.9591576939322055
+}

@@ -1,0 +1,21 @@
+# Upload only the inputs needed to build the static website.
+*
+!package.json
+!package-lock.json
+!vercel.json
+!scripts
+!scripts/build-site.mjs
+!site
+!site/index.html
+!site/styles.css
+!site/app.js
+!site/data.json
+!site/assets
+!site/assets/*.webp
+!site/assets/*.jpeg
+!site/assets/*.jpg
+!site/assets/*.png
+!site/assets/*.svg
+!site/assets/*.avif
+!site/assets/*.gif
+!site/assets/*.ico

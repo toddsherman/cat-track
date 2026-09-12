@@ -1,0 +1,23 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+*.log
+analysis/*_epochs.pkl
+
+# Private originals retain capture/location metadata; clean copies are in media/.
+/8A3A7486.JPG
+/8A3A7949.JPG
+/T&p1.png
+/ax3_hand_1.jpeg
+
+# Removed from the project website at the owner's request.
+/IMG_1494.mov
+.vercel
+.env*

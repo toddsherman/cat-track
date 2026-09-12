@@ -1,0 +1,2613 @@
+{
+  "analysis_start": "2026-08-31 00:00:00",
+  "analysis_end_exclusive": "2026-09-06 00:00:00",
+  "calendar_days": 6,
+  "night": "22:00\u201306:00",
+  "day": "06:00\u201322:00",
+  "time_basis": "device local clock, assumed Pacific",
+  "paired_observed_hours": 143.9777777777778,
+  "paired_excluded_seconds": 80,
+  "cats": {
+    "Peach": {
+      "all": {
+        "observed_hours": 143.9777777777778,
+        "mean_rms_mg": 52.14875626479111,
+        "median_rms_mg": 9.861541461661353,
+        "mean_norm_sd_mg": 16.68561331682237,
+        "raw_enmo_mg": 12.283008204076452,
+        "movement_fraction": 0.27043139373360087,
+        "rest_fraction": 0.5156081185368112,
+        "rest_hours_observed": 74.23611111111111,
+        "rest_hours_per_period": 12.374594844883468,
+        "movement_hours_per_period": 6.49035344960642
+      },
+      "night": {
+        "observed_hours": 48.0,
+        "mean_rms_mg": 34.674098055790616,
+        "median_rms_mg": 9.050543823380378,
+        "mean_norm_sd_mg": 11.157742931076283,
+        "raw_enmo_mg": 13.13273668302843,
+        "movement_fraction": 0.16712962962962963,
+        "rest_fraction": 0.7383101851851852,
+        "rest_hours_observed": 35.43888888888889,
+        "rest_hours_per_period": 5.906481481481482,
+        "movement_hours_per_period": 1.337037037037037
+      },
+      "day": {
+        "observed_hours": 95.97777777777777,
+        "mean_rms_mg": 60.88810836746328,
+        "median_rms_mg": 10.402632505590661,
+        "mean_norm_sd_mg": 19.45018845764468,
+        "raw_enmo_mg": 11.858045593625825,
+        "movement_fraction": 0.3220942347765687,
+        "rest_fraction": 0.4042313035424867,
+        "rest_hours_observed": 38.797222222222224,
+        "rest_hours_per_period": 6.467700856679787,
+        "movement_hours_per_period": 5.153507756425099
+      }
+    },
+    "Toast": {
+      "all": {
+        "observed_hours": 143.9777777777778,
+        "mean_rms_mg": 65.53448725898916,
+        "median_rms_mg": 10.258888782634816,
+        "mean_norm_sd_mg": 24.502335700874568,
+        "raw_enmo_mg": 7.449078696667094,
+        "movement_fraction": 0.328686911560426,
+        "rest_fraction": 0.5288817718783763,
+        "rest_hours_observed": 76.14722222222223,
+        "rest_hours_per_period": 12.69316252508103,
+        "movement_hours_per_period": 7.888485877450224
+      },
+      "night": {
+        "observed_hours": 48.0,
+        "mean_rms_mg": 35.65140944491059,
+        "median_rms_mg": 8.911006657380875,
+        "mean_norm_sd_mg": 13.516107418637814,
+        "raw_enmo_mg": 3.8844108872516117,
+        "movement_fraction": 0.15885416666666666,
+        "rest_fraction": 0.7671585648148148,
+        "rest_hours_observed": 36.82361111111111,
+        "rest_hours_per_period": 6.1372685185185185,
+        "movement_hours_per_period": 1.2708333333333333
+      },
+      "day": {
+        "observed_hours": 95.97777777777777,
+        "mean_rms_mg": 80.47948565639821,
+        "median_rms_mg": 11.470195108594968,
+        "mean_norm_sd_mg": 29.99672169060167,
+        "raw_enmo_mg": 9.231825274193705,
+        "movement_fraction": 0.41362294512618664,
+        "rest_fraction": 0.40971579069228986,
+        "rest_hours_observed": 39.32361111111111,
+        "rest_hours_per_period": 6.555452651076638,
+        "movement_hours_per_period": 6.617967122018986
+      }
+    }
+  },
+  "sensitivity": [
+    {
+      "cat": "Peach",
+      "threshold_mg": 15,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 12.142383083809229,
+      "night_rest_fraction": 0.7336805555555556,
+      "day_rest_fraction": 0.3920322991433202,
+      "movement_fraction": 0.29018752893965116
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 15,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.04746102793641,
+      "night_rest_fraction": 0.7301793981481481,
+      "day_rest_fraction": 0.3878501968048159,
+      "movement_fraction": 0.29018752893965116
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 20,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 12.374594844883468,
+      "night_rest_fraction": 0.7383101851851852,
+      "day_rest_fraction": 0.4042313035424867,
+      "movement_fraction": 0.27043139373360087
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 20,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.253279827133817,
+      "night_rest_fraction": 0.7347800925925926,
+      "day_rest_fraction": 0.3984139847186849,
+      "movement_fraction": 0.27043139373360087
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 30,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 13.047846889952154,
+      "night_rest_fraction": 0.7671296296296296,
+      "day_rest_fraction": 0.4318997453114147,
+      "movement_fraction": 0.24517672480321037
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 30,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.815172094459022,
+      "night_rest_fraction": 0.760474537037037,
+      "day_rest_fraction": 0.4206847649918963,
+      "movement_fraction": 0.24517672480321037
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 40,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 13.327288161753357,
+      "night_rest_fraction": 0.7730613425925926,
+      "day_rest_fraction": 0.4463996295438759,
+      "movement_fraction": 0.22779364099398056
+    },
+    {
+      "cat": "Peach",
+      "threshold_mg": 40,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 13.051782682512734,
+      "night_rest_fraction": 0.7638020833333333,
+      "day_rest_fraction": 0.4338099097013198,
+      "movement_fraction": 0.22779364099398056
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 15,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 12.388717394659668,
+      "night_rest_fraction": 0.758449074074074,
+      "day_rest_fraction": 0.3950422551516555,
+      "movement_fraction": 0.35014083963574627
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 15,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.233369347121467,
+      "night_rest_fraction": 0.7535590277777777,
+      "day_rest_fraction": 0.3877778420930771,
+      "movement_fraction": 0.35014083963574627
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 20,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 12.69316252508103,
+      "night_rest_fraction": 0.7671585648148148,
+      "day_rest_fraction": 0.40971579069228986,
+      "movement_fraction": 0.328686911560426
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 20,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.518367031949376,
+      "night_rest_fraction": 0.7622685185185185,
+      "day_rest_fraction": 0.4012358184764992,
+      "movement_fraction": 0.328686911560426
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 30,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 12.868189535422133,
+      "night_rest_fraction": 0.7749131944444444,
+      "day_rest_fraction": 0.41677761055799956,
+      "movement_fraction": 0.3015608118536811
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 30,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.647553634820188,
+      "night_rest_fraction": 0.7649594907407408,
+      "day_rest_fraction": 0.4079648066682102,
+      "movement_fraction": 0.3015608118536811
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 40,
+      "min_bout_minutes": 5,
+      "rest_hours_per_day": 13.033492822966508,
+      "night_rest_fraction": 0.7789641203703703,
+      "day_rest_fraction": 0.425083931465617,
+      "movement_fraction": 0.28060850439882695
+    },
+    {
+      "cat": "Toast",
+      "threshold_mg": 40,
+      "min_bout_minutes": 10,
+      "rest_hours_per_day": 12.784380305602715,
+      "night_rest_fraction": 0.7664641203703704,
+      "day_rest_fraction": 0.4157646445936559,
+      "movement_fraction": 0.28060850439882695
+    }
+  ],
+  "rest_rule": {
+    "rms_threshold_mg": 20,
+    "posture_change_deg": 5,
+    "minimum_bout_minutes": 5,
+    "max_internal_break_seconds": 30,
+    "minimum_quiet_fraction_per_bout": 0.9,
+    "bridges_count_as_rest": false
+  },
+  "daily": [
+    {
+      "cat": "Peach",
+      "date": "2026-08-31",
+      "period": "all",
+      "observed_hours": 23.977777777777778,
+      "mean_rms_mg": 53.55938700800064,
+      "median_rms_mg": 9.71944101899265,
+      "mean_norm_sd_mg": 17.493653915578985,
+      "raw_enmo_mg": 13.886471656749485,
+      "movement_fraction": 0.2634383688600556,
+      "rest_fraction": 0.5304101019462465,
+      "rest_hours_observed": 12.718055555555555
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-08-31",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 27.88383705908833,
+      "median_rms_mg": 8.683430479147017,
+      "mean_norm_sd_mg": 9.023868547733464,
+      "raw_enmo_mg": 12.355027088932031,
+      "movement_fraction": 0.13090277777777778,
+      "rest_fraction": 0.7963541666666667,
+      "rest_hours_observed": 6.370833333333334
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-08-31",
+      "period": "day",
+      "observed_hours": 15.977777777777778,
+      "mean_rms_mg": 66.41501702414588,
+      "median_rms_mg": 10.432108092681084,
+      "mean_norm_sd_mg": 21.73443657541819,
+      "raw_enmo_mg": 14.653258922972409,
+      "movement_fraction": 0.32979833101529904,
+      "rest_fraction": 0.39725312934631435,
+      "rest_hours_observed": 6.347222222222222
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-01",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 53.95889117658382,
+      "median_rms_mg": 10.153509245580484,
+      "mean_norm_sd_mg": 17.338089723074443,
+      "raw_enmo_mg": 12.975285796497593,
+      "movement_fraction": 0.2857060185185185,
+      "rest_fraction": 0.4329861111111111,
+      "rest_hours_observed": 10.391666666666667
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-01",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 36.005526825756625,
+      "median_rms_mg": 9.180481855722732,
+      "mean_norm_sd_mg": 11.82691350598746,
+      "raw_enmo_mg": 14.640659691546775,
+      "movement_fraction": 0.18055555555555555,
+      "rest_fraction": 0.7651041666666667,
+      "rest_hours_observed": 6.120833333333334
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-01",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 62.93557335199742,
+      "median_rms_mg": 10.791540856812363,
+      "mean_norm_sd_mg": 20.093677831617928,
+      "raw_enmo_mg": 12.142598848973002,
+      "movement_fraction": 0.33828125,
+      "rest_fraction": 0.2669270833333333,
+      "rest_hours_observed": 4.270833333333333
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-02",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 53.56886848553435,
+      "median_rms_mg": 10.031411281022148,
+      "mean_norm_sd_mg": 16.965136698050134,
+      "raw_enmo_mg": 12.854511316875492,
+      "movement_fraction": 0.27609953703703705,
+      "rest_fraction": 0.5445601851851852,
+      "rest_hours_observed": 13.069444444444445
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-02",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 36.53867356605184,
+      "median_rms_mg": 9.166003724278884,
+      "mean_norm_sd_mg": 11.036972909329782,
+      "raw_enmo_mg": 13.433219868075076,
+      "movement_fraction": 0.16336805555555556,
+      "rest_fraction": 0.8032986111111111,
+      "rest_hours_observed": 6.426388888888889
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-02",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 62.08396594527561,
+      "median_rms_mg": 10.594810050210242,
+      "mean_norm_sd_mg": 19.929218592410308,
+      "raw_enmo_mg": 12.565157041275699,
+      "movement_fraction": 0.3324652777777778,
+      "rest_fraction": 0.41519097222222223,
+      "rest_hours_observed": 6.643055555555556
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-03",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 54.158320333009385,
+      "median_rms_mg": 9.852030247619275,
+      "mean_norm_sd_mg": 17.169282193204104,
+      "raw_enmo_mg": 11.737501852518214,
+      "movement_fraction": 0.27685185185185185,
+      "rest_fraction": 0.5381944444444444,
+      "rest_hours_observed": 12.916666666666666
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-03",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 36.30890824536316,
+      "median_rms_mg": 8.965210538514976,
+      "mean_norm_sd_mg": 12.33036631836209,
+      "raw_enmo_mg": 12.256755278116842,
+      "movement_fraction": 0.1779513888888889,
+      "rest_fraction": 0.7451388888888889,
+      "rest_hours_observed": 5.961111111111111
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-03",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 63.08302637683248,
+      "median_rms_mg": 10.392304845418419,
+      "mean_norm_sd_mg": 19.588740130625112,
+      "raw_enmo_mg": 11.477875139718902,
+      "movement_fraction": 0.3263020833333333,
+      "rest_fraction": 0.43472222222222223,
+      "rest_hours_observed": 6.955555555555556
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-04",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 42.785374007197376,
+      "median_rms_mg": 9.355813700581855,
+      "mean_norm_sd_mg": 13.411440377614642,
+      "raw_enmo_mg": 10.0164356117066,
+      "movement_fraction": 0.23246527777777778,
+      "rest_fraction": 0.5325810185185185,
+      "rest_hours_observed": 12.781944444444445
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-04",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 36.197540982481534,
+      "median_rms_mg": 8.86288097360871,
+      "mean_norm_sd_mg": 11.542512326548405,
+      "raw_enmo_mg": 9.825629884332363,
+      "movement_fraction": 0.184375,
+      "rest_fraction": 0.6192708333333333,
+      "rest_hours_observed": 4.954166666666667
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-04",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 46.07929051955529,
+      "median_rms_mg": 9.627434620187794,
+      "mean_norm_sd_mg": 14.345904403147763,
+      "raw_enmo_mg": 10.111838475393716,
+      "movement_fraction": 0.2565104166666667,
+      "rest_fraction": 0.4892361111111111,
+      "rest_hours_observed": 7.8277777777777775
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-05",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 54.863002717998135,
+      "median_rms_mg": 10.01013781984288,
+      "mean_norm_sd_mg": 17.736825179151506,
+      "raw_enmo_mg": 12.229327678493435,
+      "movement_fraction": 0.28802083333333334,
+      "rest_fraction": 0.5149305555555556,
+      "rest_hours_observed": 12.358333333333333
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-05",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 35.110101656002186,
+      "median_rms_mg": 9.312290266091793,
+      "mean_norm_sd_mg": 11.185823978496513,
+      "raw_enmo_mg": 16.28512828716748,
+      "movement_fraction": 0.165625,
+      "rest_fraction": 0.7006944444444444,
+      "rest_hours_observed": 5.605555555555555
+    },
+    {
+      "cat": "Peach",
+      "date": "2026-09-05",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 64.73945324899613,
+      "median_rms_mg": 10.593335066178746,
+      "mean_norm_sd_mg": 21.012325779479,
+      "raw_enmo_mg": 10.201427374156413,
+      "movement_fraction": 0.34921875,
+      "rest_fraction": 0.42204861111111114,
+      "rest_hours_observed": 6.752777777777778
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-08-31",
+      "period": "all",
+      "observed_hours": 23.977777777777778,
+      "mean_rms_mg": 62.24994508552489,
+      "median_rms_mg": 9.723871784639988,
+      "mean_norm_sd_mg": 23.57967839734923,
+      "raw_enmo_mg": 13.376025122998533,
+      "movement_fraction": 0.2987720111214087,
+      "rest_fraction": 0.5305259499536608,
+      "rest_hours_observed": 12.720833333333333
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-08-31",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 35.66445806517505,
+      "median_rms_mg": 8.571327526059001,
+      "mean_norm_sd_mg": 13.835768329371579,
+      "raw_enmo_mg": 6.105081661020453,
+      "movement_fraction": 0.14965277777777777,
+      "rest_fraction": 0.7387152777777778,
+      "rest_hours_observed": 5.909722222222222
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-08-31",
+      "period": "day",
+      "observed_hours": 15.977777777777778,
+      "mean_rms_mg": 75.56117641699353,
+      "median_rms_mg": 10.709572749835694,
+      "mean_norm_sd_mg": 28.458409446684357,
+      "raw_enmo_mg": 17.016553142904108,
+      "movement_fraction": 0.37343532684283726,
+      "rest_fraction": 0.42628650904033377,
+      "rest_hours_observed": 6.811111111111111
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-01",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 64.6274293205174,
+      "median_rms_mg": 10.285685653801224,
+      "mean_norm_sd_mg": 24.455214469997834,
+      "raw_enmo_mg": 6.904591783086462,
+      "movement_fraction": 0.3223958333333333,
+      "rest_fraction": 0.5270254629629629,
+      "rest_hours_observed": 12.64861111111111
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-01",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 27.2217480331247,
+      "median_rms_mg": 8.29359005640339,
+      "mean_norm_sd_mg": 10.139144354865925,
+      "raw_enmo_mg": 3.1602200995046745,
+      "movement_fraction": 0.11666666666666667,
+      "rest_fraction": 0.8373263888888889,
+      "rest_hours_observed": 6.698611111111111
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-01",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 83.33026996421376,
+      "median_rms_mg": 12.12208077596216,
+      "mean_norm_sd_mg": 31.613249527563788,
+      "raw_enmo_mg": 8.776777624877356,
+      "movement_fraction": 0.42526041666666664,
+      "rest_fraction": 0.371875,
+      "rest_hours_observed": 5.95
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-02",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 72.53976472802886,
+      "median_rms_mg": 10.648377954219725,
+      "mean_norm_sd_mg": 26.272141155412363,
+      "raw_enmo_mg": 6.596796656277169,
+      "movement_fraction": 0.3644675925925926,
+      "rest_fraction": 0.5049768518518518,
+      "rest_hours_observed": 12.119444444444444
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-02",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 37.86985760387051,
+      "median_rms_mg": 9.112148484304974,
+      "mean_norm_sd_mg": 13.848397369445312,
+      "raw_enmo_mg": 3.632769412907717,
+      "movement_fraction": 0.16354166666666667,
+      "rest_fraction": 0.7833333333333333,
+      "rest_hours_observed": 6.266666666666667
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-02",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 89.87471829010805,
+      "median_rms_mg": 14.417874355703878,
+      "mean_norm_sd_mg": 32.48401304839589,
+      "raw_enmo_mg": 8.078810277961896,
+      "movement_fraction": 0.46493055555555557,
+      "rest_fraction": 0.3657986111111111,
+      "rest_hours_observed": 5.852777777777778
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-03",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 66.10350735996346,
+      "median_rms_mg": 10.135025900308369,
+      "mean_norm_sd_mg": 24.905367354301784,
+      "raw_enmo_mg": 6.693903915819889,
+      "movement_fraction": 0.32621527777777776,
+      "rest_fraction": 0.5592013888888889,
+      "rest_hours_observed": 13.420833333333333
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-03",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 48.3430857455768,
+      "median_rms_mg": 9.316504897903044,
+      "mean_norm_sd_mg": 17.985408203731588,
+      "raw_enmo_mg": 3.513419200794066,
+      "movement_fraction": 0.24166666666666667,
+      "rest_fraction": 0.6623263888888888,
+      "rest_hours_observed": 5.298611111111111
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-03",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 74.98371816715677,
+      "median_rms_mg": 10.607529208898548,
+      "mean_norm_sd_mg": 28.36534692958688,
+      "raw_enmo_mg": 8.284146273332802,
+      "movement_fraction": 0.3684895833333333,
+      "rest_fraction": 0.5076388888888889,
+      "rest_hours_observed": 8.122222222222222
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-04",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 64.25311706296836,
+      "median_rms_mg": 10.49957991632476,
+      "mean_norm_sd_mg": 23.740178618088983,
+      "raw_enmo_mg": 4.891952700305987,
+      "movement_fraction": 0.34803240740740743,
+      "rest_fraction": 0.5164930555555556,
+      "rest_hours_observed": 12.395833333333334
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-04",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 26.644160700767557,
+      "median_rms_mg": 8.902538859331177,
+      "mean_norm_sd_mg": 10.455280394582427,
+      "raw_enmo_mg": 1.5381625092833013,
+      "movement_fraction": 0.11996527777777778,
+      "rest_fraction": 0.8270833333333333,
+      "rest_hours_observed": 6.616666666666666
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-04",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 83.05759524406876,
+      "median_rms_mg": 13.988468159973168,
+      "mean_norm_sd_mg": 30.382627729842262,
+      "raw_enmo_mg": 6.56884779581733,
+      "movement_fraction": 0.46206597222222223,
+      "rest_fraction": 0.3611979166666667,
+      "rest_hours_observed": 5.779166666666667
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-05",
+      "period": "all",
+      "observed_hours": 24.0,
+      "mean_rms_mg": 63.43011875417876,
+      "median_rms_mg": 10.2239018172491,
+      "mean_norm_sd_mg": 24.060579897779117,
+      "raw_enmo_mg": 6.236689914872229,
+      "movement_fraction": 0.31221064814814814,
+      "rest_fraction": 0.5350694444444445,
+      "rest_hours_observed": 12.841666666666667
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-05",
+      "period": "night",
+      "observed_hours": 8.0,
+      "mean_rms_mg": 38.16514652094895,
+      "median_rms_mg": 9.305846994771532,
+      "mean_norm_sd_mg": 14.832645859830054,
+      "raw_enmo_mg": 5.356812439999459,
+      "movement_fraction": 0.16163194444444445,
+      "rest_fraction": 0.7541666666666667,
+      "rest_hours_observed": 6.033333333333333
+    },
+    {
+      "cat": "Toast",
+      "date": "2026-09-05",
+      "period": "day",
+      "observed_hours": 16.0,
+      "mean_rms_mg": 76.06260487079366,
+      "median_rms_mg": 11.015440209684709,
+      "mean_norm_sd_mg": 28.674546916753656,
+      "raw_enmo_mg": 6.676628652308615,
+      "movement_fraction": 0.3875,
+      "rest_fraction": 0.42552083333333335,
+      "rest_hours_observed": 6.808333333333334
+    }
+  ],
+  "hourly": [
+    {
+      "cat": "Peach",
+      "hour": 0,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 19.809425603499456,
+      "median_rms_mg": 8.78564169540168,
+      "mean_norm_sd_mg": 6.595502992268252,
+      "raw_enmo_mg": 18.295417649853764,
+      "movement_fraction": 0.08148148148148149,
+      "rest_fraction": 0.9120370370370371,
+      "rest_hours_observed": 5.472222222222222
+    },
+    {
+      "cat": "Peach",
+      "hour": 1,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 23.30431692077356,
+      "median_rms_mg": 8.565724918631847,
+      "mean_norm_sd_mg": 8.01727603777468,
+      "raw_enmo_mg": 10.292411662224866,
+      "movement_fraction": 0.10902777777777778,
+      "rest_fraction": 0.8819444444444444,
+      "rest_hours_observed": 5.291666666666667
+    },
+    {
+      "cat": "Peach",
+      "hour": 2,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 24.576227755980486,
+      "median_rms_mg": 9.092852760363602,
+      "mean_norm_sd_mg": 9.114845868874502,
+      "raw_enmo_mg": 14.633295956978937,
+      "movement_fraction": 0.10810185185185185,
+      "rest_fraction": 0.86875,
+      "rest_hours_observed": 5.2125
+    },
+    {
+      "cat": "Peach",
+      "hour": 3,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 14.15513021146548,
+      "median_rms_mg": 8.253787009614307,
+      "mean_norm_sd_mg": 5.043865560112873,
+      "raw_enmo_mg": 10.956231521651217,
+      "movement_fraction": 0.05138888888888889,
+      "rest_fraction": 0.9381944444444444,
+      "rest_hours_observed": 5.629166666666666
+    },
+    {
+      "cat": "Peach",
+      "hour": 4,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 59.28246815444998,
+      "median_rms_mg": 9.863125772287372,
+      "mean_norm_sd_mg": 18.44636054108457,
+      "raw_enmo_mg": 10.715391033323542,
+      "movement_fraction": 0.29814814814814816,
+      "rest_fraction": 0.6240740740740741,
+      "rest_hours_observed": 3.7444444444444445
+    },
+    {
+      "cat": "Peach",
+      "hour": 5,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 48.14498533496123,
+      "median_rms_mg": 9.859215847282217,
+      "mean_norm_sd_mg": 14.423382561901327,
+      "raw_enmo_mg": 11.959362829328105,
+      "movement_fraction": 0.23819444444444443,
+      "rest_fraction": 0.4909722222222222,
+      "rest_hours_observed": 2.9458333333333333
+    },
+    {
+      "cat": "Peach",
+      "hour": 6,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 44.32059242862365,
+      "median_rms_mg": 9.754806507564702,
+      "mean_norm_sd_mg": 13.592527641027567,
+      "raw_enmo_mg": 11.456682006862563,
+      "movement_fraction": 0.23148148148148148,
+      "rest_fraction": 0.3474537037037037,
+      "rest_hours_observed": 2.084722222222222
+    },
+    {
+      "cat": "Peach",
+      "hour": 7,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 137.61657702980332,
+      "median_rms_mg": 80.34862519730368,
+      "mean_norm_sd_mg": 44.049416743131154,
+      "raw_enmo_mg": 20.92949111526759,
+      "movement_fraction": 0.7111111111111111,
+      "rest_fraction": 0.0,
+      "rest_hours_observed": 0.0
+    },
+    {
+      "cat": "Peach",
+      "hour": 8,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 81.42095779944226,
+      "median_rms_mg": 13.224444426963629,
+      "mean_norm_sd_mg": 26.04929784096559,
+      "raw_enmo_mg": 14.88100047160458,
+      "movement_fraction": 0.4474537037037037,
+      "rest_fraction": 0.09097222222222222,
+      "rest_hours_observed": 0.5458333333333333
+    },
+    {
+      "cat": "Peach",
+      "hour": 9,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 66.39781048704697,
+      "median_rms_mg": 11.560040381164157,
+      "mean_norm_sd_mg": 20.666891350244313,
+      "raw_enmo_mg": 11.932198289297952,
+      "movement_fraction": 0.3872685185185185,
+      "rest_fraction": 0.11550925925925926,
+      "rest_hours_observed": 0.6930555555555555
+    },
+    {
+      "cat": "Peach",
+      "hour": 10,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 50.16888228899552,
+      "median_rms_mg": 9.887640437628846,
+      "mean_norm_sd_mg": 15.116929133608632,
+      "raw_enmo_mg": 13.102712795380851,
+      "movement_fraction": 0.27199074074074076,
+      "rest_fraction": 0.41782407407407407,
+      "rest_hours_observed": 2.5069444444444446
+    },
+    {
+      "cat": "Peach",
+      "hour": 11,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 31.15590017308778,
+      "median_rms_mg": 8.830792830186358,
+      "mean_norm_sd_mg": 10.08754393237104,
+      "raw_enmo_mg": 20.99142185609788,
+      "movement_fraction": 0.15092592592592594,
+      "rest_fraction": 0.757175925925926,
+      "rest_hours_observed": 4.543055555555555
+    },
+    {
+      "cat": "Peach",
+      "hour": 12,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 40.894490920765044,
+      "median_rms_mg": 8.929410631978985,
+      "mean_norm_sd_mg": 12.437970511639854,
+      "raw_enmo_mg": 12.68471691297918,
+      "movement_fraction": 0.20879629629629629,
+      "rest_fraction": 0.6673611111111111,
+      "rest_hours_observed": 4.004166666666666
+    },
+    {
+      "cat": "Peach",
+      "hour": 13,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 17.691716412544114,
+      "median_rms_mg": 8.439518004273484,
+      "mean_norm_sd_mg": 6.234906942675,
+      "raw_enmo_mg": 7.268932943822681,
+      "movement_fraction": 0.08101851851851852,
+      "rest_fraction": 0.8631944444444445,
+      "rest_hours_observed": 5.179166666666666
+    },
+    {
+      "cat": "Peach",
+      "hour": 14,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 33.61714608103151,
+      "median_rms_mg": 9.134504805158102,
+      "mean_norm_sd_mg": 11.856270436912279,
+      "raw_enmo_mg": 3.718588449348534,
+      "movement_fraction": 0.14814814814814814,
+      "rest_fraction": 0.7928240740740741,
+      "rest_hours_observed": 4.756944444444445
+    },
+    {
+      "cat": "Peach",
+      "hour": 15,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 39.74178835136986,
+      "median_rms_mg": 9.158218714534119,
+      "mean_norm_sd_mg": 13.34658674294967,
+      "raw_enmo_mg": 4.590923942750972,
+      "movement_fraction": 0.20671296296296296,
+      "rest_fraction": 0.6083333333333333,
+      "rest_hours_observed": 3.65
+    },
+    {
+      "cat": "Peach",
+      "hour": 16,
+      "observed_hours": 5.977777777777778,
+      "mean_rms_mg": 47.50890579875039,
+      "median_rms_mg": 9.4049521163037,
+      "mean_norm_sd_mg": 15.507097728389926,
+      "raw_enmo_mg": 5.149070761921815,
+      "movement_fraction": 0.22304832713754646,
+      "rest_fraction": 0.6772769516728625,
+      "rest_hours_observed": 4.048611111111111
+    },
+    {
+      "cat": "Peach",
+      "hour": 17,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 35.51299178960002,
+      "median_rms_mg": 8.808731463723625,
+      "mean_norm_sd_mg": 11.54219634446509,
+      "raw_enmo_mg": 3.6385255994959063,
+      "movement_fraction": 0.1738425925925926,
+      "rest_fraction": 0.75625,
+      "rest_hours_observed": 4.5375
+    },
+    {
+      "cat": "Peach",
+      "hour": 18,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 103.97682104459066,
+      "median_rms_mg": 32.432871160559145,
+      "mean_norm_sd_mg": 35.53128105394109,
+      "raw_enmo_mg": 16.92912222413193,
+      "movement_fraction": 0.5668981481481481,
+      "rest_fraction": 0.04976851851851852,
+      "rest_hours_observed": 0.2986111111111111
+    },
+    {
+      "cat": "Peach",
+      "hour": 19,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 83.10849935999472,
+      "median_rms_mg": 14.783280648141655,
+      "mean_norm_sd_mg": 26.648892219802846,
+      "raw_enmo_mg": 14.596496392024926,
+      "movement_fraction": 0.4601851851851852,
+      "rest_fraction": 0.0,
+      "rest_hours_observed": 0.0
+    },
+    {
+      "cat": "Peach",
+      "hour": 20,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 93.04725564388706,
+      "median_rms_mg": 22.46892724024454,
+      "mean_norm_sd_mg": 28.12481966248281,
+      "raw_enmo_mg": 16.146154410340312,
+      "movement_fraction": 0.5189814814814815,
+      "rest_fraction": 0.023148148148148147,
+      "rest_hours_observed": 0.1388888888888889
+    },
+    {
+      "cat": "Peach",
+      "hour": 21,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 67.97984566777318,
+      "median_rms_mg": 10.921701893247693,
+      "mean_norm_sd_mg": 20.395782997969985,
+      "raw_enmo_mg": 11.687843271753243,
+      "movement_fraction": 0.36527777777777776,
+      "rest_fraction": 0.30162037037037037,
+      "rest_hours_observed": 1.8097222222222222
+    },
+    {
+      "cat": "Peach",
+      "hour": 22,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 51.439060773013544,
+      "median_rms_mg": 9.365828253128829,
+      "mean_norm_sd_mg": 16.709595355859076,
+      "raw_enmo_mg": 15.177780722537873,
+      "movement_fraction": 0.2611111111111111,
+      "rest_fraction": 0.49699074074074073,
+      "rest_hours_observed": 2.9819444444444443
+    },
+    {
+      "cat": "Peach",
+      "hour": 23,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 36.68116969218118,
+      "median_rms_mg": 9.186636496746846,
+      "mean_norm_sd_mg": 10.911114530735007,
+      "raw_enmo_mg": 13.032002088329113,
+      "movement_fraction": 0.18958333333333333,
+      "rest_fraction": 0.6935185185185185,
+      "rest_hours_observed": 4.161111111111111
+    },
+    {
+      "cat": "Toast",
+      "hour": 0,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 16.065822752089083,
+      "median_rms_mg": 8.437366751497798,
+      "mean_norm_sd_mg": 6.0118314229907925,
+      "raw_enmo_mg": 4.111229192575388,
+      "movement_fraction": 0.04884259259259259,
+      "rest_fraction": 0.9435185185185185,
+      "rest_hours_observed": 5.661111111111111
+    },
+    {
+      "cat": "Toast",
+      "hour": 1,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 19.30696849534437,
+      "median_rms_mg": 8.10183841012401,
+      "mean_norm_sd_mg": 7.378886079428646,
+      "raw_enmo_mg": 1.4418520173316118,
+      "movement_fraction": 0.07893518518518519,
+      "rest_fraction": 0.9143518518518519,
+      "rest_hours_observed": 5.486111111111111
+    },
+    {
+      "cat": "Toast",
+      "hour": 2,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 14.892842785569712,
+      "median_rms_mg": 8.425125396738348,
+      "mean_norm_sd_mg": 5.348755421245183,
+      "raw_enmo_mg": 1.8768915988742298,
+      "movement_fraction": 0.04259259259259259,
+      "rest_fraction": 0.9502314814814815,
+      "rest_hours_observed": 5.701388888888889
+    },
+    {
+      "cat": "Toast",
+      "hour": 3,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 16.152930619768195,
+      "median_rms_mg": 8.169171919722936,
+      "mean_norm_sd_mg": 6.103113940217539,
+      "raw_enmo_mg": 2.357352879006052,
+      "movement_fraction": 0.05277777777777778,
+      "rest_fraction": 0.9412037037037037,
+      "rest_hours_observed": 5.647222222222222
+    },
+    {
+      "cat": "Toast",
+      "hour": 4,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 42.2198760534639,
+      "median_rms_mg": 9.264806675734956,
+      "mean_norm_sd_mg": 16.267216420503097,
+      "raw_enmo_mg": 4.19935572446872,
+      "movement_fraction": 0.2011574074074074,
+      "rest_fraction": 0.6983796296296296,
+      "rest_hours_observed": 4.190277777777778
+    },
+    {
+      "cat": "Toast",
+      "hour": 5,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 40.2800807283313,
+      "median_rms_mg": 9.326865955090492,
+      "mean_norm_sd_mg": 14.897478978727529,
+      "raw_enmo_mg": 5.321469731047855,
+      "movement_fraction": 0.1763888888888889,
+      "rest_fraction": 0.7023148148148148,
+      "rest_hours_observed": 4.213888888888889
+    },
+    {
+      "cat": "Toast",
+      "hour": 6,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 34.566981055447265,
+      "median_rms_mg": 8.383088396412646,
+      "mean_norm_sd_mg": 11.560137381274712,
+      "raw_enmo_mg": 5.371257489196965,
+      "movement_fraction": 0.13495370370370371,
+      "rest_fraction": 0.8326388888888889,
+      "rest_hours_observed": 4.995833333333334
+    },
+    {
+      "cat": "Toast",
+      "hour": 7,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 140.88479305469835,
+      "median_rms_mg": 89.60982957273487,
+      "mean_norm_sd_mg": 55.87606174729162,
+      "raw_enmo_mg": 17.28634075979363,
+      "movement_fraction": 0.7719907407407407,
+      "rest_fraction": 0.05092592592592592,
+      "rest_hours_observed": 0.3055555555555556
+    },
+    {
+      "cat": "Toast",
+      "hour": 8,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 83.63711633410382,
+      "median_rms_mg": 17.337505239494178,
+      "mean_norm_sd_mg": 30.767969188148506,
+      "raw_enmo_mg": 9.644791740627639,
+      "movement_fraction": 0.475,
+      "rest_fraction": 0.12291666666666666,
+      "rest_hours_observed": 0.7375
+    },
+    {
+      "cat": "Toast",
+      "hour": 9,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 72.48144438625813,
+      "median_rms_mg": 11.317769254149962,
+      "mean_norm_sd_mg": 26.277268026605157,
+      "raw_enmo_mg": 9.955199776413698,
+      "movement_fraction": 0.38981481481481484,
+      "rest_fraction": 0.305787037037037,
+      "rest_hours_observed": 1.8347222222222221
+    },
+    {
+      "cat": "Toast",
+      "hour": 10,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 72.71019274240139,
+      "median_rms_mg": 11.64563693074594,
+      "mean_norm_sd_mg": 27.130758293488366,
+      "raw_enmo_mg": 10.538116819238049,
+      "movement_fraction": 0.4081018518518518,
+      "rest_fraction": 0.33564814814814814,
+      "rest_hours_observed": 2.013888888888889
+    },
+    {
+      "cat": "Toast",
+      "hour": 11,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 65.72014883299397,
+      "median_rms_mg": 10.022989069178923,
+      "mean_norm_sd_mg": 25.315977589836816,
+      "raw_enmo_mg": 12.0230981243152,
+      "movement_fraction": 0.33055555555555555,
+      "rest_fraction": 0.5094907407407407,
+      "rest_hours_observed": 3.0569444444444445
+    },
+    {
+      "cat": "Toast",
+      "hour": 12,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 68.69544698263813,
+      "median_rms_mg": 10.275881957277104,
+      "mean_norm_sd_mg": 25.108512438907564,
+      "raw_enmo_mg": 8.194085809793641,
+      "movement_fraction": 0.35300925925925924,
+      "rest_fraction": 0.5229166666666667,
+      "rest_hours_observed": 3.1375
+    },
+    {
+      "cat": "Toast",
+      "hour": 13,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 67.84619537923545,
+      "median_rms_mg": 10.05422759983026,
+      "mean_norm_sd_mg": 23.3107712431544,
+      "raw_enmo_mg": 6.725792124886896,
+      "movement_fraction": 0.31805555555555554,
+      "rest_fraction": 0.6148148148148148,
+      "rest_hours_observed": 3.688888888888889
+    },
+    {
+      "cat": "Toast",
+      "hour": 14,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 59.35862378462477,
+      "median_rms_mg": 9.618799007503846,
+      "mean_norm_sd_mg": 23.06450285256277,
+      "raw_enmo_mg": 5.883085940189377,
+      "movement_fraction": 0.2953703703703704,
+      "rest_fraction": 0.6046296296296296,
+      "rest_hours_observed": 3.6277777777777778
+    },
+    {
+      "cat": "Toast",
+      "hour": 15,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 62.6714126099056,
+      "median_rms_mg": 10.304193396427289,
+      "mean_norm_sd_mg": 23.195263636940222,
+      "raw_enmo_mg": 7.748226671336779,
+      "movement_fraction": 0.29444444444444445,
+      "rest_fraction": 0.6025462962962963,
+      "rest_hours_observed": 3.6152777777777776
+    },
+    {
+      "cat": "Toast",
+      "hour": 16,
+      "observed_hours": 5.977777777777778,
+      "mean_rms_mg": 61.29212263379011,
+      "median_rms_mg": 9.638688113595855,
+      "mean_norm_sd_mg": 23.367081046001687,
+      "raw_enmo_mg": 5.925568447880594,
+      "movement_fraction": 0.27184014869888473,
+      "rest_fraction": 0.6672862453531598,
+      "rest_hours_observed": 3.988888888888889
+    },
+    {
+      "cat": "Toast",
+      "hour": 17,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 36.397994827160694,
+      "median_rms_mg": 8.752346262087713,
+      "mean_norm_sd_mg": 13.564103830415382,
+      "raw_enmo_mg": 6.051719539483441,
+      "movement_fraction": 0.17569444444444443,
+      "rest_fraction": 0.7715277777777778,
+      "rest_hours_observed": 4.629166666666666
+    },
+    {
+      "cat": "Toast",
+      "hour": 18,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 115.46971828138018,
+      "median_rms_mg": 46.30527936646925,
+      "mean_norm_sd_mg": 44.56613568743218,
+      "raw_enmo_mg": 11.12956846722795,
+      "movement_fraction": 0.6097222222222223,
+      "rest_fraction": 0.20347222222222222,
+      "rest_hours_observed": 1.2208333333333334
+    },
+    {
+      "cat": "Toast",
+      "hour": 19,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 114.41074378679951,
+      "median_rms_mg": 40.921327791162426,
+      "mean_norm_sd_mg": 42.55298445136418,
+      "raw_enmo_mg": 10.447697682036376,
+      "movement_fraction": 0.5905092592592592,
+      "rest_fraction": 0.15625,
+      "rest_hours_observed": 0.9375
+    },
+    {
+      "cat": "Toast",
+      "hour": 20,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 130.82370321123543,
+      "median_rms_mg": 69.50212707948967,
+      "mean_norm_sd_mg": 48.8289800732007,
+      "raw_enmo_mg": 12.432113550328372,
+      "movement_fraction": 0.6905092592592592,
+      "rest_fraction": 0.03958333333333333,
+      "rest_hours_observed": 0.2375
+    },
+    {
+      "cat": "Toast",
+      "hour": 21,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 100.63406829220743,
+      "median_rms_mg": 21.457660150051176,
+      "mean_norm_sd_mg": 35.4364853383929,
+      "raw_enmo_mg": 8.340296048697656,
+      "movement_fraction": 0.5078703703703704,
+      "rest_fraction": 0.21597222222222223,
+      "rest_hours_observed": 1.2958333333333334
+    },
+    {
+      "cat": "Toast",
+      "hour": 22,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 86.64530888524034,
+      "median_rms_mg": 11.989321284674858,
+      "mean_norm_sd_mg": 33.006954825483405,
+      "raw_enmo_mg": 7.8614504000524335,
+      "movement_fraction": 0.41388888888888886,
+      "rest_fraction": 0.3537037037037037,
+      "rest_hours_observed": 2.1222222222222222
+    },
+    {
+      "cat": "Toast",
+      "hour": 23,
+      "observed_hours": 6.0,
+      "mean_rms_mg": 49.647445239477825,
+      "median_rms_mg": 9.416521114990214,
+      "mean_norm_sd_mg": 19.11462226050632,
+      "raw_enmo_mg": 3.905685554656605,
+      "movement_fraction": 0.25625,
+      "rest_fraction": 0.6335648148148149,
+      "rest_hours_observed": 3.801388888888889
+    }
+  ],
+  "metadata": {
+    "Peach": {
+      "file": "CWA-DATA peach.CWA",
+      "header": {
+        "device_id": 115897,
+        "session_id": 2,
+        "logging_start": [
+          2026,
+          8,
+          30,
+          14,
+          10,
+          0
+        ],
+        "logging_end": [
+          2026,
+          9,
+          6,
+          14,
+          10,
+          0
+        ],
+        "config_rate_hz": 25.0,
+        "config_range_g": 8,
+        "firmware": 48,
+        "annotation": "_s=peach",
+        "invalid_packets": 0,
+        "checksum_failures": 0,
+        "trailing_bytes": 0,
+        "timing_segments": 1,
+        "gaps": [],
+        "median_actual_rate_hz": 25.08435963230836,
+        "packing": 0,
+        "samples_per_packet": 120,
+        "n_packets": 126471
+      },
+      "first_sample": "2026-08-30 14:10:49.449859619",
+      "last_sample": "2026-09-06 14:10:01.131759405",
+      "samples": 15176520,
+      "median_sample_rate_hz": 25.08435003109899,
+      "sequence_breaks": 0,
+      "gaps": [],
+      "epoch_count": 120952,
+      "valid_epoch_count": 120950,
+      "rms_percentiles_mg": {
+        "0.01": 2.3913908087124622,
+        "0.05": 4.100304866713582,
+        "0.25": 7.701460900375943,
+        "0.5": 9.924716620641126,
+        "0.75": 31.603234658156406,
+        "0.9": 180.1234892509951,
+        "0.95": 278.4625739939637,
+        "0.99": 519.5696189954292
+      },
+      "stillest_5pct_median_norm_g": 0.9776240530714,
+      "rest_bouts_full_recording": [
+        {
+          "start": "2026-08-30 15:05:25",
+          "end": "2026-08-30 16:54:35",
+          "span_minutes": 109.16666666666667,
+          "quiet_minutes": 103.5
+        },
+        {
+          "start": "2026-08-30 18:18:55",
+          "end": "2026-08-30 18:52:15",
+          "span_minutes": 33.333333333333336,
+          "quiet_minutes": 30.416666666666668
+        },
+        {
+          "start": "2026-08-30 20:37:10",
+          "end": "2026-08-30 20:48:15",
+          "span_minutes": 11.083333333333334,
+          "quiet_minutes": 10.416666666666666
+        },
+        {
+          "start": "2026-08-30 21:26:25",
+          "end": "2026-08-30 21:37:20",
+          "span_minutes": 10.916666666666666,
+          "quiet_minutes": 10.166666666666666
+        },
+        {
+          "start": "2026-08-30 21:38:05",
+          "end": "2026-08-30 22:01:45",
+          "span_minutes": 23.666666666666668,
+          "quiet_minutes": 21.833333333333332
+        },
+        {
+          "start": "2026-08-30 22:02:35",
+          "end": "2026-08-30 22:13:10",
+          "span_minutes": 10.583333333333334,
+          "quiet_minutes": 10.25
+        },
+        {
+          "start": "2026-08-30 22:36:30",
+          "end": "2026-08-30 22:43:50",
+          "span_minutes": 7.333333333333333,
+          "quiet_minutes": 7.333333333333333
+        },
+        {
+          "start": "2026-08-30 22:47:20",
+          "end": "2026-08-30 23:43:20",
+          "span_minutes": 56.0,
+          "quiet_minutes": 53.666666666666664
+        },
+        {
+          "start": "2026-08-30 23:44:35",
+          "end": "2026-08-31 01:58:15",
+          "span_minutes": 133.66666666666666,
+          "quiet_minutes": 127.5
+        },
+        {
+          "start": "2026-08-31 01:59:30",
+          "end": "2026-08-31 04:57:50",
+          "span_minutes": 178.33333333333334,
+          "quiet_minutes": 169.41666666666666
+        },
+        {
+          "start": "2026-08-31 06:08:55",
+          "end": "2026-08-31 06:14:05",
+          "span_minutes": 5.166666666666667,
+          "quiet_minutes": 4.666666666666667
+        },
+        {
+          "start": "2026-08-31 06:17:15",
+          "end": "2026-08-31 06:42:25",
+          "span_minutes": 25.166666666666668,
+          "quiet_minutes": 22.75
+        },
+        {
+          "start": "2026-08-31 10:30:05",
+          "end": "2026-08-31 10:47:45",
+          "span_minutes": 17.666666666666668,
+          "quiet_minutes": 16.5
+        },
+        {
+          "start": "2026-08-31 11:02:35",
+          "end": "2026-08-31 15:10:20",
+          "span_minutes": 247.75,
+          "quiet_minutes": 232.33333333333334
+        },
+        {
+          "start": "2026-08-31 16:02:55",
+          "end": "2026-08-31 16:47:20",
+          "span_minutes": 44.416666666666664,
+          "quiet_minutes": 42.083333333333336
+        },
+        {
+          "start": "2026-08-31 16:49:05",
+          "end": "2026-08-31 17:17:15",
+          "span_minutes": 28.166666666666668,
+          "quiet_minutes": 26.416666666666668
+        },
+        {
+          "start": "2026-08-31 17:17:50",
+          "end": "2026-08-31 17:42:30",
+          "span_minutes": 24.666666666666668,
+          "quiet_minutes": 22.666666666666668
+        },
+        {
+          "start": "2026-08-31 21:21:35",
+          "end": "2026-08-31 21:35:45",
+          "span_minutes": 14.166666666666666,
+          "quiet_minutes": 13.416666666666666
+        },
+        {
+          "start": "2026-08-31 21:58:35",
+          "end": "2026-08-31 22:30:50",
+          "span_minutes": 32.25,
+          "quiet_minutes": 29.75
+        },
+        {
+          "start": "2026-08-31 22:36:50",
+          "end": "2026-08-31 23:19:35",
+          "span_minutes": 42.75,
+          "quiet_minutes": 39.666666666666664
+        },
+        {
+          "start": "2026-08-31 23:25:10",
+          "end": "2026-09-01 01:37:55",
+          "span_minutes": 132.75,
+          "quiet_minutes": 123.41666666666667
+        },
+        {
+          "start": "2026-09-01 01:38:50",
+          "end": "2026-09-01 01:44:30",
+          "span_minutes": 5.666666666666667,
+          "quiet_minutes": 5.166666666666667
+        },
+        {
+          "start": "2026-09-01 01:56:10",
+          "end": "2026-09-01 03:59:05",
+          "span_minutes": 122.91666666666667,
+          "quiet_minutes": 115.66666666666667
+        },
+        {
+          "start": "2026-09-01 03:59:45",
+          "end": "2026-09-01 04:48:20",
+          "span_minutes": 48.583333333333336,
+          "quiet_minutes": 44.0
+        },
+        {
+          "start": "2026-09-01 05:14:15",
+          "end": "2026-09-01 05:19:40",
+          "span_minutes": 5.416666666666667,
+          "quiet_minutes": 5.0
+        },
+        {
+          "start": "2026-09-01 05:20:20",
+          "end": "2026-09-01 05:40:50",
+          "span_minutes": 20.5,
+          "quiet_minutes": 19.083333333333332
+        },
+        {
+          "start": "2026-09-01 05:41:40",
+          "end": "2026-09-01 06:21:35",
+          "span_minutes": 39.916666666666664,
+          "quiet_minutes": 37.75
+        },
+        {
+          "start": "2026-09-01 12:51:45",
+          "end": "2026-09-01 13:51:05",
+          "span_minutes": 59.333333333333336,
+          "quiet_minutes": 55.583333333333336
+        },
+        {
+          "start": "2026-09-01 14:09:50",
+          "end": "2026-09-01 14:33:15",
+          "span_minutes": 23.416666666666668,
+          "quiet_minutes": 22.166666666666668
+        },
+        {
+          "start": "2026-09-01 15:10:55",
+          "end": "2026-09-01 15:46:25",
+          "span_minutes": 35.5,
+          "quiet_minutes": 33.083333333333336
+        },
+        {
+          "start": "2026-09-01 15:49:50",
+          "end": "2026-09-01 17:04:15",
+          "span_minutes": 74.41666666666667,
+          "quiet_minutes": 67.83333333333333
+        },
+        {
+          "start": "2026-09-01 17:04:55",
+          "end": "2026-09-01 18:06:30",
+          "span_minutes": 61.583333333333336,
+          "quiet_minutes": 56.916666666666664
+        },
+        {
+          "start": "2026-09-01 22:38:25",
+          "end": "2026-09-01 23:02:35",
+          "span_minutes": 24.166666666666668,
+          "quiet_minutes": 23.5
+        },
+        {
+          "start": "2026-09-01 23:03:40",
+          "end": "2026-09-01 23:29:30",
+          "span_minutes": 25.833333333333332,
+          "quiet_minutes": 24.666666666666668
+        },
+        {
+          "start": "2026-09-01 23:37:20",
+          "end": "2026-09-02 01:27:40",
+          "span_minutes": 110.33333333333333,
+          "quiet_minutes": 103.33333333333333
+        },
+        {
+          "start": "2026-09-02 01:33:25",
+          "end": "2026-09-02 03:27:55",
+          "span_minutes": 114.5,
+          "quiet_minutes": 107.75
+        },
+        {
+          "start": "2026-09-02 03:28:40",
+          "end": "2026-09-02 04:45:40",
+          "span_minutes": 77.0,
+          "quiet_minutes": 70.66666666666667
+        },
+        {
+          "start": "2026-09-02 05:20:20",
+          "end": "2026-09-02 06:18:45",
+          "span_minutes": 58.416666666666664,
+          "quiet_minutes": 53.583333333333336
+        },
+        {
+          "start": "2026-09-02 06:25:55",
+          "end": "2026-09-02 06:42:05",
+          "span_minutes": 16.166666666666668,
+          "quiet_minutes": 14.833333333333334
+        },
+        {
+          "start": "2026-09-02 08:45:55",
+          "end": "2026-09-02 09:11:45",
+          "span_minutes": 25.833333333333332,
+          "quiet_minutes": 24.833333333333332
+        },
+        {
+          "start": "2026-09-02 09:12:25",
+          "end": "2026-09-02 09:31:45",
+          "span_minutes": 19.333333333333332,
+          "quiet_minutes": 17.583333333333332
+        },
+        {
+          "start": "2026-09-02 09:40:45",
+          "end": "2026-09-02 09:52:10",
+          "span_minutes": 11.416666666666666,
+          "quiet_minutes": 10.666666666666666
+        },
+        {
+          "start": "2026-09-02 10:45:45",
+          "end": "2026-09-02 12:05:25",
+          "span_minutes": 79.66666666666667,
+          "quiet_minutes": 73.41666666666667
+        },
+        {
+          "start": "2026-09-02 12:06:10",
+          "end": "2026-09-02 12:29:35",
+          "span_minutes": 23.416666666666668,
+          "quiet_minutes": 21.5
+        },
+        {
+          "start": "2026-09-02 13:09:15",
+          "end": "2026-09-02 13:26:50",
+          "span_minutes": 17.583333333333332,
+          "quiet_minutes": 17.166666666666668
+        },
+        {
+          "start": "2026-09-02 13:27:25",
+          "end": "2026-09-02 13:51:40",
+          "span_minutes": 24.25,
+          "quiet_minutes": 21.833333333333332
+        },
+        {
+          "start": "2026-09-02 14:10:05",
+          "end": "2026-09-02 15:14:50",
+          "span_minutes": 64.75,
+          "quiet_minutes": 61.083333333333336
+        },
+        {
+          "start": "2026-09-02 15:24:30",
+          "end": "2026-09-02 15:35:15",
+          "span_minutes": 10.75,
+          "quiet_minutes": 10.583333333333334
+        },
+        {
+          "start": "2026-09-02 16:30:30",
+          "end": "2026-09-02 16:53:30",
+          "span_minutes": 23.0,
+          "quiet_minutes": 20.916666666666668
+        },
+        {
+          "start": "2026-09-02 16:57:25",
+          "end": "2026-09-02 17:20:30",
+          "span_minutes": 23.083333333333332,
+          "quiet_minutes": 21.916666666666668
+        },
+        {
+          "start": "2026-09-02 17:23:20",
+          "end": "2026-09-02 18:13:00",
+          "span_minutes": 49.666666666666664,
+          "quiet_minutes": 45.583333333333336
+        },
+        {
+          "start": "2026-09-02 20:21:05",
+          "end": "2026-09-02 20:29:25",
+          "span_minutes": 8.333333333333334,
+          "quiet_minutes": 8.0
+        },
+        {
+          "start": "2026-09-02 21:46:45",
+          "end": "2026-09-02 22:23:55",
+          "span_minutes": 37.166666666666664,
+          "quiet_minutes": 34.5
+        },
+        {
+          "start": "2026-09-02 22:35:15",
+          "end": "2026-09-02 23:15:30",
+          "span_minutes": 40.25,
+          "quiet_minutes": 36.583333333333336
+        },
+        {
+          "start": "2026-09-02 23:29:55",
+          "end": "2026-09-03 01:48:50",
+          "span_minutes": 138.91666666666666,
+          "quiet_minutes": 130.33333333333334
+        },
+        {
+          "start": "2026-09-03 01:52:05",
+          "end": "2026-09-03 04:23:10",
+          "span_minutes": 151.08333333333334,
+          "quiet_minutes": 142.08333333333334
+        },
+        {
+          "start": "2026-09-03 05:07:15",
+          "end": "2026-09-03 06:23:10",
+          "span_minutes": 75.91666666666667,
+          "quiet_minutes": 69.25
+        },
+        {
+          "start": "2026-09-03 09:57:25",
+          "end": "2026-09-03 10:39:35",
+          "span_minutes": 42.166666666666664,
+          "quiet_minutes": 40.416666666666664
+        },
+        {
+          "start": "2026-09-03 10:44:10",
+          "end": "2026-09-03 11:22:35",
+          "span_minutes": 38.416666666666664,
+          "quiet_minutes": 37.083333333333336
+        },
+        {
+          "start": "2026-09-03 11:25:50",
+          "end": "2026-09-03 12:39:50",
+          "span_minutes": 74.0,
+          "quiet_minutes": 70.83333333333333
+        },
+        {
+          "start": "2026-09-03 12:51:25",
+          "end": "2026-09-03 15:31:30",
+          "span_minutes": 160.08333333333334,
+          "quiet_minutes": 150.83333333333334
+        },
+        {
+          "start": "2026-09-03 16:43:40",
+          "end": "2026-09-03 16:52:10",
+          "span_minutes": 8.5,
+          "quiet_minutes": 7.666666666666667
+        },
+        {
+          "start": "2026-09-03 17:00:55",
+          "end": "2026-09-03 18:01:25",
+          "span_minutes": 60.5,
+          "quiet_minutes": 55.5
+        },
+        {
+          "start": "2026-09-03 20:59:25",
+          "end": "2026-09-03 21:36:25",
+          "span_minutes": 37.0,
+          "quiet_minutes": 34.166666666666664
+        },
+        {
+          "start": "2026-09-03 22:05:45",
+          "end": "2026-09-03 22:21:15",
+          "span_minutes": 15.5,
+          "quiet_minutes": 14.25
+        },
+        {
+          "start": "2026-09-03 23:05:30",
+          "end": "2026-09-04 00:15:10",
+          "span_minutes": 69.66666666666667,
+          "quiet_minutes": 65.5
+        },
+        {
+          "start": "2026-09-04 00:23:35",
+          "end": "2026-09-04 02:07:35",
+          "span_minutes": 104.0,
+          "quiet_minutes": 99.08333333333333
+        },
+        {
+          "start": "2026-09-04 02:16:25",
+          "end": "2026-09-04 04:32:00",
+          "span_minutes": 135.58333333333334,
+          "quiet_minutes": 128.83333333333334
+        },
+        {
+          "start": "2026-09-04 04:54:45",
+          "end": "2026-09-04 05:08:15",
+          "span_minutes": 13.5,
+          "quiet_minutes": 13.083333333333334
+        },
+        {
+          "start": "2026-09-04 05:13:10",
+          "end": "2026-09-04 06:25:40",
+          "span_minutes": 72.5,
+          "quiet_minutes": 66.91666666666667
+        },
+        {
+          "start": "2026-09-04 08:11:40",
+          "end": "2026-09-04 08:32:50",
+          "span_minutes": 21.166666666666668,
+          "quiet_minutes": 19.083333333333332
+        },
+        {
+          "start": "2026-09-04 10:00:50",
+          "end": "2026-09-04 10:38:50",
+          "span_minutes": 38.0,
+          "quiet_minutes": 35.833333333333336
+        },
+        {
+          "start": "2026-09-04 10:49:55",
+          "end": "2026-09-04 12:28:30",
+          "span_minutes": 98.58333333333333,
+          "quiet_minutes": 89.75
+        },
+        {
+          "start": "2026-09-04 12:33:25",
+          "end": "2026-09-04 13:59:05",
+          "span_minutes": 85.66666666666667,
+          "quiet_minutes": 82.33333333333333
+        },
+        {
+          "start": "2026-09-04 13:59:55",
+          "end": "2026-09-04 14:34:00",
+          "span_minutes": 34.083333333333336,
+          "quiet_minutes": 31.166666666666668
+        },
+        {
+          "start": "2026-09-04 14:39:15",
+          "end": "2026-09-04 17:24:25",
+          "span_minutes": 165.16666666666666,
+          "quiet_minutes": 156.5
+        },
+        {
+          "start": "2026-09-04 21:19:05",
+          "end": "2026-09-04 21:52:40",
+          "span_minutes": 33.583333333333336,
+          "quiet_minutes": 30.5
+        },
+        {
+          "start": "2026-09-05 00:03:50",
+          "end": "2026-09-05 00:36:35",
+          "span_minutes": 32.75,
+          "quiet_minutes": 32.166666666666664
+        },
+        {
+          "start": "2026-09-05 00:37:45",
+          "end": "2026-09-05 02:28:35",
+          "span_minutes": 110.83333333333333,
+          "quiet_minutes": 105.08333333333333
+        },
+        {
+          "start": "2026-09-05 02:51:45",
+          "end": "2026-09-05 04:32:45",
+          "span_minutes": 101.0,
+          "quiet_minutes": 93.83333333333333
+        },
+        {
+          "start": "2026-09-05 10:30:45",
+          "end": "2026-09-05 10:39:00",
+          "span_minutes": 8.25,
+          "quiet_minutes": 7.5
+        },
+        {
+          "start": "2026-09-05 10:44:40",
+          "end": "2026-09-05 11:52:05",
+          "span_minutes": 67.41666666666667,
+          "quiet_minutes": 63.666666666666664
+        },
+        {
+          "start": "2026-09-05 11:58:30",
+          "end": "2026-09-05 12:57:20",
+          "span_minutes": 58.833333333333336,
+          "quiet_minutes": 55.916666666666664
+        },
+        {
+          "start": "2026-09-05 13:02:40",
+          "end": "2026-09-05 14:32:55",
+          "span_minutes": 90.25,
+          "quiet_minutes": 84.33333333333333
+        },
+        {
+          "start": "2026-09-05 14:37:00",
+          "end": "2026-09-05 16:07:25",
+          "span_minutes": 90.41666666666667,
+          "quiet_minutes": 86.58333333333333
+        },
+        {
+          "start": "2026-09-05 16:08:05",
+          "end": "2026-09-05 16:54:10",
+          "span_minutes": 46.083333333333336,
+          "quiet_minutes": 42.166666666666664
+        },
+        {
+          "start": "2026-09-05 17:04:25",
+          "end": "2026-09-05 17:56:00",
+          "span_minutes": 51.583333333333336,
+          "quiet_minutes": 47.333333333333336
+        },
+        {
+          "start": "2026-09-05 21:30:10",
+          "end": "2026-09-05 21:36:05",
+          "span_minutes": 5.916666666666667,
+          "quiet_minutes": 5.666666666666667
+        },
+        {
+          "start": "2026-09-05 21:47:25",
+          "end": "2026-09-05 22:10:15",
+          "span_minutes": 22.833333333333332,
+          "quiet_minutes": 21.583333333333332
+        },
+        {
+          "start": "2026-09-05 22:11:30",
+          "end": "2026-09-05 22:38:05",
+          "span_minutes": 26.583333333333332,
+          "quiet_minutes": 24.583333333333332
+        },
+        {
+          "start": "2026-09-05 22:45:45",
+          "end": "2026-09-06 00:23:00",
+          "span_minutes": 97.25,
+          "quiet_minutes": 92.25
+        },
+        {
+          "start": "2026-09-06 00:37:40",
+          "end": "2026-09-06 02:43:10",
+          "span_minutes": 125.5,
+          "quiet_minutes": 118.41666666666667
+        },
+        {
+          "start": "2026-09-06 02:49:20",
+          "end": "2026-09-06 03:37:15",
+          "span_minutes": 47.916666666666664,
+          "quiet_minutes": 46.25
+        },
+        {
+          "start": "2026-09-06 05:04:55",
+          "end": "2026-09-06 05:17:35",
+          "span_minutes": 12.666666666666666,
+          "quiet_minutes": 11.416666666666666
+        },
+        {
+          "start": "2026-09-06 05:26:25",
+          "end": "2026-09-06 05:43:30",
+          "span_minutes": 17.083333333333332,
+          "quiet_minutes": 15.666666666666666
+        },
+        {
+          "start": "2026-09-06 06:34:10",
+          "end": "2026-09-06 06:41:25",
+          "span_minutes": 7.25,
+          "quiet_minutes": 7.0
+        },
+        {
+          "start": "2026-09-06 10:32:10",
+          "end": "2026-09-06 10:41:35",
+          "span_minutes": 9.416666666666666,
+          "quiet_minutes": 9.0
+        },
+        {
+          "start": "2026-09-06 11:05:15",
+          "end": "2026-09-06 12:13:35",
+          "span_minutes": 68.33333333333333,
+          "quiet_minutes": 64.0
+        },
+        {
+          "start": "2026-09-06 12:14:10",
+          "end": "2026-09-06 13:21:35",
+          "span_minutes": 67.41666666666667,
+          "quiet_minutes": 65.66666666666667
+        },
+        {
+          "start": "2026-09-06 13:46:20",
+          "end": "2026-09-06 14:10:00",
+          "span_minutes": 23.666666666666668,
+          "quiet_minutes": 23.583333333333332
+        }
+      ]
+    },
+    "Toast": {
+      "file": "CWA-DATA toast.CWA",
+      "header": {
+        "device_id": 117142,
+        "session_id": 1,
+        "logging_start": [
+          2026,
+          8,
+          30,
+          13,
+          38,
+          0
+        ],
+        "logging_end": [
+          2026,
+          9,
+          6,
+          13,
+          38,
+          0
+        ],
+        "config_rate_hz": 25.0,
+        "config_range_g": 8,
+        "firmware": 48,
+        "annotation": "_s=toast",
+        "invalid_packets": 0,
+        "checksum_failures": 0,
+        "trailing_bytes": 0,
+        "timing_segments": 2,
+        "gaps": [
+          {
+            "start": 1788194270.6065757,
+            "end": 1788194347.5899963,
+            "seconds": 76.98342061042786
+          }
+        ],
+        "median_actual_rate_hz": 24.855123031645377,
+        "packing": 0,
+        "samples_per_packet": 120,
+        "n_packets": 125275
+      },
+      "first_sample": "2026-08-30 13:40:13.458618164",
+      "last_sample": "2026-09-06 13:38:04.989857435",
+      "samples": 15033000,
+      "median_sample_rate_hz": 24.855134814814814,
+      "sequence_breaks": 1,
+      "gaps": [
+        {
+          "start": "2026-08-31 16:37:50.606808901",
+          "end": "2026-08-31 16:39:07.589996338",
+          "seconds": 76.9831874370575
+        }
+      ],
+      "epoch_count": 120935,
+      "valid_epoch_count": 120918,
+      "rms_percentiles_mg": {
+        "0.01": 2.4139672455336556,
+        "0.05": 4.154445948043955,
+        "0.25": 7.778893313539201,
+        "0.5": 10.219090888579249,
+        "0.75": 58.93382140611246,
+        "0.9": 210.25354908014998,
+        "0.95": 314.09896916560956,
+        "0.99": 627.4182622688348
+      },
+      "stillest_5pct_median_norm_g": 0.9591576939322055,
+      "rest_bouts_full_recording": [
+        {
+          "start": "2026-08-30 14:36:30",
+          "end": "2026-08-30 14:52:05",
+          "span_minutes": 15.583333333333334,
+          "quiet_minutes": 15.083333333333334
+        },
+        {
+          "start": "2026-08-30 14:55:00",
+          "end": "2026-08-30 16:30:40",
+          "span_minutes": 95.66666666666667,
+          "quiet_minutes": 91.08333333333333
+        },
+        {
+          "start": "2026-08-30 16:31:15",
+          "end": "2026-08-30 16:54:40",
+          "span_minutes": 23.416666666666668,
+          "quiet_minutes": 22.75
+        },
+        {
+          "start": "2026-08-30 17:28:25",
+          "end": "2026-08-30 17:49:50",
+          "span_minutes": 21.416666666666668,
+          "quiet_minutes": 20.0
+        },
+        {
+          "start": "2026-08-30 18:16:00",
+          "end": "2026-08-30 18:45:25",
+          "span_minutes": 29.416666666666668,
+          "quiet_minutes": 28.75
+        },
+        {
+          "start": "2026-08-30 20:14:10",
+          "end": "2026-08-30 21:11:25",
+          "span_minutes": 57.25,
+          "quiet_minutes": 51.583333333333336
+        },
+        {
+          "start": "2026-08-30 22:29:55",
+          "end": "2026-08-30 22:52:50",
+          "span_minutes": 22.916666666666668,
+          "quiet_minutes": 22.25
+        },
+        {
+          "start": "2026-08-30 22:55:15",
+          "end": "2026-08-31 03:05:10",
+          "span_minutes": 249.91666666666666,
+          "quiet_minutes": 240.83333333333334
+        },
+        {
+          "start": "2026-08-31 03:07:30",
+          "end": "2026-08-31 04:25:15",
+          "span_minutes": 77.75,
+          "quiet_minutes": 74.58333333333333
+        },
+        {
+          "start": "2026-08-31 04:25:50",
+          "end": "2026-08-31 05:13:10",
+          "span_minutes": 47.333333333333336,
+          "quiet_minutes": 45.25
+        },
+        {
+          "start": "2026-08-31 05:57:25",
+          "end": "2026-08-31 06:11:15",
+          "span_minutes": 13.833333333333334,
+          "quiet_minutes": 13.0
+        },
+        {
+          "start": "2026-08-31 06:12:00",
+          "end": "2026-08-31 07:10:50",
+          "span_minutes": 58.833333333333336,
+          "quiet_minutes": 54.166666666666664
+        },
+        {
+          "start": "2026-08-31 09:00:10",
+          "end": "2026-08-31 09:26:20",
+          "span_minutes": 26.166666666666668,
+          "quiet_minutes": 23.75
+        },
+        {
+          "start": "2026-08-31 11:16:55",
+          "end": "2026-08-31 11:55:20",
+          "span_minutes": 38.416666666666664,
+          "quiet_minutes": 36.5
+        },
+        {
+          "start": "2026-08-31 11:56:05",
+          "end": "2026-08-31 15:29:55",
+          "span_minutes": 213.83333333333334,
+          "quiet_minutes": 205.16666666666666
+        },
+        {
+          "start": "2026-08-31 16:05:00",
+          "end": "2026-08-31 16:37:25",
+          "span_minutes": 32.416666666666664,
+          "quiet_minutes": 29.666666666666668
+        },
+        {
+          "start": "2026-08-31 17:30:40",
+          "end": "2026-08-31 18:01:35",
+          "span_minutes": 30.916666666666668,
+          "quiet_minutes": 28.75
+        },
+        {
+          "start": "2026-08-31 21:22:30",
+          "end": "2026-08-31 21:43:05",
+          "span_minutes": 20.583333333333332,
+          "quiet_minutes": 18.666666666666668
+        },
+        {
+          "start": "2026-08-31 21:58:05",
+          "end": "2026-08-31 22:11:10",
+          "span_minutes": 13.083333333333334,
+          "quiet_minutes": 12.0
+        },
+        {
+          "start": "2026-08-31 22:11:50",
+          "end": "2026-08-31 22:28:30",
+          "span_minutes": 16.666666666666668,
+          "quiet_minutes": 15.333333333333334
+        },
+        {
+          "start": "2026-08-31 23:22:25",
+          "end": "2026-08-31 23:33:40",
+          "span_minutes": 11.25,
+          "quiet_minutes": 10.916666666666666
+        },
+        {
+          "start": "2026-08-31 23:42:20",
+          "end": "2026-09-01 02:36:00",
+          "span_minutes": 173.66666666666666,
+          "quiet_minutes": 167.58333333333334
+        },
+        {
+          "start": "2026-09-01 02:37:40",
+          "end": "2026-09-01 04:21:25",
+          "span_minutes": 103.75,
+          "quiet_minutes": 100.16666666666667
+        },
+        {
+          "start": "2026-09-01 04:22:00",
+          "end": "2026-09-01 04:50:00",
+          "span_minutes": 28.0,
+          "quiet_minutes": 26.75
+        },
+        {
+          "start": "2026-09-01 05:18:25",
+          "end": "2026-09-01 07:12:10",
+          "span_minutes": 113.75,
+          "quiet_minutes": 107.83333333333333
+        },
+        {
+          "start": "2026-09-01 13:06:10",
+          "end": "2026-09-01 14:25:50",
+          "span_minutes": 79.66666666666667,
+          "quiet_minutes": 75.41666666666667
+        },
+        {
+          "start": "2026-09-01 15:07:45",
+          "end": "2026-09-01 16:04:00",
+          "span_minutes": 56.25,
+          "quiet_minutes": 53.166666666666664
+        },
+        {
+          "start": "2026-09-01 16:04:35",
+          "end": "2026-09-01 18:06:30",
+          "span_minutes": 121.91666666666667,
+          "quiet_minutes": 114.58333333333333
+        },
+        {
+          "start": "2026-09-01 18:12:35",
+          "end": "2026-09-01 18:29:15",
+          "span_minutes": 16.666666666666668,
+          "quiet_minutes": 15.166666666666666
+        },
+        {
+          "start": "2026-09-01 21:08:25",
+          "end": "2026-09-01 21:22:05",
+          "span_minutes": 13.666666666666666,
+          "quiet_minutes": 12.416666666666666
+        },
+        {
+          "start": "2026-09-01 21:23:10",
+          "end": "2026-09-01 21:42:55",
+          "span_minutes": 19.75,
+          "quiet_minutes": 19.416666666666668
+        },
+        {
+          "start": "2026-09-01 22:12:40",
+          "end": "2026-09-01 22:20:30",
+          "span_minutes": 7.833333333333333,
+          "quiet_minutes": 7.083333333333333
+        },
+        {
+          "start": "2026-09-01 22:23:45",
+          "end": "2026-09-01 22:36:55",
+          "span_minutes": 13.166666666666666,
+          "quiet_minutes": 11.916666666666666
+        },
+        {
+          "start": "2026-09-01 22:40:15",
+          "end": "2026-09-01 23:02:05",
+          "span_minutes": 21.833333333333332,
+          "quiet_minutes": 21.583333333333332
+        },
+        {
+          "start": "2026-09-01 23:11:30",
+          "end": "2026-09-01 23:50:25",
+          "span_minutes": 38.916666666666664,
+          "quiet_minutes": 38.166666666666664
+        },
+        {
+          "start": "2026-09-01 23:54:55",
+          "end": "2026-09-02 01:12:25",
+          "span_minutes": 77.5,
+          "quiet_minutes": 75.25
+        },
+        {
+          "start": "2026-09-02 01:13:05",
+          "end": "2026-09-02 01:33:20",
+          "span_minutes": 20.25,
+          "quiet_minutes": 19.75
+        },
+        {
+          "start": "2026-09-02 01:34:20",
+          "end": "2026-09-02 04:28:20",
+          "span_minutes": 174.0,
+          "quiet_minutes": 168.0
+        },
+        {
+          "start": "2026-09-02 05:06:40",
+          "end": "2026-09-02 06:22:10",
+          "span_minutes": 75.5,
+          "quiet_minutes": 71.08333333333333
+        },
+        {
+          "start": "2026-09-02 06:23:50",
+          "end": "2026-09-02 06:52:00",
+          "span_minutes": 28.166666666666668,
+          "quiet_minutes": 26.0
+        },
+        {
+          "start": "2026-09-02 08:53:10",
+          "end": "2026-09-02 10:09:35",
+          "span_minutes": 76.41666666666667,
+          "quiet_minutes": 73.58333333333333
+        },
+        {
+          "start": "2026-09-02 11:04:50",
+          "end": "2026-09-02 11:11:30",
+          "span_minutes": 6.666666666666667,
+          "quiet_minutes": 6.0
+        },
+        {
+          "start": "2026-09-02 11:21:20",
+          "end": "2026-09-02 11:55:10",
+          "span_minutes": 33.833333333333336,
+          "quiet_minutes": 31.166666666666668
+        },
+        {
+          "start": "2026-09-02 12:10:00",
+          "end": "2026-09-02 12:26:10",
+          "span_minutes": 16.166666666666668,
+          "quiet_minutes": 16.0
+        },
+        {
+          "start": "2026-09-02 14:27:40",
+          "end": "2026-09-02 15:38:40",
+          "span_minutes": 71.0,
+          "quiet_minutes": 68.41666666666667
+        },
+        {
+          "start": "2026-09-02 16:33:40",
+          "end": "2026-09-02 18:14:55",
+          "span_minutes": 101.25,
+          "quiet_minutes": 94.91666666666667
+        },
+        {
+          "start": "2026-09-02 20:39:35",
+          "end": "2026-09-02 20:55:20",
+          "span_minutes": 15.75,
+          "quiet_minutes": 14.25
+        },
+        {
+          "start": "2026-09-02 22:48:15",
+          "end": "2026-09-03 00:55:55",
+          "span_minutes": 127.66666666666667,
+          "quiet_minutes": 120.83333333333333
+        },
+        {
+          "start": "2026-09-03 01:12:05",
+          "end": "2026-09-03 01:30:15",
+          "span_minutes": 18.166666666666668,
+          "quiet_minutes": 16.833333333333332
+        },
+        {
+          "start": "2026-09-03 01:33:00",
+          "end": "2026-09-03 03:32:10",
+          "span_minutes": 119.16666666666667,
+          "quiet_minutes": 112.66666666666667
+        },
+        {
+          "start": "2026-09-03 03:36:45",
+          "end": "2026-09-03 04:41:45",
+          "span_minutes": 65.0,
+          "quiet_minutes": 61.916666666666664
+        },
+        {
+          "start": "2026-09-03 05:07:00",
+          "end": "2026-09-03 06:28:45",
+          "span_minutes": 81.75,
+          "quiet_minutes": 77.08333333333333
+        },
+        {
+          "start": "2026-09-03 06:29:30",
+          "end": "2026-09-03 06:52:05",
+          "span_minutes": 22.583333333333332,
+          "quiet_minutes": 20.916666666666668
+        },
+        {
+          "start": "2026-09-03 08:19:35",
+          "end": "2026-09-03 09:07:35",
+          "span_minutes": 48.0,
+          "quiet_minutes": 44.0
+        },
+        {
+          "start": "2026-09-03 09:36:40",
+          "end": "2026-09-03 12:39:55",
+          "span_minutes": 183.25,
+          "quiet_minutes": 172.66666666666666
+        },
+        {
+          "start": "2026-09-03 12:49:15",
+          "end": "2026-09-03 13:58:40",
+          "span_minutes": 69.41666666666667,
+          "quiet_minutes": 66.5
+        },
+        {
+          "start": "2026-09-03 14:02:20",
+          "end": "2026-09-03 14:29:10",
+          "span_minutes": 26.833333333333332,
+          "quiet_minutes": 26.416666666666668
+        },
+        {
+          "start": "2026-09-03 14:30:10",
+          "end": "2026-09-03 15:34:50",
+          "span_minutes": 64.66666666666667,
+          "quiet_minutes": 60.583333333333336
+        },
+        {
+          "start": "2026-09-03 16:44:30",
+          "end": "2026-09-03 16:58:25",
+          "span_minutes": 13.916666666666666,
+          "quiet_minutes": 13.75
+        },
+        {
+          "start": "2026-09-03 17:01:45",
+          "end": "2026-09-03 17:46:25",
+          "span_minutes": 44.666666666666664,
+          "quiet_minutes": 42.833333333333336
+        },
+        {
+          "start": "2026-09-03 17:47:00",
+          "end": "2026-09-03 17:59:05",
+          "span_minutes": 12.083333333333334,
+          "quiet_minutes": 12.083333333333334
+        },
+        {
+          "start": "2026-09-03 23:34:05",
+          "end": "2026-09-04 00:41:15",
+          "span_minutes": 67.16666666666667,
+          "quiet_minutes": 63.5
+        },
+        {
+          "start": "2026-09-04 00:42:40",
+          "end": "2026-09-04 03:09:50",
+          "span_minutes": 147.16666666666666,
+          "quiet_minutes": 140.33333333333334
+        },
+        {
+          "start": "2026-09-04 03:10:25",
+          "end": "2026-09-04 04:32:40",
+          "span_minutes": 82.25,
+          "quiet_minutes": 79.33333333333333
+        },
+        {
+          "start": "2026-09-04 04:36:05",
+          "end": "2026-09-04 06:05:55",
+          "span_minutes": 89.83333333333333,
+          "quiet_minutes": 86.33333333333333
+        },
+        {
+          "start": "2026-09-04 06:06:30",
+          "end": "2026-09-04 06:47:10",
+          "span_minutes": 40.666666666666664,
+          "quiet_minutes": 38.75
+        },
+        {
+          "start": "2026-09-04 06:47:50",
+          "end": "2026-09-04 06:55:25",
+          "span_minutes": 7.583333333333333,
+          "quiet_minutes": 7.5
+        },
+        {
+          "start": "2026-09-04 10:25:50",
+          "end": "2026-09-04 11:05:05",
+          "span_minutes": 39.25,
+          "quiet_minutes": 37.0
+        },
+        {
+          "start": "2026-09-04 11:06:10",
+          "end": "2026-09-04 11:46:20",
+          "span_minutes": 40.166666666666664,
+          "quiet_minutes": 38.0
+        },
+        {
+          "start": "2026-09-04 12:33:55",
+          "end": "2026-09-04 12:43:35",
+          "span_minutes": 9.666666666666666,
+          "quiet_minutes": 9.5
+        },
+        {
+          "start": "2026-09-04 14:09:45",
+          "end": "2026-09-04 14:19:10",
+          "span_minutes": 9.416666666666666,
+          "quiet_minutes": 8.583333333333334
+        },
+        {
+          "start": "2026-09-04 14:53:25",
+          "end": "2026-09-04 15:02:10",
+          "span_minutes": 8.75,
+          "quiet_minutes": 8.583333333333334
+        },
+        {
+          "start": "2026-09-04 15:47:55",
+          "end": "2026-09-04 17:27:00",
+          "span_minutes": 99.08333333333333,
+          "quiet_minutes": 94.91666666666667
+        },
+        {
+          "start": "2026-09-04 18:13:20",
+          "end": "2026-09-04 18:35:10",
+          "span_minutes": 21.833333333333332,
+          "quiet_minutes": 20.25
+        },
+        {
+          "start": "2026-09-04 18:50:10",
+          "end": "2026-09-04 19:37:25",
+          "span_minutes": 47.25,
+          "quiet_minutes": 45.0
+        },
+        {
+          "start": "2026-09-04 19:38:10",
+          "end": "2026-09-04 20:00:00",
+          "span_minutes": 21.833333333333332,
+          "quiet_minutes": 20.5
+        },
+        {
+          "start": "2026-09-04 21:46:50",
+          "end": "2026-09-04 22:07:55",
+          "span_minutes": 21.083333333333332,
+          "quiet_minutes": 20.5
+        },
+        {
+          "start": "2026-09-04 22:12:10",
+          "end": "2026-09-04 22:48:15",
+          "span_minutes": 36.083333333333336,
+          "quiet_minutes": 33.583333333333336
+        },
+        {
+          "start": "2026-09-04 23:44:25",
+          "end": "2026-09-05 01:17:55",
+          "span_minutes": 93.5,
+          "quiet_minutes": 90.58333333333333
+        },
+        {
+          "start": "2026-09-05 01:18:55",
+          "end": "2026-09-05 02:33:30",
+          "span_minutes": 74.58333333333333,
+          "quiet_minutes": 70.83333333333333
+        },
+        {
+          "start": "2026-09-05 02:34:10",
+          "end": "2026-09-05 03:11:05",
+          "span_minutes": 36.916666666666664,
+          "quiet_minutes": 35.666666666666664
+        },
+        {
+          "start": "2026-09-05 03:12:05",
+          "end": "2026-09-05 04:28:20",
+          "span_minutes": 76.25,
+          "quiet_minutes": 72.25
+        },
+        {
+          "start": "2026-09-05 05:18:10",
+          "end": "2026-09-05 06:41:40",
+          "span_minutes": 83.5,
+          "quiet_minutes": 79.16666666666667
+        },
+        {
+          "start": "2026-09-05 10:34:40",
+          "end": "2026-09-05 11:01:00",
+          "span_minutes": 26.333333333333332,
+          "quiet_minutes": 25.666666666666668
+        },
+        {
+          "start": "2026-09-05 11:53:50",
+          "end": "2026-09-05 12:03:00",
+          "span_minutes": 9.166666666666666,
+          "quiet_minutes": 8.666666666666666
+        },
+        {
+          "start": "2026-09-05 12:03:35",
+          "end": "2026-09-05 12:21:20",
+          "span_minutes": 17.75,
+          "quiet_minutes": 17.0
+        },
+        {
+          "start": "2026-09-05 12:23:10",
+          "end": "2026-09-05 13:07:35",
+          "span_minutes": 44.416666666666664,
+          "quiet_minutes": 42.75
+        },
+        {
+          "start": "2026-09-05 13:08:10",
+          "end": "2026-09-05 14:16:20",
+          "span_minutes": 68.16666666666667,
+          "quiet_minutes": 64.25
+        },
+        {
+          "start": "2026-09-05 14:41:30",
+          "end": "2026-09-05 15:59:10",
+          "span_minutes": 77.66666666666667,
+          "quiet_minutes": 75.41666666666667
+        },
+        {
+          "start": "2026-09-05 15:59:55",
+          "end": "2026-09-05 18:09:20",
+          "span_minutes": 129.41666666666666,
+          "quiet_minutes": 122.16666666666667
+        },
+        {
+          "start": "2026-09-05 21:45:30",
+          "end": "2026-09-05 22:01:25",
+          "span_minutes": 15.916666666666666,
+          "quiet_minutes": 14.75
+        },
+        {
+          "start": "2026-09-05 22:29:25",
+          "end": "2026-09-05 22:36:50",
+          "span_minutes": 7.416666666666667,
+          "quiet_minutes": 7.0
+        },
+        {
+          "start": "2026-09-05 22:57:10",
+          "end": "2026-09-06 00:15:25",
+          "span_minutes": 78.25,
+          "quiet_minutes": 74.33333333333333
+        },
+        {
+          "start": "2026-09-06 00:19:35",
+          "end": "2026-09-06 01:47:55",
+          "span_minutes": 88.33333333333333,
+          "quiet_minutes": 85.41666666666667
+        },
+        {
+          "start": "2026-09-06 02:01:30",
+          "end": "2026-09-06 03:20:40",
+          "span_minutes": 79.16666666666667,
+          "quiet_minutes": 77.25
+        },
+        {
+          "start": "2026-09-06 03:21:20",
+          "end": "2026-09-06 04:13:10",
+          "span_minutes": 51.833333333333336,
+          "quiet_minutes": 50.333333333333336
+        },
+        {
+          "start": "2026-09-06 04:13:45",
+          "end": "2026-09-06 04:19:40",
+          "span_minutes": 5.916666666666667,
+          "quiet_minutes": 5.416666666666667
+        },
+        {
+          "start": "2026-09-06 05:10:05",
+          "end": "2026-09-06 06:51:10",
+          "span_minutes": 101.08333333333333,
+          "quiet_minutes": 96.41666666666667
+        },
+        {
+          "start": "2026-09-06 10:53:15",
+          "end": "2026-09-06 13:21:55",
+          "span_minutes": 148.66666666666666,
+          "quiet_minutes": 139.75
+        }
+      ]
+    }
+  },
+  "activity_15min_pearson_correlation": 0.5464467507502911
+}

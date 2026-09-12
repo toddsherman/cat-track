@@ -1,0 +1,211 @@
+{
+  "analysis_start": "2026-08-31 00:00:00",
+  "analysis_end_exclusive": "2026-09-06 00:00:00",
+  "daytime": "06:00\u201322:00 device-local clock",
+  "method": {
+    "rms_threshold_mg": 20,
+    "posture_change_deg": 5,
+    "minimum_bout_minutes": 5,
+    "max_internal_break_seconds": 30,
+    "minimum_quiet_fraction_per_bout": 0.9,
+    "bridges_count_as_rest": false
+  },
+  "paired_daytime_hours": 95.97777777777777,
+  "state_hours_per_16h": {
+    "Neither resting": 7.531836073165085,
+    "Peach only": 1.9127112757582774,
+    "Toast only": 2.0004630701551287,
+    "Both resting": 4.55498958092151
+  },
+  "fraction_peach_rest_overlapping": 0.7042672012601131,
+  "fraction_toast_rest_overlapping": 0.6948398262282344,
+  "daily": [
+    {
+      "date": "2026-08-31",
+      "both_rest_hours_per_16h": 4.80528511821975,
+      "paired_observed_hours": 15.977777777777778
+    },
+    {
+      "date": "2026-09-01",
+      "both_rest_hours_per_16h": 3.7152777777777777,
+      "paired_observed_hours": 16.0
+    },
+    {
+      "date": "2026-09-02",
+      "both_rest_hours_per_16h": 4.326388888888889,
+      "paired_observed_hours": 16.0
+    },
+    {
+      "date": "2026-09-03",
+      "both_rest_hours_per_16h": 5.973611111111111,
+      "paired_observed_hours": 16.0
+    },
+    {
+      "date": "2026-09-04",
+      "both_rest_hours_per_16h": 3.338888888888889,
+      "paired_observed_hours": 16.0
+    },
+    {
+      "date": "2026-09-05",
+      "both_rest_hours_per_16h": 5.170833333333333,
+      "paired_observed_hours": 16.0
+    }
+  ],
+  "hourly": [
+    {
+      "hour": 6,
+      "both_rest_fraction": 0.33125,
+      "peach_rest_fraction": 0.3474537037037037,
+      "toast_rest_fraction": 0.8326388888888889
+    },
+    {
+      "hour": 7,
+      "both_rest_fraction": 0.0,
+      "peach_rest_fraction": 0.0,
+      "toast_rest_fraction": 0.05092592592592592
+    },
+    {
+      "hour": 8,
+      "both_rest_fraction": 0.017592592592592594,
+      "peach_rest_fraction": 0.09097222222222222,
+      "toast_rest_fraction": 0.12291666666666666
+    },
+    {
+      "hour": 9,
+      "both_rest_fraction": 0.11319444444444444,
+      "peach_rest_fraction": 0.11550925925925926,
+      "toast_rest_fraction": 0.305787037037037
+    },
+    {
+      "hour": 10,
+      "both_rest_fraction": 0.24328703703703702,
+      "peach_rest_fraction": 0.41782407407407407,
+      "toast_rest_fraction": 0.33564814814814814
+    },
+    {
+      "hour": 11,
+      "both_rest_fraction": 0.4622685185185185,
+      "peach_rest_fraction": 0.757175925925926,
+      "toast_rest_fraction": 0.5094907407407407
+    },
+    {
+      "hour": 12,
+      "both_rest_fraction": 0.48217592592592595,
+      "peach_rest_fraction": 0.6673611111111111,
+      "toast_rest_fraction": 0.5229166666666667
+    },
+    {
+      "hour": 13,
+      "both_rest_fraction": 0.55,
+      "peach_rest_fraction": 0.8631944444444445,
+      "toast_rest_fraction": 0.6148148148148148
+    },
+    {
+      "hour": 14,
+      "both_rest_fraction": 0.5506944444444445,
+      "peach_rest_fraction": 0.7928240740740741,
+      "toast_rest_fraction": 0.6046296296296296
+    },
+    {
+      "hour": 15,
+      "both_rest_fraction": 0.4648148148148148,
+      "peach_rest_fraction": 0.6083333333333333,
+      "toast_rest_fraction": 0.6025462962962963
+    },
+    {
+      "hour": 16,
+      "both_rest_fraction": 0.5815520446096655,
+      "peach_rest_fraction": 0.6772769516728625,
+      "toast_rest_fraction": 0.6672862453531598
+    },
+    {
+      "hour": 17,
+      "both_rest_fraction": 0.6405092592592593,
+      "peach_rest_fraction": 0.75625,
+      "toast_rest_fraction": 0.7715277777777778
+    },
+    {
+      "hour": 18,
+      "both_rest_fraction": 0.03888888888888889,
+      "peach_rest_fraction": 0.04976851851851852,
+      "toast_rest_fraction": 0.20347222222222222
+    },
+    {
+      "hour": 19,
+      "both_rest_fraction": 0.0,
+      "peach_rest_fraction": 0.0,
+      "toast_rest_fraction": 0.15625
+    },
+    {
+      "hour": 20,
+      "both_rest_fraction": 0.0,
+      "peach_rest_fraction": 0.023148148148148147,
+      "toast_rest_fraction": 0.03958333333333333
+    },
+    {
+      "hour": 21,
+      "both_rest_fraction": 0.0798611111111111,
+      "peach_rest_fraction": 0.30162037037037037,
+      "toast_rest_fraction": 0.21597222222222223
+    }
+  ],
+  "sensitivity": [
+    {
+      "rms_threshold_mg": 15,
+      "minimum_bout_minutes": 5,
+      "both_rest_hours_per_16h": 4.363973141931003,
+      "fraction_peach_rest_overlapping": 0.695729208962386,
+      "fraction_toast_rest_overlapping": 0.6904282208139493
+    },
+    {
+      "rms_threshold_mg": 15,
+      "minimum_bout_minutes": 10,
+      "both_rest_hours_per_16h": 4.29358647835147,
+      "fraction_peach_rest_overlapping": 0.6918886650249981,
+      "fraction_toast_rest_overlapping": 0.6920177631824458
+    },
+    {
+      "rms_threshold_mg": 20,
+      "minimum_bout_minutes": 5,
+      "both_rest_hours_per_16h": 4.55498958092151,
+      "fraction_peach_rest_overlapping": 0.7042672012601131,
+      "fraction_toast_rest_overlapping": 0.6948398262282344
+    },
+    {
+      "rms_threshold_mg": 20,
+      "minimum_bout_minutes": 10,
+      "both_rest_hours_per_16h": 4.414447788840009,
+      "fraction_peach_rest_overlapping": 0.6925032689234345,
+      "fraction_toast_rest_overlapping": 0.6876329931114077
+    },
+    {
+      "rms_threshold_mg": 30,
+      "minimum_bout_minutes": 5,
+      "both_rest_hours_per_16h": 4.655938874739523,
+      "fraction_peach_rest_overlapping": 0.6737586276217918,
+      "fraction_toast_rest_overlapping": 0.6982049234401583
+    },
+    {
+      "rms_threshold_mg": 30,
+      "minimum_bout_minutes": 10,
+      "both_rest_hours_per_16h": 4.52882611715675,
+      "fraction_peach_rest_overlapping": 0.6728354717759967,
+      "fraction_toast_rest_overlapping": 0.6938138479001135
+    },
+    {
+      "rms_threshold_mg": 40,
+      "minimum_bout_minutes": 5,
+      "both_rest_hours_per_16h": 4.70155128501968,
+      "fraction_peach_rest_overlapping": 0.6582598547717843,
+      "fraction_toast_rest_overlapping": 0.6912680851063829
+    },
+    {
+      "rms_threshold_mg": 40,
+      "minimum_bout_minutes": 10,
+      "both_rest_hours_per_16h": 4.587636026858069,
+      "fraction_peach_rest_overlapping": 0.6609513643338448,
+      "fraction_toast_rest_overlapping": 0.6896383697051964
+    }
+  ],
+  "interpretation": "Sleep-like rest from collar stillness. Shared timing does not establish sleeping in the same place or interaction."
+}

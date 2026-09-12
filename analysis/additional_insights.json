@@ -1,0 +1,652 @@
+{
+  "analysis_start": "2026-08-31 00:00:00",
+  "analysis_end_exclusive": "2026-09-06 00:00:00",
+  "movement": {
+    "Peach": [
+      {
+        "threshold_mg": 15,
+        "movement_hours_per_24h": 6.964500694551628,
+        "mean_rms_during_movement_mg": 159.32353405539698
+      },
+      {
+        "threshold_mg": 20,
+        "movement_hours_per_24h": 6.49035344960642,
+        "mean_rms_during_movement_mg": 169.70117177001657
+      },
+      {
+        "threshold_mg": 30,
+        "movement_hours_per_24h": 5.884241395277049,
+        "mean_rms_during_movement_mg": 184.64768581961422
+      },
+      {
+        "threshold_mg": 40,
+        "movement_hours_per_24h": 5.467047383855533,
+        "mean_rms_during_movement_mg": 196.08797342183092
+      }
+    ],
+    "Toast": [
+      {
+        "threshold_mg": 15,
+        "movement_hours_per_24h": 8.40338015125791,
+        "mean_rms_during_movement_mg": 171.77164427098927
+      },
+      {
+        "threshold_mg": 20,
+        "movement_hours_per_24h": 7.888485877450224,
+        "mean_rms_during_movement_mg": 181.854628644428
+      },
+      {
+        "threshold_mg": 30,
+        "movement_hours_per_24h": 7.237459484488347,
+        "mean_rms_during_movement_mg": 196.0048347337899
+      },
+      {
+        "threshold_mg": 40,
+        "movement_hours_per_24h": 6.734604105571847,
+        "mean_rms_during_movement_mg": 208.04580471209536
+      }
+    ]
+  },
+  "windows": {
+    "00:00\u201304:00": {
+      "Peach": {
+        "mean_rms_mg": 20.46127512292974,
+        "rest_fraction": 0.9002314814814815,
+        "mean_rms_by_day": {
+          "2026-08-31": 13.726708444781282,
+          "2026-09-01": 21.48460822703924,
+          "2026-09-02": 18.99507480241849,
+          "2026-09-03": 15.795846543815891,
+          "2026-09-04": 20.327124485307042,
+          "2026-09-05": 32.43828823421652
+        }
+      },
+      "Toast": {
+        "mean_rms_mg": 16.60464116319284,
+        "rest_fraction": 0.9373263888888889,
+        "mean_rms_by_day": {
+          "2026-08-31": 15.679438322240049,
+          "2026-09-01": 13.973063078632377,
+          "2026-09-02": 14.001771718363152,
+          "2026-09-03": 24.68725555919614,
+          "2026-09-04": 15.81074091227222,
+          "2026-09-05": 15.475577388453111
+        }
+      }
+    },
+    "04:00\u201307:00": {
+      "Peach": {
+        "mean_rms_mg": 50.58268197267828,
+        "rest_fraction": 0.4875,
+        "mean_rms_by_day": {
+          "2026-08-31": 53.705987519230945,
+          "2026-09-01": 35.05115804396555,
+          "2026-09-02": 52.918988667911016,
+          "2026-09-03": 57.599685476217445,
+          "2026-09-04": 45.90648482569228,
+          "2026-09-05": 58.31378730305247
+        }
+      },
+      "Toast": {
+        "mean_rms_mg": 39.02231261241416,
+        "rest_fraction": 0.7444444444444445,
+        "mean_rms_by_day": {
+          "2026-08-31": 39.19799926644128,
+          "2026-09-01": 25.392956577549942,
+          "2026-09-02": 50.14292052481125,
+          "2026-09-03": 34.56050363462708,
+          "2026-09-04": 22.180877832123755,
+          "2026-09-05": 62.65861783893163
+        }
+      }
+    },
+    "07:00\u201309:00": {
+      "Peach": {
+        "mean_rms_mg": 109.5187674146228,
+        "rest_fraction": 0.04548611111111111,
+        "mean_rms_by_day": {
+          "2026-08-31": 107.276375912737,
+          "2026-09-01": 95.45942966084347,
+          "2026-09-02": 93.44708436125035,
+          "2026-09-03": 124.82800515077712,
+          "2026-09-04": 103.45664160933755,
+          "2026-09-05": 132.64506779279128
+        }
+      },
+      "Toast": {
+        "mean_rms_mg": 112.2609546944011,
+        "rest_fraction": 0.0869212962962963,
+        "mean_rms_by_day": {
+          "2026-08-31": 95.83388949605141,
+          "2026-09-01": 90.27385727666272,
+          "2026-09-02": 119.28153857909591,
+          "2026-09-03": 109.34134953857843,
+          "2026-09-04": 117.55272901185745,
+          "2026-09-05": 141.28236426416058
+        }
+      }
+    },
+    "11:00\u201317:00": {
+      "Peach": {
+        "mean_rms_mg": 35.0939944307223,
+        "rest_fraction": 0.7277254478072884,
+        "mean_rms_by_day": {
+          "2026-08-31": 26.47515070442688,
+          "2026-09-01": 59.13058991691507,
+          "2026-09-02": 45.436668517879625,
+          "2026-09-03": 38.59588210338808,
+          "2026-09-04": 18.80316874655791,
+          "2026-09-05": 22.0905849517355
+        }
+      },
+      "Toast": {
+        "mean_rms_mg": 64.26582732404384,
+        "rest_fraction": 0.5868977764051884,
+        "mean_rms_by_day": {
+          "2026-08-31": 42.63169699190743,
+          "2026-09-01": 74.52361142699569,
+          "2026-09-02": 88.70022460473741,
+          "2026-09-03": 50.6087574314624,
+          "2026-09-04": 87.62932131904874,
+          "2026-09-05": 41.42122576147384
+        }
+      }
+    },
+    "18:00\u201322:00": {
+      "Peach": {
+        "mean_rms_mg": 87.02810542906141,
+        "rest_fraction": 0.09363425925925926,
+        "mean_rms_by_day": {
+          "2026-08-31": 123.43261293441974,
+          "2026-09-01": 87.75933636011146,
+          "2026-09-02": 85.6291089668906,
+          "2026-09-03": 95.57521454352283,
+          "2026-09-04": 45.82224537374197,
+          "2026-09-05": 83.95011439568181
+        }
+      },
+      "Toast": {
+        "mean_rms_mg": 115.33455839290565,
+        "rest_fraction": 0.15381944444444445,
+        "mean_rms_by_day": {
+          "2026-08-31": 135.65562140738325,
+          "2026-09-01": 129.8920173452356,
+          "2026-09-02": 115.75273011825334,
+          "2026-09-03": 130.71030458126467,
+          "2026-09-04": 83.4462317545382,
+          "2026-09-05": 96.5504451507588
+        }
+      }
+    },
+    "22:00\u201324:00": {
+      "Peach": {
+        "mean_rms_mg": 44.06011523259736,
+        "rest_fraction": 0.5952546296296296,
+        "mean_rms_by_day": {
+          "2026-08-31": 29.09913253894881,
+          "2026-09-01": 60.75999300987991,
+          "2026-09-02": 47.29889772611081,
+          "2026-09-03": 55.59541599114004,
+          "2026-09-04": 52.59556792267702,
+          "2026-09-05": 19.011684206827574
+        }
+      },
+      "Toast": {
+        "mean_rms_mg": 68.1463770623591,
+        "rest_fraction": 0.49363425925925924,
+        "mean_rms_by_day": {
+          "2026-08-31": 61.342412689573706,
+          "2026-09-01": 51.89018079738202,
+          "2026-09-02": 67.94289124155908,
+          "2026-09-03": 111.33022558200466,
+          "2026-09-04": 57.25427473295066,
+          "2026-09-05": 59.11827733068438
+        }
+      }
+    }
+  },
+  "daily": {
+    "Peach": {
+      "2026-08-31": 53.559387008000634,
+      "2026-09-01": 53.95889117658382,
+      "2026-09-02": 53.56886848553436,
+      "2026-09-03": 54.158320333009385,
+      "2026-09-04": 42.785374007197376,
+      "2026-09-05": 54.86300271799814
+    },
+    "Toast": {
+      "2026-08-31": 62.24994508552489,
+      "2026-09-01": 64.62742932051741,
+      "2026-09-02": 72.53976472802886,
+      "2026-09-03": 66.10350735996344,
+      "2026-09-04": 64.25311706296836,
+      "2026-09-05": 63.43011875417876
+    }
+  },
+  "activity_lag": [
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -60,
+      "correlation": 0.04177512868909984
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -55,
+      "correlation": 0.0633035899395457
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -50,
+      "correlation": 0.0769427030874223
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -45,
+      "correlation": 0.08395986555968792
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -40,
+      "correlation": 0.0956185888937405
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -35,
+      "correlation": 0.16349013580023086
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -30,
+      "correlation": 0.1726117453258819
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -25,
+      "correlation": 0.18723487965114877
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -20,
+      "correlation": 0.22991318768588231
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -15,
+      "correlation": 0.2783035080547852
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -10,
+      "correlation": 0.33306044275532676
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": -5,
+      "correlation": 0.3654330069001121
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 0,
+      "correlation": 0.4058453734506472
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 5,
+      "correlation": 0.38722140969935553
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 10,
+      "correlation": 0.3375893530610953
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 15,
+      "correlation": 0.3629050862051249
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 20,
+      "correlation": 0.335228965069609
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 25,
+      "correlation": 0.27255146543112574
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 30,
+      "correlation": 0.2225542917317619
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 35,
+      "correlation": 0.1799653317979318
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 40,
+      "correlation": 0.1487026167829905
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 45,
+      "correlation": 0.11984124739095271
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 50,
+      "correlation": 0.09932797466794195
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 55,
+      "correlation": 0.08914827369458507
+    },
+    {
+      "bin_minutes": 5,
+      "toast_delay_minutes": 60,
+      "correlation": 0.09156205649762487
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": -60,
+      "correlation": 0.08331582567576018
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": -45,
+      "correlation": 0.1329740749342146
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": -30,
+      "correlation": 0.24469595715273346
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": -15,
+      "correlation": 0.4020483528074741
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": 0,
+      "correlation": 0.5464467507502911
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": 15,
+      "correlation": 0.49511330287532457
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": 30,
+      "correlation": 0.31526143473617657
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": 45,
+      "correlation": 0.18321533880180046
+    },
+    {
+      "bin_minutes": 15,
+      "toast_delay_minutes": 60,
+      "correlation": 0.14930259908682492
+    },
+    {
+      "bin_minutes": 30,
+      "toast_delay_minutes": -60,
+      "correlation": 0.10418687873189657
+    },
+    {
+      "bin_minutes": 30,
+      "toast_delay_minutes": -30,
+      "correlation": 0.33233808784260604
+    },
+    {
+      "bin_minutes": 30,
+      "toast_delay_minutes": 0,
+      "correlation": 0.636431673431745
+    },
+    {
+      "bin_minutes": 30,
+      "toast_delay_minutes": 30,
+      "correlation": 0.4312960610342156
+    },
+    {
+      "bin_minutes": 30,
+      "toast_delay_minutes": 60,
+      "correlation": 0.18329760593683742
+    }
+  ],
+  "rest_alignment": {
+    "mean_same_day_overlap_hours": 4.555047519703292,
+    "mean_different_date_overlap_hours": 3.662283070622778,
+    "additional_same_day_minutes": 53.56586694483085,
+    "date_pairs": [
+      {
+        "peach_date": "2026-08-31",
+        "toast_date": "2026-08-31",
+        "same_day": true,
+        "overlap_hours_per_16h": 4.80528511821975
+      },
+      {
+        "peach_date": "2026-08-31",
+        "toast_date": "2026-09-01",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.25452016689847
+      },
+      {
+        "peach_date": "2026-08-31",
+        "toast_date": "2026-09-02",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.831710709318498
+      },
+      {
+        "peach_date": "2026-08-31",
+        "toast_date": "2026-09-03",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.9944367176634215
+      },
+      {
+        "peach_date": "2026-08-31",
+        "toast_date": "2026-09-04",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.991655076495132
+      },
+      {
+        "peach_date": "2026-08-31",
+        "toast_date": "2026-09-05",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.566063977746871
+      },
+      {
+        "peach_date": "2026-09-01",
+        "toast_date": "2026-08-31",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.726008344923505
+      },
+      {
+        "peach_date": "2026-09-01",
+        "toast_date": "2026-09-01",
+        "same_day": true,
+        "overlap_hours_per_16h": 3.7152777777777777
+      },
+      {
+        "peach_date": "2026-09-01",
+        "toast_date": "2026-09-02",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.147222222222222
+      },
+      {
+        "peach_date": "2026-09-01",
+        "toast_date": "2026-09-03",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.951388888888889
+      },
+      {
+        "peach_date": "2026-09-01",
+        "toast_date": "2026-09-04",
+        "same_day": false,
+        "overlap_hours_per_16h": 1.8763888888888889
+      },
+      {
+        "peach_date": "2026-09-01",
+        "toast_date": "2026-09-05",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.775
+      },
+      {
+        "peach_date": "2026-09-02",
+        "toast_date": "2026-08-31",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.165507649513213
+      },
+      {
+        "peach_date": "2026-09-02",
+        "toast_date": "2026-09-01",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.915277777777778
+      },
+      {
+        "peach_date": "2026-09-02",
+        "toast_date": "2026-09-02",
+        "same_day": true,
+        "overlap_hours_per_16h": 4.326388888888889
+      },
+      {
+        "peach_date": "2026-09-02",
+        "toast_date": "2026-09-03",
+        "same_day": false,
+        "overlap_hours_per_16h": 5.166666666666667
+      },
+      {
+        "peach_date": "2026-09-02",
+        "toast_date": "2026-09-04",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.5388888888888888
+      },
+      {
+        "peach_date": "2026-09-02",
+        "toast_date": "2026-09-05",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.090277777777778
+      },
+      {
+        "peach_date": "2026-09-03",
+        "toast_date": "2026-08-31",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.528511821974965
+      },
+      {
+        "peach_date": "2026-09-03",
+        "toast_date": "2026-09-01",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.238888888888889
+      },
+      {
+        "peach_date": "2026-09-03",
+        "toast_date": "2026-09-02",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.275
+      },
+      {
+        "peach_date": "2026-09-03",
+        "toast_date": "2026-09-03",
+        "same_day": true,
+        "overlap_hours_per_16h": 5.973611111111111
+      },
+      {
+        "peach_date": "2026-09-03",
+        "toast_date": "2026-09-04",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.2916666666666665
+      },
+      {
+        "peach_date": "2026-09-03",
+        "toast_date": "2026-09-05",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.344444444444444
+      },
+      {
+        "peach_date": "2026-09-04",
+        "toast_date": "2026-08-31",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.751043115438108
+      },
+      {
+        "peach_date": "2026-09-04",
+        "toast_date": "2026-09-01",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.915277777777778
+      },
+      {
+        "peach_date": "2026-09-04",
+        "toast_date": "2026-09-02",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.0194444444444444
+      },
+      {
+        "peach_date": "2026-09-04",
+        "toast_date": "2026-09-03",
+        "same_day": false,
+        "overlap_hours_per_16h": 5.584722222222222
+      },
+      {
+        "peach_date": "2026-09-04",
+        "toast_date": "2026-09-04",
+        "same_day": true,
+        "overlap_hours_per_16h": 3.338888888888889
+      },
+      {
+        "peach_date": "2026-09-04",
+        "toast_date": "2026-09-05",
+        "same_day": false,
+        "overlap_hours_per_16h": 5.122222222222222
+      },
+      {
+        "peach_date": "2026-09-05",
+        "toast_date": "2026-08-31",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.504867872044506
+      },
+      {
+        "peach_date": "2026-09-05",
+        "toast_date": "2026-09-01",
+        "same_day": false,
+        "overlap_hours_per_16h": 3.576388888888889
+      },
+      {
+        "peach_date": "2026-09-05",
+        "toast_date": "2026-09-02",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.8472222222222223
+      },
+      {
+        "peach_date": "2026-09-05",
+        "toast_date": "2026-09-03",
+        "same_day": false,
+        "overlap_hours_per_16h": 4.919444444444444
+      },
+      {
+        "peach_date": "2026-09-05",
+        "toast_date": "2026-09-04",
+        "same_day": false,
+        "overlap_hours_per_16h": 2.9583333333333335
+      },
+      {
+        "peach_date": "2026-09-05",
+        "toast_date": "2026-09-05",
+        "same_day": true,
+        "overlap_hours_per_16h": 5.170833333333333
+      }
+    ]
+  },
+  "peach_quieter_date": {
+    "date": "2026-09-04",
+    "daily_percent_below_other_days": 20.79964384054457,
+    "evening_percent_below_other_days": 51.902390146140995,
+    "selected_after_inspecting_data": true
+  }
+}

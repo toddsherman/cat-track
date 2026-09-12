@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/catTrack/">
+  <title>Cat Track | Todd Sherman</title>
+  <meta name="description" content="I put activity trackers on Toast and Peach to find out what my cats actually do all day. A week of movement, shared naps, and a few surprises.">
+  <meta name="theme-color" content="#F4F1EA">
+  <link rel="canonical" href="https://www.todd.sh/catTrack">
+  <meta property="og:title" content="Cat Track">
+  <meta property="og:description" content="Two cats, a pair of accelerometers, and a week of data about what happens between naps.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.todd.sh/catTrack">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+  <script defer data-project-content-id="cat-track" src="/project-content-loader.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="return-bar" aria-label="Return to portfolio"><a href="/">← todd.sh</a><span aria-hidden="true">Cat Track</span></nav>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+
+  <main id="main">
+    <header class="hero wrap">
+      <div class="hero-copy">
+        <h1><span data-sanity-copy="title">Cat Track</span><span class="title-dot" aria-hidden="true">.</span></h1>
+        <p class="hero-dek" data-sanity-copy="hero_dek">What do my cats actually do all day?</p>
+        <p class="hero-intro" data-sanity-copy="hero_intro">Toast and Peach are very good at looking busy doing nothing. I made them a pair of activity-tracking collars to find out what happens between naps.</p>
+        <a class="button" href="#activity"><span data-sanity-copy="explore_label">Follow the data</span><span aria-hidden="true">↓</span></a>
+        <div class="hero-trace" aria-hidden="true">
+          <svg viewBox="0 0 400 78"><path class="trace-base" d="M0 61H400"/><path class="trace-peach" d="M0 59L26 58L40 50L49 58L68 55L76 60L90 44L98 54L110 59L126 59L142 50L149 23L155 46L164 58L184 56L200 58L209 33L216 7L223 33L231 20L239 58L260 59L280 52L286 40L297 56L310 58L324 54L333 21L340 46L350 53L366 58L385 55L400 59"/><path class="trace-toast" d="M0 68L38 67L48 59L56 67L91 68L118 62L127 68L145 66L153 42L158 60L170 68L192 67L214 62L222 32L229 58L243 67L266 66L285 62L291 35L297 65L317 64L330 59L339 13L347 48L355 28L362 64L384 67L400 68"/></svg>
+          <span>A little hardware. A lot of curiosity.</span>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/together.webp" alt="Toast and Peach stretched out on their backs, sharing a couch cushion" width="1600" height="1383" srcset="assets/together-800.webp 800w, assets/together.webp 1600w" sizes="(max-width:800px) calc(100vw - 40px), 50vw" fetchpriority="high">
+        <figcaption><span data-sanity-copy="hero_caption">The subjects, in their natural state.</span><span aria-hidden="true">01 / 03</span></figcaption>
+      </figure>
+    </header>
+
+    <div class="chapter-nav wrap" aria-label="Page sections">
+      <a href="#story">The story</a><a href="#activity">The activity</a><a href="#rest">The naps</a><a href="#next">What’s next</a><a href="#method">The method</a>
+    </div>
+
+    <section class="headline-stats wrap" aria-label="Three findings from the recording">
+      <div><p class="stat-number"><span data-count="26">26</span><span class="stat-unit">%</span></p><p data-sanity-copy="stat_activity">More average movement from Toast</p></div>
+      <div><p class="stat-number"><span data-count="70">70</span><span class="stat-unit">%</span></p><p data-sanity-copy="stat_overlap">Of each cat’s daytime rest overlaps</p></div>
+      <div><p class="stat-number">~6<span class="stat-unit">h</span></p><p data-sanity-copy="stat_night">Of quiet rest in each eight-hour night</p></div>
+    </section>
+
+    <section class="story wrap section-space" id="story">
+      <div class="section-margin"><span class="section-index">01 / The story</span></div>
+      <div class="story-main">
+        <h2 data-sanity-copy="story_heading">I’ve had cats my whole life.</h2>
+        <p class="large-copy" data-sanity-copy="story_history">Michael, Michael Todd, Micky, Muffy, Church, Gypsy, Slash, Saber. And now, Toast and Peach.</p>
+        <p data-sanity-copy="story_aliases">Toast also answers to Toaster, Toast Malone, Cinnamon Toast Crunch, and Toastie the Mostie. Or, more accurately, is occasionally addressed by those names.</p>
+        <p data-sanity-copy="story_question">Toast and Peach sleep a lot. They’re also probably the fattest cats I’ve had. So I got curious: just how active are they, really?</p>
+        <p><span data-sanity-copy="story_hardware_a">I made some collars using the</span> <a href="https://axivity.com/product/ax3" target="_blank" rel="noopener noreferrer">Axivity AX3</a><span data-sanity-copy="story_hardware_b">, a tiny accelerometer that can log movement for a couple of weeks before I download the data. Then I let the cats get on with being cats.</span></p>
+        <div class="hardware-note"><a class="hardware-photo" href="https://axivity.com/product/ax3" target="_blank" rel="noopener noreferrer"><img src="assets/ax3-hand.jpeg" width="567" height="600" loading="lazy" alt="An Axivity AX3 accelerometer held between two fingers, showing its small size"></a><div><strong data-sanity-copy="hardware_label">The setup</strong><p data-sanity-copy="hardware_description">Two collar-mounted AX3s. Three axes of movement, sampled 25 times a second. About a week later: 30.2 million readings.</p></div></div>
+      </div>
+    </section>
+
+    <section class="activity-section section-space" id="activity">
+      <div class="wrap">
+        <div class="section-heading"><div><span class="section-index">02 / The activity</span><h2 data-sanity-copy="activity_heading">Toast moves more. But the hour matters.</h2></div><p data-sanity-copy="activity_intro">Across six complete days, Toast recorded 26% more average collar movement. The difference is 32% during the day and just 3% at night. Their nighttime averages are almost the same.</p></div>
+        <div class="chart-panel activity-panel">
+          <div class="chart-toolbar"><div><h3 data-sanity-copy="activity_chart_heading">A day in the life</h3><p id="activity-period">Average of August 31–September 5, 2026</p></div><label class="select-label">View day<select id="day-select" aria-label="Choose a day for the activity chart"><option value="all">Six-day average</option></select></label></div>
+          <div class="legend"><span class="legend-peach">Peach</span><span class="legend-toast">Toast</span><span class="legend-night">Night · 10 p.m.–6 a.m.</span><span class="legend-meal">Meals · usual routine</span></div>
+          <div class="activity-chart chart-host" id="activity-chart" role="img" aria-label="Hourly collar movement for Peach and Toast; both peak around 7 a.m. and in the evening"><p class="chart-loading">Loading the recording…</p></div>
+          <div class="chart-readout" id="activity-readout" aria-live="polite"><span>Move across the chart or use the hour slider.</span></div>
+          <label class="hour-control"><span>Inspect hour</span><input type="range" id="hour-slider" min="0" max="23" value="7" aria-label="Inspect an hour of activity"><output id="hour-output" for="hour-slider">7–8 a.m.</output></label>
+          <p class="chart-caption" data-sanity-copy="activity_caption">Movement is average acceleration variability, in mg. It includes head movements and grooming as well as getting up and going somewhere.</p>
+        </div>
+        <aside class="meal-routine" aria-label="The cats’ usual feeding routine">
+          <h3 data-sanity-copy="meal_heading">They know the meal schedule.</h3>
+          <div><p data-sanity-copy="meal_routine">Breakfast is around 7:15 a.m. every day, and they’re already begging for food by then. Dinner is less consistent, usually around 6:30–7 p.m.</p><p class="meal-context" data-sanity-copy="meal_context">Their 7–8 a.m. activity peak overlaps with breakfast. The meal markers show this usual routine.</p></div>
+        </aside>
+        <div class="split-insights">
+          <article><span class="inline-marker peach-marker"></span><h3 data-sanity-copy="early_heading">Peach is busier before dawn.</h3><p data-sanity-copy="early_copy">From 4–7 a.m., Peach records about 30% more movement than Toast. The pattern holds on five of the six days.</p></article>
+          <article><span class="inline-marker toast-marker"></span><h3 data-sanity-copy="late_heading">Toast keeps going later.</h3><p data-sanity-copy="late_copy">From 10 p.m. to midnight, Toast records 55% more movement. That also holds on five of six days. By 7–9 a.m., they’re nearly tied.</p></article>
+        </div>
+        <div class="movement-duration">
+          <div><span class="section-index">Time adds up</span><h3 data-sanity-copy="duration_heading">Toast spends more time moving.</h3><p data-sanity-copy="duration_copy">Toast accumulates about 84 extra minutes of movement each day. During those active intervals, average movement intensity is only about 7% higher.</p></div>
+          <div class="duration-bars" aria-label="Daily time above the shared movement cutoff"><div class="duration-row"><span>Peach</span><div class="duration-track"><i style="--bar:27.04%;--bar-color:var(--red)"></i></div><strong>6.5<span> h</span></strong></div><div class="duration-row"><span>Toast</span><div class="duration-track"><i style="--bar:32.87%;--bar-color:var(--blue)"></i></div><strong>7.9<span> h</span></strong></div><p class="chart-caption" data-sanity-copy="duration_note">Five-second intervals above the same 20 mg cutoff, added together. The full bar represents 24 hours. These are accumulated movements, not hours of continuous exercise.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-interlude wrap section-space" aria-label="Photos of the cats">
+      <figure><img src="assets/cart-cat.webp" alt="A fluffy cat sitting in a small wooden toy shopping cart" width="1600" height="2399" loading="lazy"><figcaption data-sanity-copy="cart_caption">Why walk when there’s a perfectly good cart?</figcaption></figure>
+      <div class="interlude-copy"><p class="pull-quote" data-sanity-copy="photo_quote">A surprisingly rigorous investigation into doing very little.</p><span class="tiny-rule"></span><p data-sanity-copy="photo_note">The collars stayed on continuously. The cats kept their usual routines.</p></div>
+      <figure><img src="assets/chair-cat.webp" alt="A cream-colored cat reclining on a chair beneath a row of coats" width="1600" height="2399" loading="lazy"><figcaption data-sanity-copy="chair_caption">Reserved seating.</figcaption></figure>
+    </section>
+
+    <section class="rest-section section-space" id="rest">
+      <div class="wrap">
+        <div class="section-heading"><div><span class="section-index">03 / The naps</span><h2 data-sanity-copy="rest_heading">The night shift is mostly sleep.</h2></div><div><p data-sanity-copy="rest_intro">Both spend about three-quarters of the night in sustained quiet rest, compared with about two-fifths of the day. Daytime is twice as long, so it still adds up to slightly more resting hours.</p><p class="method-inline" data-sanity-copy="rest_caveat">Here, “sleep-like rest” means sustained stillness. Quiet wakefulness can count too.</p></div></div>
+        <div class="sleep-comparison">
+          <article class="sleep-period"><div class="period-title"><span class="period-icon" aria-hidden="true">☾</span><div><h3>Nighttime</h3><p>10 p.m.–6 a.m. · 8 hours</p></div></div><div class="sleep-bar-row"><span>Peach</span><div class="sleep-track"><i class="peach-fill" style="width:73.831%"></i></div><strong>5.9 h<small>74% of the night</small></strong></div><div class="sleep-bar-row"><span>Toast</span><div class="sleep-track"><i class="toast-fill" style="width:76.716%"></i></div><strong>6.1 h<small>77% of the night</small></strong></div></article>
+          <article class="sleep-period"><div class="period-title"><span class="period-icon sun" aria-hidden="true">☼</span><div><h3>Daytime</h3><p>6 a.m.–10 p.m. · 16 hours</p></div></div><div class="sleep-bar-row"><span>Peach</span><div class="sleep-track"><i class="peach-fill" style="width:40.423%"></i></div><strong>6.5 h<small>40% of the day</small></strong></div><div class="sleep-bar-row"><span>Toast</span><div class="sleep-track"><i class="toast-fill" style="width:40.972%"></i></div><strong>6.6 h<small>41% of the day</small></strong></div></article>
+        </div>
+        <div class="rest-total"><span data-sanity-copy="rest_total_label">Per 24 hours</span><p><span class="peach-text">Peach <strong>12.4 h</strong></span><span class="toast-text">Toast <strong>12.7 h</strong></span></p><span data-sanity-copy="rest_total_note">Estimates, not a sleep competition.</span></div>
+
+        <div class="overlap-intro"><span class="overlap-number">70<span>%</span></span><div><h3 data-sanity-copy="overlap_heading">They even rest on the same schedule.</h3><p data-sanity-copy="overlap_intro">About 70% of each cat’s daytime rest happens while the other is resting too: an average of 4.6 shared hours a day. Most of that overlap falls between 11 a.m. and 6 p.m.</p></div></div>
+        <div class="chart-panel overlap-panel"><div class="chart-toolbar"><div><h3 data-sanity-copy="overlap_chart_heading">Six days of shared downtime</h3><p data-sanity-copy="overlap_chart_note">Each row spans midnight to midnight. Toast is on top, Peach below; color marks each cat’s detected rest.</p></div></div><div class="legend overlap-legend"><span class="legend-toast">Toast · top</span><span class="legend-peach">Peach · bottom</span><span class="legend-neither">No rest detected</span><span class="legend-missing">Missing data</span><span class="legend-human-sleep">Human sleep time · 10 p.m.–6 a.m.</span><span class="legend-meal">Meals · usual routine</span></div><div class="overlap-chart" id="overlap-chart"><p class="chart-loading">Loading the rest intervals…</p></div><div class="overlap-readout" id="overlap-readout" aria-live="polite">Choose a day below to inspect its five-minute intervals.</div><div class="overlap-controls"><label>Day<select id="overlap-day" aria-label="Choose a day for rest overlap"></select></label><label class="overlap-time-label">Time<input id="overlap-time" type="range" min="0" max="287" value="156" aria-label="Inspect rest across the full 24-hour day"><output for="overlap-time" id="overlap-time-output">1 p.m.</output></label></div><p class="chart-caption" data-sanity-copy="overlap_chart_scope">Totals at right show shared rest across all 24 hours; the 70% figure above refers to daytime only.</p></div>
+        <div class="split-insights rest-insights"><article><h3 data-sanity-copy="own_time_heading">There’s solo downtime, too.</h3><p data-sanity-copy="own_time_copy">Each cat has about two additional hours of daytime rest while the other isn’t classified as resting. Shared timing doesn’t mean they’re sleeping in the same place.</p></article><article><h3 data-sanity-copy="same_day_heading">More than a similar daily routine.</h3><p data-sanity-copy="same_day_copy">Pairing different dates at the same clock times gives 3.7 shared hours, compared with 4.6 on matching dates. That’s about 54 extra minutes of overlap on the actual day.</p></article></div>
+      </div>
+    </section>
+
+    <section class="daily-section wrap section-space" id="surprises">
+      <div class="section-heading"><div><span class="section-index">04 / The surprises</span><h2 data-sanity-copy="daily_heading">One very quiet Friday.</h2></div><p data-sanity-copy="daily_intro">Toast moved more on every complete day. But September 4 stands out for Peach: average movement was 21% below the other days, and evening movement was 52% lower. The next day was back in the usual range.</p></div>
+      <div class="chart-panel"><div class="chart-toolbar"><h3 data-sanity-copy="daily_chart_heading">The week, day by day</h3><div class="legend"><span class="legend-peach">Peach</span><span class="legend-toast">Toast</span></div></div><div id="daily-chart" class="daily-chart chart-host" role="img" aria-label="Daily average movement: Toast higher on every day, Peach lower on September 4"></div><p class="chart-caption" data-sanity-copy="daily_caption">Average collar movement in mg. The recording shows the change, but doesn’t identify its cause.</p></div>
+      <div class="findings-grid">
+        <article><span class="finding-index">01</span><h3 data-sanity-copy="midnight_heading">Midnight is the quiet stretch.</h3><p data-sanity-copy="midnight_copy">Between midnight and 4 a.m., about 90% of Peach’s time and 94% of Toast’s qualifies as sustained quiet rest.</p><div class="mini-rest" aria-label="Quiet rest midnight to 4 a.m.: Peach 90 percent, Toast 94 percent"><span class="peach-text">90%</span><i></i><span class="toast-text">94%</span></div></article>
+        <article><span class="finding-index">02</span><h3 data-sanity-copy="leader_heading">No obvious ringleader.</h3><p data-sanity-copy="leader_copy">Their movement lines up best with no time delay, whether measured in five-, fifteen-, or thirty-minute blocks. These summaries don’t identify a consistent activity leader.</p><div class="mini-sync" aria-hidden="true"><span>Peach</span><i></i><span>Toast</span><b>0-minute best alignment</b></div></article>
+        <article><span class="finding-index">03</span><h3 data-sanity-copy="benchmark_heading">“Average cat” is still a mystery.</h3><p data-sanity-copy="benchmark_copy">Toast is more active than Peach. But published studies use different sensors and definitions of activity, so these numbers can’t rank either cat against most cats.</p><a class="text-link" href="#limits">What the data can’t tell us ↗</a></article>
+      </div>
+    </section>
+
+    <section class="next-section section-space" id="next"><div class="wrap next-layout"><div><span class="section-index">05 / What’s next</span><h2 data-sanity-copy="next_heading">A little less dinner. Maybe a laser robot.</h2><p data-sanity-copy="vet_story">At a recent vet check-in, we determined that Peach needs to lose about three pounds and Toast about one. The plan is mostly measured food portions, with gradual loss of about 1% of body weight per week.</p><p data-sanity-copy="toy_story">I’ve also considered an automated cat toy—something like a motion-activated turret arm with a laser pointer attached. I’m skeptical they’d engage. But I am very tempted to find out.</p><p class="next-closer" data-sanity-copy="next_closer">For now, this week gives us a starting point. The next recording will tell us what changes.</p></div><aside class="weight-plan"><span class="section-index">From our vet check-in</span><div><span>Peach</span><strong>3<small> lb</small></strong><p>to lose</p></div><div><span>Toast</span><strong>1<small> lb</small></strong><p>to lose</p></div><p class="weight-note" data-sanity-copy="weight_note">These are the targets from our visit, not progress measured by the collars.</p></aside></div>
+    </section>
+
+    <section class="method-section wrap section-space" id="method"><div class="section-heading"><div><span class="section-index">06 / The method</span><h2 data-sanity-copy="method_heading">A small experiment. A useful baseline.</h2></div><p data-sanity-copy="method_intro">The files cover August 30–September 6, 2026. For a fair comparison, I used the six complete calendar days both collars recorded: August 31–September 5.</p></div>
+      <div class="method-facts"><div><strong>2</strong><span>AX3 collars</span></div><div><strong>25<span> Hz</span></strong><span>Configured sampling</span></div><div><strong>6</strong><span>Matched full days</span></div><div><strong>99.985<span>%</span></strong><span>Paired time coverage</span></div></div>
+      <div class="method-columns"><div><h3 data-sanity-copy="movement_method_heading">Measuring movement</h3><p data-sanity-copy="movement_method_copy">I summarized acceleration changes in five-second intervals, using all three axes. This reduces the effect of static collar orientation. Higher values mean more variable collar movement; they aren’t steps, calories, or distance.</p><p data-sanity-copy="gap_copy">Toast’s recording has a 77-second interruption. The 80 seconds of five-second bins overlapping it were excluded from both cats. The device clocks are treated as local Pacific time.</p></div><div><h3 data-sanity-copy="sleep_method_heading">Estimating rest</h3><p data-sanity-copy="sleep_method_copy">An interval qualifies as quiet when movement is below a shared cutoff and the collar’s orientation stays steady. Rest periods need to last at least five minutes; brief interruptions can connect a period but don’t add to its rest time.</p><p data-sanity-copy="night_definition">Night is 10 p.m.–6 a.m. Day is 6 a.m.–10 p.m. Comparing percentages matters because those windows are different lengths.</p></div></div>
+      <details id="limits"><summary><span data-sanity-copy="limits_heading">How certain are the sleep estimates?</span><span aria-hidden="true">+</span></summary><div class="details-content"><p data-sanity-copy="limits_copy">Not certain enough to declare a winner. Across plausible stillness cutoffs and five- or ten-minute minimum rest periods, Peach’s estimated rest ranges from 12.0–13.3 hours per day and Toast’s from 12.2–13.0. The ranking changes with the cutoff.</p><div class="sensitivity-control"><label for="threshold-select">Stillness cutoff</label><select id="threshold-select"><option value="15">15 mg · stricter</option><option value="20" selected>20 mg · default</option><option value="30">30 mg</option><option value="40">40 mg · more permissive</option></select></div><div id="sensitivity-result" class="sensitivity-result" aria-live="polite"><span>Peach <strong>12.37 h</strong></span><span>Toast <strong>12.69 h</strong></span></div><p class="chart-caption" data-sanity-copy="sensitivity_note">Totals use a five-minute minimum period. These are method sensitivity ranges, not confidence intervals or bounds on actual sleep.</p><p data-sanity-copy="sleep_limit_copy">Quiet wakefulness can look like sleep, and movement during real sleep can break a rest period. We don’t have labeled video for the recording. This is a description of sleep-like rest, not a validated feline sleep measurement.</p></div></details>
+      <details><summary><span data-sanity-copy="sources_heading">Data, definitions, and sources</span><span aria-hidden="true">+</span></summary><div class="details-content"><p data-sanity-copy="raw_definition">Movement variability is 1,000 × √(var(x) + var(y) + var(z)), calculated within each five-second interval from acceleration in g. The shared rest cutoff is 20 mg, with less than 5° of orientation change and at least 90% quiet intervals in a qualifying period. Missing data never connects rest periods.</p><p data-sanity-copy="scope_limit">Their morning and evening activity peaks resemble patterns reported in other housed cats. But age and outdoor access affect activity, and a fair population comparison needs the same measurement method. A week can reveal routines, not permanent personality traits. These recordings can’t identify specific behaviors, diagnose health, measure weight loss, or establish why the cats’ schedules align.</p><ul class="source-list"><li><a href="https://axivity.com/product/ax3" target="_blank" rel="noopener noreferrer">Axivity AX3 — the hardware ↗</a></li><li><a href="https://github.com/openmovementproject/openmovement-python/blob/master/src/openmovement/load/cwa_load.py" target="_blank" rel="noopener noreferrer">Open Movement — timestamp decoding reference ↗</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/37631701/" target="_blank" rel="noopener noreferrer">Feline accelerometer behavior validation ↗</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/38676239/" target="_blank" rel="noopener noreferrer">Pet-cat activity, age, and home environment ↗</a></li><li><a href="https://www.sciencedirect.com/science/article/pii/S0168159125000218" target="_blank" rel="noopener noreferrer">Circadian activity in group-housed cats ↗</a></li><li><a href="data.json" download="cat-track-data.json">Download the chart data ↓</a></li></ul></div></details>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><a href="/">← todd.sh</a><p data-sanity-copy="footer_copy">Made out of curiosity. Supervised by cats.</p><a href="#main">Back to top ↑</a></footer>
+  <noscript><div class="noscript-note">The story and headline findings are available above. Enable JavaScript to explore the interactive charts, or <a href="data.json">read the chart data</a>.</div></noscript>
+</body>
+</html>

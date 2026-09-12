@@ -1,0 +1,55 @@
+{
+  "file": "CWA-DATA peach.CWA",
+  "header": {
+    "device_id": 115897,
+    "session_id": 2,
+    "logging_start": [
+      2026,
+      8,
+      30,
+      14,
+      10,
+      0
+    ],
+    "logging_end": [
+      2026,
+      9,
+      6,
+      14,
+      10,
+      0
+    ],
+    "config_rate_hz": 25.0,
+    "config_range_g": 8,
+    "firmware": 48,
+    "annotation": "_s=peach",
+    "invalid_packets": 0,
+    "checksum_failures": 0,
+    "trailing_bytes": 0,
+    "timing_segments": 1,
+    "gaps": [],
+    "median_actual_rate_hz": 25.08435963230836,
+    "packing": 0,
+    "samples_per_packet": 120,
+    "n_packets": 126471
+  },
+  "first_sample": "2026-08-30 14:10:49.449859619",
+  "last_sample": "2026-09-06 14:10:01.131759405",
+  "samples": 15176520,
+  "median_sample_rate_hz": 25.08435003109899,
+  "sequence_breaks": 0,
+  "gaps": [],
+  "epoch_count": 120952,
+  "valid_epoch_count": 120950,
+  "rms_percentiles_mg": {
+    "0.01": 2.3913908087124622,
+    "0.05": 4.100304866713582,
+    "0.25": 7.701460900375943,
+    "0.5": 9.924716620641126,
+    "0.75": 31.603234658156406,
+    "0.9": 180.1234892509951,
+    "0.95": 278.4625739939637,
+    "0.99": 519.5696189954292
+  },
+  "stillest_5pct_median_norm_g": 0.9776240530714
+}

@@ -1,0 +1,739 @@
+<title>__NAME__ Actogram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#f7f7fa; --surface:#fff; --surface-2:#eeeef4; --line:#e1e1ea; --line-2:#cfcfdc;
+  --ink:#181a23; --ink-2:#54586b; --ink-3:#8a8ea2;
+  --sleep:#4f52a3; --sleep-soft:rgba(79,82,163,.18);
+  --rest:#79899f; --rest-soft:rgba(121,137,159,.18);
+  --active:#bd7529; --active-soft:rgba(189,117,41,.20);
+  --temp:#1f7d78;
+  --night:rgba(79,82,163,.055);
+  --grid:rgba(24,26,35,.07);
+  --focus:#4f52a3;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+  --ground:#0f1118; --surface:#161922; --surface-2:#1d212b; --line:#282d3a; --line-2:#39404f;
+  --ink:#e9eaf2; --ink-2:#a1a6b9; --ink-3:#6c7183;
+  --sleep:#8d90e2; --sleep-soft:rgba(141,144,226,.22);
+  --rest:#8fa0b6; --rest-soft:rgba(143,160,182,.20);
+  --active:#dfa059; --active-soft:rgba(223,160,89,.24);
+  --temp:#5cc4bd;
+  --night:rgba(141,144,226,.11);
+  --grid:rgba(233,234,242,.08);
+  --focus:#8d90e2;
+}
+}
+:root[data-theme="dark"]{
+  --ground:#0f1118; --surface:#161922; --surface-2:#1d212b; --line:#282d3a; --line-2:#39404f;
+  --ink:#e9eaf2; --ink-2:#a1a6b9; --ink-3:#6c7183;
+  --sleep:#8d90e2; --sleep-soft:rgba(141,144,226,.22);
+  --rest:#8fa0b6; --rest-soft:rgba(143,160,182,.20);
+  --active:#dfa059; --active-soft:rgba(223,160,89,.24);
+  --temp:#5cc4bd;
+  --night:rgba(141,144,226,.11);
+  --grid:rgba(233,234,242,.08);
+  --focus:#8d90e2;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1240px; margin:0 auto; padding:28px 22px 56px; display:flex; flex-direction:column; gap:22px}
+
+/* ---- masthead ---- */
+.head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px}
+.ident{display:flex; flex-direction:column; gap:5px}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+h1{margin:0; font-size:38px; font-weight:700; letter-spacing:-.022em; line-height:1; text-wrap:balance}
+.window{
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace; font-size:12.5px; color:var(--ink-2);
+  font-variant-numeric:tabular-nums;
+}
+.theme-btn{
+  background:var(--surface); border:1px solid var(--line); color:var(--ink-2);
+  border-radius:7px; padding:7px 12px; cursor:pointer; font:inherit; font-size:13px;
+}
+.theme-btn:hover{border-color:var(--line-2); color:var(--ink)}
+.theme-btn:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+/* ---- readouts ---- */
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.stat{background:var(--surface); padding:13px 15px; display:flex; flex-direction:column; gap:3px}
+.stat .k{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-3)}
+.stat .v{font-size:25px; font-weight:600; letter-spacing:-.02em; font-variant-numeric:tabular-nums;
+  line-height:1.1; white-space:nowrap}
+.stat .u{font-size:12px; font-weight:400; color:var(--ink-3); line-height:1.3}
+.stat.is-sleep .v{color:var(--sleep)}
+.stat.is-active .v{color:var(--active)}
+.stat.is-rest .v{color:var(--rest)}
+
+/* ---- chart ---- */
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.panel-head{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  padding:12px 16px; border-bottom:1px solid var(--line)}
+.legend{display:flex; gap:15px; flex-wrap:wrap}
+.key{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-2)}
+.sw{width:11px; height:11px; border-radius:2.5px; flex:none}
+.hint{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px; color:var(--ink-3)}
+.toggle{display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--ink-2); cursor:pointer}
+.toggle input{accent-color:var(--sleep); cursor:pointer; margin:0}
+.sens{display:grid; grid-template-columns:minmax(260px,1fr) minmax(240px,1.1fr); gap:20px;
+  padding:16px; border-top:1px solid var(--line)}
+#sens{height:132px; width:100%}
+.sens p{margin:0; font-size:13px; color:var(--ink-2); line-height:1.55}
+.sens p + p{margin-top:9px}
+.sens b{color:var(--ink); font-weight:600}
+.filmhrs{display:flex; flex-wrap:wrap; gap:5px; margin-top:10px}
+.hr{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px; padding:3px 7px;
+  border-radius:5px; background:var(--surface-2); border:1px solid var(--line); color:var(--ink-2)}
+.hr.top{background:var(--rest-soft); border-color:var(--rest); color:var(--ink)}
+.chart-host{position:relative; padding:6px 0 0}
+canvas{display:block; width:100%; touch-action:none}
+#main{height:534px; cursor:crosshair}
+#mini{height:66px; cursor:ew-resize; border-top:1px solid var(--line)}
+.tip{
+  position:absolute; pointer-events:none; opacity:0; transition:opacity .1s;
+  background:var(--surface); border:1px solid var(--line-2); border-radius:8px;
+  padding:9px 11px; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px;
+  color:var(--ink); box-shadow:0 6px 22px rgba(0,0,0,.16); white-space:nowrap; z-index:5;
+  font-variant-numeric:tabular-nums;
+}
+.tip .st{font-weight:500; margin-bottom:3px}
+.tip .row{color:var(--ink-2)}
+
+/* ---- controls ---- */
+.controls{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;
+  padding:16px; border-top:1px solid var(--line); background:var(--surface-2)}
+.ctl{display:flex; flex-direction:column; gap:7px}
+.ctl-top{display:flex; justify-content:space-between; align-items:baseline; gap:10px}
+.ctl label{font-size:13px; color:var(--ink-2)}
+.ctl output{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; color:var(--ink);
+  font-variant-numeric:tabular-nums}
+input[type=range]{width:100%; accent-color:var(--sleep); cursor:pointer}
+.toggle .sw{width:11px; height:3px; border-radius:2px}
+input[type=range]:focus-visible{outline:2px solid var(--focus); outline-offset:3px}
+.ctl .why{font-size:11.5px; color:var(--ink-3); line-height:1.4}
+.ctl-reset{justify-content:flex-start; gap:9px}
+.reset-btn{
+  background:var(--surface); border:1px solid var(--line-2); color:var(--ink);
+  border-radius:7px; padding:8px 13px; cursor:pointer; font:inherit; font-size:13px;
+  text-align:left; transition:border-color .12s, color .12s;
+}
+.reset-btn:hover:not(:disabled){border-color:var(--sleep); color:var(--sleep)}
+.reset-btn:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.reset-btn:disabled{opacity:.45; cursor:default; color:var(--ink-3)}
+
+.note{font-size:13.5px; color:var(--ink-2); max-width:66ch; line-height:1.6}
+.note strong{color:var(--ink); font-weight:600}
+.bouts{width:100%; border-collapse:collapse; font-size:13px}
+.bouts th{text-align:left; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:10.5px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:400;
+  padding:9px 16px; border-bottom:1px solid var(--line)}
+.bouts td{padding:8px 16px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums;
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; color:var(--ink-2)}
+.bouts tr:last-child td{border-bottom:none}
+.bouts td:first-child{color:var(--ink)}
+.scroll{max-height:260px; overflow-y:auto; overflow-x:auto}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+
+<div class="wrap">
+
+  <header class="head">
+    <div class="ident">
+      <span class="eyebrow">Collar accelerometry &middot; device __DEVICE__ &middot; session __SESSION__</span>
+      <h1>__NAME__</h1>
+      <span class="window" id="window"></span>
+    </div>
+    <button class="theme-btn" id="theme" type="button">Toggle theme</button>
+  </header>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <div class="legend">
+        <span class="key"><span class="sw" style="background:var(--sleep)"></span>Likely sleep</span>
+        <span class="key"><span class="sw" style="background:var(--rest)"></span>Still, awake</span>
+        <span class="key"><span class="sw" style="background:var(--active)"></span>Active</span>
+        <span class="key"><span class="sw" style="background:var(--night);border:1px solid var(--line-2)"></span>10&thinsp;PM &ndash; 6&thinsp;AM</span>
+      </div>
+      <label class="toggle"><input type="checkbox" id="showpost" checked>
+        <span class="sw" style="background:var(--ink-3)"></span> Posture drift</label>
+      <label class="toggle"><input type="checkbox" id="showtemp" checked>
+        <span class="sw" style="background:var(--temp)"></span> Temperature</label>
+      <span class="hint">scroll to zoom &middot; drag to pan &middot; drag the strip below to select</span>
+    </div>
+    <div class="chart-host">
+      <canvas id="main"></canvas>
+      <canvas id="mini"></canvas>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="controls">
+      <div class="ctl">
+        <div class="ctl-top"><label for="mv">Movement threshold</label><output id="mvo"></output></div>
+        <input type="range" id="mv" min="2" max="25" step="0.5">
+        <span class="why">Below this, the cat counts as still. There is no natural break to find here:
+        39% of epochs sit at exactly zero and the rest form a single broad hump. Any value from
+        1&ndash;12&nbsp;mg splits the data within a few percent, so this knob matters less than it looks.</span>
+      </div>
+      <div class="ctl">
+        <div class="ctl-top"><label for="ang">Posture tolerance</label><output id="ango"></output></div>
+        <input type="range" id="ang" min="0.2" max="15" step="0.1">
+        <span class="why">How far a held posture may drift <em>per minute</em> and still read as sleep.
+        A collar rotates, so the <em>absolute</em> angle means nothing &mdash; but drift still does, and it clusters
+        about 9&times; more than chance even with movement held fixed. Van&nbsp;Hees&rsquo; 5&deg; is far too loose here:
+        it passes 90% of still epochs. The default sits near where temperature agreement peaks.</span>
+      </div>
+      <div class="ctl">
+        <div class="ctl-top"><label for="bout">Shortest sleep bout</label><output id="bouto"></output></div>
+        <input type="range" id="bout" min="1" max="30" step="1">
+        <span class="why">Stretches shorter than this are scored as still-but-awake. Van&nbsp;Hees uses
+        30&nbsp;min, but that targets one consolidated nightly sleep window in humans; cats nap polyphasically,
+        so 5&nbsp;min is a judgement call of mine, not a published figure.</span>
+      </div>
+      <div class="ctl ctl-reset">
+        <button class="reset-btn" id="reset" type="button">Reset to published defaults</button>
+        <span class="why">Movement sits in a range where the choice barely changes the answer. Posture is
+        set where agreement with the temperature channel peaks on __NAME__&rsquo;s own data &mdash; not van&nbsp;Hees&rsquo;
+        5&deg;, which is too loose to discriminate on a neck-worn sensor. Bout length remains a judgement call.</span>
+      </div>
+    </div>
+    <div class="sens">
+      <canvas id="sens"></canvas>
+      <div>
+        <p><span style="color:var(--rest)">&#9472;&#9472;</span> time __NAME__ spent motionless &middot;
+        <span style="color:var(--sleep)">&#9472;&#9472;</span> the sleep estimate as the posture threshold
+        varies &middot; <span style="color:var(--temp)">&#9476;&#9476;</span> how much warmer the sleep-scored
+        epochs run than the still-but-awake ones. Temperature is <em>not</em> an input to the classifier,
+        so where that dashed line peaks is the setting at which two independent signals agree most.</p>
+        <p><b>How much of this is a real finding?</b> The flat ceiling is time __NAME__ spent
+        motionless &mdash; that number barely moves whatever you choose. The curve below it is the sleep
+        estimate, and it slides with a threshold nobody has validated on a cat.</p>
+        <p id="senstext"></p>
+        <p><b>Where video would settle it:</b> the hours below hold the most time that flips
+        classification between a strict and a loose posture setting. Point a camera at these.</p>
+        <div class="filmhrs" id="filmhrs"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><strong style="font-size:14px;font-weight:600">Sleep bouts</strong>
+      <span class="hint" id="boutcount"></span></div>
+    <div class="scroll">
+      <table class="bouts">
+        <thead><tr><th>Start</th><th>End</th><th>Length</th><th>Mean ENMO</th><th>Temp</th></tr></thead>
+        <tbody id="bouttb"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="note">
+    <strong>Read this as a hypothesis, not a measurement.</strong> Sleep here means the cat was both
+    motionless and holding one posture for a sustained stretch &mdash; adapted from the van&nbsp;Hees algorithm
+    for humans. Be aware how much work each half is doing: __NAME__ was motionless for 12.6&nbsp;h, and at the
+    default settings the posture test removes only about 1.8&nbsp;h of that. Loosen the posture slider and
+    &ldquo;likely sleep&rdquo; converges on &ldquo;time spent motionless&rdquo; &mdash; which bundles real sleep together
+    with sitting still, awake. The honest use of this page is to move the sliders and see how much the
+    answer depends on choices nobody has validated on a cat. Pinning it down needs observed ground truth.
+  </p>
+</div>
+
+<script id="payload" type="application/json">__DATA__</script>
+<script>
+const D = JSON.parse(document.getElementById('payload').textContent);
+const N = D.n, STEP = D.step, T0 = D.t0;
+const mg = D.mg, dang = D.dangle, temp = D.temp;
+
+/* Timestamps were written as device-local wall clock, so read them back with
+   UTC accessors or the browser shifts them a second time. */
+const at = i => new Date((T0 + i*STEP)*1000);
+const p2 = n => String(n).padStart(2,'0');
+const h12 = h => (h % 12) || 12;
+const mer = h => h < 12 ? 'AM' : 'PM';
+/* Whole hours drop the ":00" so axis ticks stay compact: "3 PM", "3:15 PM". */
+const hhmm = d => {
+  const h = d.getUTCHours(), m = d.getUTCMinutes();
+  return (m ? h12(h)+':'+p2(m) : String(h12(h))) + ' ' + mer(h);
+};
+const clock = d => h12(d.getUTCHours())+':'+p2(d.getUTCMinutes())+':'+p2(d.getUTCSeconds())+' '+mer(d.getUTCHours());
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const dayLabel = d => MON[d.getUTCMonth()]+' '+d.getUTCDate();
+const hourOf = d => d.getUTCHours() + d.getUTCMinutes()/60;
+
+const S_ACTIVE=0, S_REST=1, S_SLEEP=2;
+let state = new Uint8Array(N);
+let bouts = [];
+
+function classifyInto(out, moveThr, angThr, minBoutMin){
+  const bridge = Math.round(60/STEP);             // tolerate a 1-min stir inside a bout
+  const minLen = Math.round(minBoutMin*60/STEP);
+  const raw = new Uint8Array(N); let stillN = 0;
+  for(let i=0;i<N;i++){
+    const st = mg[i] < moveThr ? 1 : 0; stillN += st;
+    raw[i] = (st && dang[i] < angThr) ? 1 : 0;
+    out[i] = st ? S_REST : S_ACTIVE;
+  }
+  let i=0;
+  while(i<N){ let j=i; while(j<N && raw[j]===raw[i]) j++;
+    if(!raw[i] && (j-i)<=bridge && i>0 && j<N) for(let k=i;k<j;k++) raw[k]=1;
+    i=j; }
+  i=0;
+  while(i<N){ let j=i; while(j<N && raw[j]===raw[i]) j++;
+    if(raw[i] && (j-i)<minLen) for(let k=i;k<j;k++) raw[k]=0;
+    i=j; }
+  let sleepN=0;
+  for(let k=0;k<N;k++) if(raw[k]){ out[k]=S_SLEEP; sleepN++; }
+  return {stillN, sleepN};
+}
+
+const scratch = new Uint8Array(N);
+const sleepHoursFor = (mv,ang,bt) => classifyInto(scratch,mv,ang,bt).sleepN*STEP/3600;
+/* How much warmer the sleep-scored epochs run than the still-but-awake ones.
+   Temperature is not an input to the classifier, so agreement here is independent
+   evidence that a threshold is separating something real. */
+function evalAt(mv,ang,bt){
+  classifyInto(scratch,mv,ang,bt);
+  let sN=0,sT=0,rN=0,rT=0;
+  for(let i=0;i<N;i++){
+    if(scratch[i]===S_SLEEP){ sN++; sT+=temp[i]; }
+    else if(scratch[i]===S_REST){ rN++; rT+=temp[i]; }
+  }
+  return {h:sN*STEP/3600, sep:(sN>100&&rN>100)? sT/sN - rT/rN : NaN};
+}
+const stillHoursFor = mv => { let c=0; for(let i=0;i<N;i++) if(mg[i]<mv) c++; return c*STEP/3600; };
+
+function classify(moveThr, angThr, minBoutMin){
+  classifyInto(state, moveThr, angThr, minBoutMin);
+  bouts=[]; let i=0;
+  while(i<N){ let j=i; while(j<N && state[j]===state[i]) j++;
+    if(state[i]===S_SLEEP){
+      let sm=0,tt=0; for(let k=i;k<j;k++){ sm+=mg[k]; tt+=temp[k]; }
+      bouts.push({i,j,mins:(j-i)*STEP/60, mg:sm/(j-i), temp:tt/(j-i)});
+    }
+    i=j; }
+}
+
+function hours(s){ let c=0; for(let i=0;i<N;i++) if(state[i]===s) c++; return c*STEP/3600; }
+
+/* ---------------- rendering ---------------- */
+const cv = document.getElementById('main'), ctx = cv.getContext('2d');
+const mc = document.getElementById('mini'), mtx = mc.getContext('2d');
+const tip = document.getElementById('tip');
+let view = {a:0, b:N};                             // visible epoch range
+let hover = -1;
+
+const css = k => getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+const RIB = 22, AX = 34, TEMPH = 58, POSTH = 54, PADL = 52, PADR = 14, PADT = 12;
+
+function fit(c){
+  const r = c.getBoundingClientRect(), dpr = window.devicePixelRatio||1;
+  c.width = Math.max(1,Math.round(r.width*dpr)); c.height = Math.max(1,Math.round(r.height*dpr));
+  const x = c.getContext('2d'); x.setTransform(dpr,0,0,dpr,0,0);
+  return {w:r.width, h:r.height};
+}
+
+function stateColor(s){ return s===S_SLEEP?css('--sleep'):s===S_REST?css('--rest'):css('--active'); }
+
+function draw(){
+  const {w,h} = fit(cv);
+  const showPost = document.getElementById('showpost').checked;
+  const showTemp = document.getElementById('showtemp').checked;
+  const postLane = showPost ? POSTH + 10 : 0, tempLane = showTemp ? TEMPH + 10 : 0;
+  const plotW = w-PADL-PADR;
+  const plotH = h - PADT - 10 - postLane - RIB - tempLane - AX;
+  const py = PADT + plotH + 10;        // posture lane
+  const ry = py + postLane;            // state ribbon
+  const ty = ry + RIB + 10;            // temperature lane
+  const axY = showTemp ? ty + TEMPH : ry + RIB;
+  ctx.clearRect(0,0,w,h);
+  const a=view.a, b=view.b, span=b-a;
+  const X = i => PADL + (i-a)/span*plotW;
+  const cols = Math.max(1,Math.round(plotW));
+  const MONO = '11px "IBM Plex Mono",monospace', SMALL = '10px "IBM Plex Mono",monospace';
+
+  // night bands, behind everything that shares the time axis
+  ctx.fillStyle = css('--night');
+  for(let i=a;i<b;){
+    const hr = hourOf(at(i));
+    if(hr>=22 || hr<6){ let j=i; while(j<b){ const q=hourOf(at(j)); if(!(q>=22||q<6)) break; j++; }
+      ctx.fillRect(X(i),PADT,Math.max(1,X(j)-X(i)),plotH);
+      if(showPost) ctx.fillRect(X(i),py,Math.max(1,X(j)-X(i)),POSTH);
+      if(showTemp) ctx.fillRect(X(i),ty,Math.max(1,X(j)-X(i)),TEMPH);
+      i=j; }
+    else i++;
+  }
+
+  // y grid — ENMO is heavy-tailed, so a sqrt scale keeps the quiet end readable
+  let peak=1; for(let i=a;i<b;i++) if(mg[i]>peak) peak=mg[i];
+  const top = Math.max(20, Math.ceil(peak/20)*20);
+  const Y = v => PADT+plotH - Math.sqrt(Math.max(0,v)/top)*plotH;
+  ctx.strokeStyle=css('--grid'); ctx.fillStyle=css('--ink-3');
+  ctx.font=MONO; ctx.textAlign='right'; ctx.lineWidth=1;
+  for(const v of [0,5,20,50,100,200].filter(v=>v<=top)){
+    const y=Math.round(Y(v))+.5;
+    ctx.beginPath(); ctx.moveTo(PADL,y); ctx.lineTo(w-PADR,y); ctx.stroke();
+    ctx.fillText(v, PADL-8, y+4);
+  }
+  ctx.save(); ctx.translate(13, PADT+plotH/2); ctx.rotate(-Math.PI/2);
+  ctx.textAlign='center'; ctx.fillText('ENMO (mg)',0,0); ctx.restore();
+
+  // activity: one min/max column per pixel, tinted by the state underneath
+  for(let px=0;px<cols;px++){
+    const i0 = a+Math.floor(px/cols*span), i1 = Math.max(i0+1, a+Math.floor((px+1)/cols*span));
+    let mx=0, cnt=[0,0,0];
+    for(let i=i0;i<i1 && i<N;i++){ if(mg[i]>mx) mx=mg[i]; cnt[state[i]]++; }
+    const dom = cnt.indexOf(Math.max(...cnt));
+    ctx.fillStyle = dom===S_SLEEP?css('--sleep-soft'):dom===S_REST?css('--rest-soft'):css('--active-soft');
+    const y=Y(mx); ctx.fillRect(PADL+px, y, 1, PADT+plotH-y);
+    ctx.fillStyle = stateColor(dom); ctx.fillRect(PADL+px, y, 1, 1.4);
+  }
+
+  // movement threshold
+  const thr = +document.getElementById('mv').value;
+  ctx.strokeStyle=css('--ink-3'); ctx.setLineDash([4,4]); ctx.beginPath();
+  ctx.moveTo(PADL,Y(thr)+.5); ctx.lineTo(w-PADR,Y(thr)+.5); ctx.stroke(); ctx.setLineDash([]);
+
+  // posture drift, with its threshold drawn the same way ENMO's is.
+  // Median per column, not max: one spike among the ~18 epochs a pixel covers
+  // would otherwise fill the lane and hide the typical value the cut acts on.
+  const angThr = +document.getElementById('ang').value;
+  if(showPost){
+    const meds = new Float64Array(cols); const buf=[];
+    for(let px=0;px<cols;px++){
+      const i0=a+Math.floor(px/cols*span), i1=Math.max(i0+1,a+Math.floor((px+1)/cols*span));
+      buf.length=0; for(let i=i0;i<i1&&i<N;i++) buf.push(dang[i]);
+      buf.sort((x,y)=>x-y);
+      meds[px] = buf.length ? buf[buf.length>>1] : 0;
+    }
+    const sorted=[...meds].sort((x,y)=>x-y);
+    const p95 = sorted[Math.floor(sorted.length*0.95)] || 1;
+    const pk = Math.max(angThr*2.2, p95*1.15);
+    const PY = v => py+POSTH - Math.sqrt(Math.min(v,pk)/pk)*(POSTH-4);
+    ctx.strokeStyle=css('--line'); ctx.beginPath();
+    ctx.moveTo(PADL,py+.5); ctx.lineTo(w-PADR,py+.5); ctx.stroke();
+    for(let px=0;px<cols;px++){
+      const v=meds[px], yy=PY(v), under = v<angThr;
+      ctx.fillStyle = under ? css('--sleep-soft') : css('--rest-soft');
+      ctx.fillRect(PADL+px, yy, 1, py+POSTH-yy);
+      ctx.fillStyle = under ? css('--sleep') : css('--ink-3');
+      ctx.fillRect(PADL+px, yy, 1, 1.2);
+    }
+    ctx.strokeStyle=css('--sleep'); ctx.setLineDash([4,4]); ctx.beginPath();
+    ctx.moveTo(PADL,PY(angThr)+.5); ctx.lineTo(w-PADR,PY(angThr)+.5); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle=css('--ink-3'); ctx.textAlign='right'; ctx.font=SMALL;
+    ctx.fillText(angThr.toFixed(1)+'°', PADL-8, PY(angThr)+4);
+    ctx.save(); ctx.translate(13, py+POSTH/2); ctx.rotate(-Math.PI/2);
+    ctx.textAlign='center'; ctx.fillText('posture',0,0); ctx.restore();
+  }
+
+  // state ribbon
+  ctx.fillStyle=css('--surface-2'); ctx.fillRect(PADL,ry,plotW,RIB);
+  ctx.fillStyle=css('--ink-3'); ctx.textAlign='right'; ctx.font=SMALL;
+  ctx.fillText('state', PADL-8, ry+14);
+  for(let px=0;px<cols;px++){
+    const i0=a+Math.floor(px/cols*span), i1=Math.max(i0+1,a+Math.floor((px+1)/cols*span));
+    let cnt=[0,0,0]; for(let i=i0;i<i1&&i<N;i++) cnt[state[i]]++;
+    ctx.fillStyle=stateColor(cnt.indexOf(Math.max(...cnt)));
+    ctx.fillRect(PADL+px,ry,1,RIB);
+  }
+
+  // temperature, in its own lane on its own scale
+  if(showTemp){
+    let lo=1e9, hi=-1e9;
+    for(let i=a;i<b;i++){ if(temp[i]<lo) lo=temp[i]; if(temp[i]>hi) hi=temp[i]; }
+    if(hi-lo < 3){ const c=(hi+lo)/2; lo=c-1.5; hi=c+1.5; }
+    const TY = v => ty+TEMPH-6 - (v-lo)/(hi-lo)*(TEMPH-12);
+    ctx.strokeStyle=css('--line'); ctx.beginPath();
+    ctx.moveTo(PADL,ty+.5); ctx.lineTo(w-PADR,ty+.5); ctx.stroke();
+    ctx.strokeStyle=css('--temp'); ctx.lineWidth=1.6; ctx.beginPath();
+    for(let px=0;px<cols;px++){
+      const i=Math.min(N-1, a+Math.floor(px/cols*span));
+      const yy=TY(temp[i]); px?ctx.lineTo(PADL+px,yy):ctx.moveTo(PADL+px,yy);
+    }
+    ctx.stroke(); ctx.lineWidth=1;
+    ctx.fillStyle=css('--temp'); ctx.textAlign='right'; ctx.font=SMALL;
+    ctx.fillText(hi.toFixed(1)+'°', PADL-8, TY(hi)+4);
+    ctx.fillText(lo.toFixed(1)+'°', PADL-8, TY(lo)+4);
+    ctx.save(); ctx.translate(13, ty+TEMPH/2); ctx.rotate(-Math.PI/2);
+    ctx.textAlign='center'; ctx.fillText('temp',0,0); ctx.restore();
+  }
+
+  // time axis — tick density follows the zoom level
+  const hrs = span*STEP/3600;
+  const stepH = hrs>36?6 : hrs>12?3 : hrs>4?1 : hrs>1?0.5 : 0.25;
+  ctx.fillStyle=css('--ink-3'); ctx.textAlign='center'; ctx.font=MONO;
+  ctx.strokeStyle=css('--grid');
+  for(let hh=Math.ceil(hourOf(at(a))/stepH)*stepH; ; hh+=stepH){
+    const idx = a + (hh-hourOf(at(a)))*3600/STEP;
+    if(idx>=b) break;
+    if(idx<a) continue;
+    const x=Math.round(X(idx))+.5, d=at(idx);
+    ctx.beginPath(); ctx.moveTo(x,axY); ctx.lineTo(x,axY+5); ctx.stroke();
+    ctx.fillText(hhmm(d), x, axY+17);
+    if(d.getUTCHours()===0 && d.getUTCMinutes()===0) ctx.fillText(dayLabel(d), x, axY+29);
+  }
+
+  if(hover>=a && hover<b){
+    const x=Math.round(X(hover))+.5;
+    ctx.strokeStyle=css('--ink-2'); ctx.beginPath();
+    ctx.moveTo(x,PADT); ctx.lineTo(x,axY); ctx.stroke();
+  }
+  drawMini();
+}
+
+function drawMini(){
+  const {w,h}=fit(mc); mtx.clearRect(0,0,w,h);
+  const plotW=w-PADL-PADR;
+  const cols=Math.max(1,Math.round(plotW));
+  for(let px=0;px<cols;px++){
+    const i0=Math.floor(px/cols*N), i1=Math.max(i0+1,Math.floor((px+1)/cols*N));
+    let mx=0,cnt=[0,0,0];
+    for(let i=i0;i<i1&&i<N;i++){ if(mg[i]>mx) mx=mg[i]; cnt[state[i]]++; }
+    mtx.fillStyle=stateColor(cnt.indexOf(Math.max(...cnt)));
+    const hgt=Math.min(1,Math.sqrt(mx/150))*(h-16);
+    mtx.globalAlpha=.55; mtx.fillRect(PADL+px,h-8-hgt,1,hgt); mtx.globalAlpha=1;
+    mtx.fillRect(PADL+px,h-7,1,5);
+  }
+  const xa=PADL+view.a/N*plotW, xb=PADL+view.b/N*plotW;
+  mtx.fillStyle=css('--ground'); mtx.globalAlpha=.6;
+  mtx.fillRect(PADL,0,xa-PADL,h); mtx.fillRect(xb,0,w-PADR-xb,h); mtx.globalAlpha=1;
+  mtx.strokeStyle=css('--ink-2'); mtx.lineWidth=1.5;
+  mtx.strokeRect(Math.round(xa)+.5,1.5,Math.max(2,xb-xa),h-3);
+}
+
+/* ---------------- interaction ---------------- */
+function idxAt(clientX){
+  const r=cv.getBoundingClientRect(), plotW=r.width-PADL-PADR;
+  const f=(clientX-r.left-PADL)/plotW;
+  return view.a + f*(view.b-view.a);
+}
+function clampView(a,b){
+  const min=Math.max(12, Math.round(60/STEP));
+  if(b-a<min){ const c=(a+b)/2; a=c-min/2; b=c+min/2; }
+  if(a<0){ b-=a; a=0; } if(b>N){ a-=(b-N); b=N; }
+  view.a=Math.max(0,Math.round(a)); view.b=Math.min(N,Math.round(b)); draw();
+}
+cv.addEventListener('wheel', e=>{
+  e.preventDefault();
+  const anchor=idxAt(e.clientX), k=Math.exp(e.deltaY*0.0016);
+  clampView(anchor-(anchor-view.a)*k, anchor+(view.b-anchor)*k);
+},{passive:false});
+
+let drag=null;
+cv.addEventListener('pointerdown', e=>{ drag={x:e.clientX,a:view.a,b:view.b}; cv.setPointerCapture(e.pointerId); cv.style.cursor='grabbing'; });
+cv.addEventListener('pointerup', ()=>{ drag=null; cv.style.cursor='crosshair'; });
+cv.addEventListener('pointerleave', ()=>{ hover=-1; tip.style.opacity=0; draw(); });
+cv.addEventListener('pointermove', e=>{
+  if(drag){
+    const r=cv.getBoundingClientRect(), plotW=r.width-PADL-PADR;
+    const d=(e.clientX-drag.x)/plotW*(drag.b-drag.a);
+    clampView(drag.a-d, drag.b-d); return;
+  }
+  const i=Math.round(idxAt(e.clientX));
+  if(i<0||i>=N){ hover=-1; tip.style.opacity=0; draw(); return; }
+  hover=i; draw();
+  const d=at(i), s=state[i];
+  tip.innerHTML = `<div class="st" style="color:${stateColor(s)}">`+
+    (s===S_SLEEP?'Likely sleep':s===S_REST?'Still, awake':'Active')+`</div>`+
+    `<div class="row">${dayLabel(d)} ${clock(d)}</div>`+
+    `<div class="row">${mg[i].toFixed(1)} mg &middot; ${temp[i].toFixed(1)}&deg;C</div>`+
+    `<div class="row">posture &Delta; ${dang[i].toFixed(2)}&deg;</div>`;
+  const host=cv.parentElement.getBoundingClientRect();
+  let x=e.clientX-host.left+14;
+  if(x+tip.offsetWidth>host.width-8) x=e.clientX-host.left-tip.offsetWidth-14;
+  tip.style.left=x+'px'; tip.style.top=(e.clientY-host.top+14)+'px'; tip.style.opacity=1;
+});
+
+let mdrag=null;
+function miniIdx(clientX){
+  const r=mc.getBoundingClientRect(), plotW=r.width-PADL-PADR;
+  return Math.max(0,Math.min(N,(clientX-r.left-PADL)/plotW*N));
+}
+mc.addEventListener('pointerdown', e=>{ mdrag=miniIdx(e.clientX); mc.setPointerCapture(e.pointerId); });
+mc.addEventListener('pointermove', e=>{ if(mdrag===null) return;
+  const b=miniIdx(e.clientX); clampView(Math.min(mdrag,b), Math.max(mdrag,b)); });
+mc.addEventListener('pointerup', e=>{
+  const b=miniIdx(e.clientX);
+  if(Math.abs(b-mdrag)<4){ const half=(view.b-view.a)/2; clampView(b-half,b+half); }
+  mdrag=null;
+});
+
+addEventListener('keydown', e=>{
+  const span=view.b-view.a, pan=span*0.12;
+  if(e.key==='ArrowRight') clampView(view.a+pan, view.b+pan);
+  else if(e.key==='ArrowLeft') clampView(view.a-pan, view.b-pan);
+  else if(e.key==='+'||e.key==='=') clampView(view.a+span*0.15, view.b-span*0.15);
+  else if(e.key==='-') clampView(view.a-span*0.2, view.b+span*0.2);
+  else if(e.key==='0') clampView(0,N);
+  else return;
+  e.preventDefault();
+});
+
+/* ---------------- sensitivity ---------------- */
+const sc = document.getElementById('sens'), stx = sc.getContext('2d');
+const ANGS = Array.from({length:36},(_,i)=>0.2*Math.pow(15/0.2, i/35));   // log sweep 0.2 -> 15
+function drawSens(mv, ang, bt){
+  const {w,h}=fit(sc); stx.clearRect(0,0,w,h);
+  const L=42, R=8, T=10, B=24, pw=w-L-R, ph=h-T-B;
+  const ceil = stillHoursFor(mv);
+  const ev = ANGS.map(a=>evalAt(mv,a,bt));
+  const ys = ev.map(e=>e.h), seps = ev.map(e=>e.sep);
+  const finite = seps.filter(v=>v===v);
+  const sepMax = finite.length ? Math.max(...finite) : 1;
+  let peak=-1; seps.forEach((v,i)=>{ if(v===v && v===sepMax) peak=i; });
+  const top = Math.ceil(Math.max(ceil,...ys)+0.5);
+  const SY = v => T+ph - (v/ (sepMax*1.25||1))*ph;
+  const X = i => L + i/(ANGS.length-1)*pw;
+  const Y = v => T+ph - v/top*ph;
+
+  stx.strokeStyle=css('--grid'); stx.fillStyle=css('--ink-3');
+  stx.font='10px "IBM Plex Mono",monospace'; stx.textAlign='right';
+  for(let v=0; v<=top; v+=Math.max(2,Math.round(top/4))){
+    const y=Math.round(Y(v))+.5;
+    stx.beginPath(); stx.moveTo(L,y); stx.lineTo(w-R,y); stx.stroke();
+    stx.fillText(v+'h', L-6, y+3.5);
+  }
+  // motionless ceiling
+  stx.strokeStyle=css('--rest'); stx.setLineDash([4,3]); stx.beginPath();
+  stx.moveTo(L,Y(ceil)+.5); stx.lineTo(w-R,Y(ceil)+.5); stx.stroke(); stx.setLineDash([]);
+  stx.fillStyle=css('--rest'); stx.textAlign='left';
+  stx.fillText('motionless '+ceil.toFixed(1)+'h', L+4, Y(ceil)-4);
+  // sleep estimate curve
+  stx.strokeStyle=css('--sleep'); stx.lineWidth=2; stx.beginPath();
+  ys.forEach((v,i)=> i?stx.lineTo(X(i),Y(v)):stx.moveTo(X(i),Y(v)));
+  stx.stroke(); stx.lineWidth=1;
+  stx.fillStyle=css('--sleep'); stx.textAlign='right';
+  stx.fillText('sleep estimate', w-R-4, Y(ys[ys.length-1])+14);
+  // agreement with temperature, on its own scale
+  stx.strokeStyle=css('--temp'); stx.lineWidth=1.6; stx.setLineDash([3,2]); stx.beginPath();
+  let started=false;
+  seps.forEach((v,i)=>{ if(v!==v) return; const yy=SY(v);
+    started? stx.lineTo(X(i),yy) : (stx.moveTo(X(i),yy), started=true); });
+  stx.stroke(); stx.setLineDash([]); stx.lineWidth=1;
+  if(peak>=0){
+    stx.fillStyle=css('--temp');
+    stx.beginPath(); stx.arc(X(peak),SY(seps[peak]),3.5,0,7); stx.fill();
+    stx.textAlign='left';
+    stx.fillText('temp agreement, peaks '+ANGS[peak].toFixed(2)+'°', X(peak)+7, SY(seps[peak])+4);
+  }
+  // current setting
+  let near=0; ANGS.forEach((a,i)=>{ if(Math.abs(a-ang)<Math.abs(ANGS[near]-ang)) near=i; });
+  stx.fillStyle=css('--sleep');
+  stx.beginPath(); stx.arc(X(near),Y(ys[near]),4,0,7); stx.fill();
+  stx.strokeStyle=css('--ink-3'); stx.setLineDash([2,3]); stx.beginPath();
+  stx.moveTo(X(near),Y(ys[near])); stx.lineTo(X(near),T+ph); stx.stroke(); stx.setLineDash([]);
+  stx.fillStyle=css('--ink-3'); stx.textAlign='center';
+  for(const a of [0.2,1,5,15]){
+    let i=0; ANGS.forEach((v,k)=>{ if(Math.abs(v-a)<Math.abs(ANGS[i]-a)) i=k; });
+    stx.fillText(a+'°', X(i), h-8);
+  }
+  return {ceil, lo:Math.min(...ys), hi:Math.max(...ys), cur:ys[near],
+          sepNow:seps[near], sepPeak:sepMax, peakAng:peak>=0?ANGS[peak]:null};
+}
+
+const scratchB = new Uint8Array(N);
+function filmHours(mv, bt){
+  classifyInto(scratch, mv, 1.0, bt); classifyInto(scratchB, mv, 15.0, bt);
+  const by = new Array(24).fill(0);
+  for(let i=0;i<N;i++) if(scratch[i]!==scratchB[i]) by[at(i).getUTCHours()] += STEP/60;
+  return by;
+}
+
+/* ---------------- panels ---------------- */
+const fmtH = h => Math.floor(h)+'h '+p2(Math.round((h%1)*60))+'m';
+function refresh(){
+  const mv=+document.getElementById('mv').value,
+        ang=+document.getElementById('ang').value,
+        bt=+document.getElementById('bout').value;
+  document.getElementById('mvo').textContent=mv.toFixed(1)+' mg';
+  document.getElementById('ango').textContent=ang.toFixed(1)+'°';
+  document.getElementById('bouto').textContent=bt+' min';
+  classify(mv,ang,bt);
+
+  const hSleep=hours(S_SLEEP), hRest=hours(S_REST), hAct=hours(S_ACTIVE);
+  const total=(hSleep+hRest+hAct);
+  const med = bouts.length ? [...bouts].map(b=>b.mins).sort((x,y)=>x-y)[Math.floor(bouts.length/2)] : 0;
+  const sens = drawSens(mv, ang, bt);
+  const cells=[
+    ['Motionless', fmtH(sens.ceil), 'holds at any threshold',''],
+    ['Likely sleep', fmtH(hSleep), 'at '+ang.toFixed(1)+'° posture','is-sleep'],
+    ['Estimate range', sens.lo.toFixed(1)+'–'+sens.hi.toFixed(1)+'h', 'across 0.2–15°','is-rest'],
+    ['Active', fmtH(hAct), (hAct/total*100).toFixed(0)+'% of window','is-active'],
+    ['Sleep bouts', bouts.length, 'median '+med.toFixed(0)+' min',''],
+    ['Longest bout', bouts.length?Math.max(...bouts.map(b=>b.mins)).toFixed(0):0,'minutes',''],
+  ];
+  const swing = sens.hi - sens.lo;
+  document.getElementById('senstext').innerHTML =
+    `At the current setting the estimate is <b>${fmtH(sens.cur)}</b>, and sleep-scored epochs run ` +
+    `<b>${sens.sepNow===sens.sepNow ? sens.sepNow.toFixed(2)+'&deg;C' : '&mdash;'} warmer</b> than still-but-awake ones. ` +
+    `Across the full slider range the estimate runs <b>${sens.lo.toFixed(1)}h to ${sens.hi.toFixed(1)}h</b> ` +
+    `&mdash; a ${swing.toFixed(1)}-hour swing. But the two channels agree most strongly at ` +
+    `<b>${sens.peakAng ? sens.peakAng.toFixed(2)+'&deg;' : 'n/a'}</b> (+${sens.sepPeak.toFixed(2)}&deg;C), ` +
+    `and agreement decays steadily as you loosen past it.`;
+  const by = filmHours(mv, bt);
+  const rank = by.map((v,h)=>[v,h]).sort((a,b)=>b[0]-a[0]);
+  const cut = rank[0][0] > 0 ? rank[0][0]*0.45 : 1e9;
+  document.getElementById('filmhrs').innerHTML = by.map((v,h)=>{
+    const d=new Date(Date.UTC(2000,0,1,h));
+    return v>0 ? `<span class="hr ${v>=cut?'top':''}">${hhmm(d)} · ${Math.round(v)}m</span>` : '';
+  }).filter(Boolean).join('');
+  document.getElementById('stats').innerHTML = cells.map(([k,v,u,c])=>
+    `<div class="stat ${c}"><span class="k">${k}</span><span class="v">${v}</span><span class="u">${u}</span></div>`).join('');
+
+  document.getElementById('boutcount').textContent = bouts.length+' bouts';
+  const atDefault = Math.abs(mv-DEFAULTS.mv)<1e-6 && Math.abs(ang-DEFAULTS.ang)<1e-6 && bt===DEFAULTS.bout;
+  const rb = document.getElementById('reset');
+  if(rb){ rb.disabled = atDefault; rb.textContent = atDefault ? 'Using published defaults' : 'Reset to published defaults'; }
+
+  document.getElementById('bouttb').innerHTML = bouts.map(b=>{
+    const s=at(b.i), e=at(b.j);
+    return `<tr><td>${dayLabel(s)} ${hhmm(s)}</td><td>${hhmm(e)}</td>`+
+           `<td>${b.mins.toFixed(0)} min</td><td>${b.mg.toFixed(1)} mg</td><td>${b.temp.toFixed(1)}°C</td></tr>`;
+  }).join('') || '<tr><td colspan="5">No bouts at these settings.</td></tr>';
+  draw();
+}
+for(const id of ['showtemp','showpost']) document.getElementById(id).addEventListener('change', draw);
+for(const id of ['mv','ang','bout']){
+  const el=document.getElementById(id);
+  el.addEventListener('input', refresh);
+  // don't let a page scroll that happens to pass over a slider change its value
+  el.addEventListener('wheel', e=>e.preventDefault(), {passive:false});
+}
+
+const DEFAULTS = {mv: D.params.move_thr_mg, ang: D.params.angle_thr_deg, bout: 5};
+function applyDefaults(){
+  for(const [id,v] of Object.entries(DEFAULTS)) document.getElementById(id).value = v;
+  refresh();
+}
+document.getElementById('reset').addEventListener('click', applyDefaults);
+
+document.getElementById('theme').addEventListener('click', ()=>{
+  const cur=document.documentElement.getAttribute('data-theme');
+  const dark=cur ? cur==='dark' : matchMedia('(prefers-color-scheme:dark)').matches;
+  document.documentElement.setAttribute('data-theme', dark?'light':'dark');
+  requestAnimationFrame(draw);
+});
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change', ()=>requestAnimationFrame(draw));
+addEventListener('resize', ()=>requestAnimationFrame(draw));
+
+const s0=at(0), s1=at(N-1);
+document.getElementById('window').textContent =
+  `${dayLabel(s0)} ${hhmm(s0)} → ${dayLabel(s1)} ${hhmm(s1)}  ·  ${(N*STEP/3600).toFixed(1)} h at ${D.rate} Hz, ±${D.range_g} g`;
+
+applyDefaults();
+</script>

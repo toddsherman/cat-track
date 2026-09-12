@@ -1,0 +1,20 @@
+{
+  "name": "cat-track",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Toast and Peach's activity and rest, measured with AX3 collars.",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "dev": "npm run build && node scripts/serve-site.mjs",
+    "start": "node scripts/serve-site.mjs",
+    "test": "npm run build && node scripts/verify-site.mjs",
+    "sync:todd": "node scripts/sync-todd-site.mjs"
+  },
+  "devDependencies": {
+    "parse5": "8.0.1"
+  }
+}
