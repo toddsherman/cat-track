@@ -9,7 +9,7 @@ const toddRoot = path.resolve(
   process.argv[2] ?? path.join(projectRoot, "..", "Todd dot sh"),
 );
 const siteRoot = path.join(projectRoot, "site");
-const thumbnail = "cat-track-palette.webp";
+const thumbnail = "cat-track-palette-v2.webp";
 const required = [
   path.join(siteRoot, "index.html"),
   path.join(siteRoot, "styles.css"),
