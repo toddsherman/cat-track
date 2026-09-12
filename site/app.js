@@ -228,7 +228,6 @@
     const target=$(anchor.getAttribute("href"));
     if(!target)return;
     event.preventDefault();
-    if(target.tagName==="DETAILS")target.open=true;
     if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
     target.focus({preventScroll:true});
     target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
