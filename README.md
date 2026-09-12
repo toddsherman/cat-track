@@ -17,7 +17,7 @@ npm run dev
 
 Open the local URL printed by the development server. Both `/` and `/catTrack` serve the project. `site/` is the canonical source; `dist/` is generated deployment output.
 
-The page includes hourly activity, daytime versus nighttime rest, a 24-hour timeline with Toast above Peach, meal-time guides, daily comparisons, and a sensitivity explorer. Rest is a motion-based heuristic, not a validated physiological sleep measurement.
+The page includes activity at five-second, one-minute, five-minute, or hourly resolution, daytime versus nighttime rest, a zoomable 24-hour timeline with Toast above Peach, meal-time guides, and a sensitivity explorer. Rest is a motion-based heuristic, not a validated physiological sleep measurement.
 
 ## Data and findings
 
@@ -49,7 +49,7 @@ npm test
 
 The first analysis command reads both original CWA files and produces local epoch caches. Later analysis runs can use `python -m cattrack.compare --reuse-epochs`. The caches are reproducible and excluded from Git.
 
-`cattrack/cwa.py` handles the AX3 packet format, fractional timestamps, and actual sample-rate interpolation. Tests cover decoding, missing data, and rest scoring. The site export verifies its aggregates against the original comparison, preserves five-second rest boundaries, and distinguishes missing data from stillness.
+`cattrack/cwa.py` handles the AX3 packet format, fractional timestamps, and actual sample-rate interpolation. Tests cover decoding, missing data, and rest scoring. The site export verifies its aggregates against the original comparison, exports all 17,280 paired five-second movement intervals per cat per day (rounded to 0.01 mg), preserves five-second rest boundaries, and distinguishes missing data from stillness.
 
 ## What is included
 

@@ -59,6 +59,15 @@ assert.equal(data.days.length, 6);
 assert.equal(data.overlap.runWindow.startMinute, 0);
 assert.equal(data.overlap.runWindow.endMinute, 1440);
 for (const day of data.days) {
+  assert.equal(day.movement5s.length, 17280, `${day.date}: full five-second movement series`);
+  for (let hour=0;hour<24;hour++) {
+    const valid = day.movement5s.slice(hour*720,(hour+1)*720).filter(pair=>pair[0]!==null);
+    for (const [column,cat] of [[0,"peach"],[1,"toast"]]) {
+      assert(valid.every(pair=>Number.isFinite(pair[column]) && pair[column]>=0));
+      const mean = valid.reduce((sum,pair)=>sum+pair[column],0)/valid.length;
+      assert(Math.abs(mean-day.hourly[hour][cat])<=0.0051, `${day.date}/${hour}/${cat}: detailed data changed hourly mean`);
+    }
+  }
   assert.equal(day.timeline.length, 288, `${day.date}: expected every five-minute interval of 24 hours`);
   day.timeline.forEach((bin, index) => assert.equal(bin.minute, index * 5));
   const runs = data.overlap.runs.find((item) => item.date === day.date);
@@ -67,6 +76,10 @@ for (const day of data.days) {
   for (const [start, end, state] of runs.segments) {
     assert(Math.abs(start - cursor) < 0.000002 && end > start, `${day.date}: rest timeline has a gap or overlap`);
     assert([0, 1, 2, 3, 4].includes(state), `${day.date}: unknown rest state`);
+    for(let bin=Math.round(start*12);bin<Math.round(end*12);bin++) {
+      assert.equal(day.movement5s[bin][0]===null,state===4, "Movement gap must match missing rest data");
+      assert.equal(day.movement5s[bin][1]===null,state===4, "Both cats must share the missing-data mask");
+    }
     if (state !== 4) observedMinutes += end - start;
     if (state === 3) bothMinutes += end - start;
     cursor = end;

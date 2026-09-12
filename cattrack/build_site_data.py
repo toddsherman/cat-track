@@ -152,6 +152,11 @@ def build():
         days.append({
             "date": date_text,
             "label": date_label,
+            # Compact paired movement values in consecutive five-second bins.
+            # Null preserves excluded time; hundredths of mg exceed chart precision.
+            "movement5s": [[round(float(aligned[name].rms_mg.iloc[i]), 2)
+                            if paired[i] else None for name in CATS]
+                           for i in np.flatnonzero(date_mask)],
             "hourly": [{"hour": hour, **row(date_mask & (idx.hour == hour))}
                        for hour in range(24)],
             "timeline": [{"minute": minute,
@@ -186,7 +191,7 @@ def build():
     samples = {name: metadata[name]["samples"] for name in CATS}
     paired_samples = {name: int(aligned[name].loc[paired, "n"].sum()) for name in CATS}
     result = {
-        "schemaVersion": 2,
+        "schemaVersion": 3,
         "summary": summary,
         "coverage": {
             "start": str(dates[0].date()),
@@ -235,6 +240,7 @@ def build():
             "restRuleText": "Five-second intervals below 20 mg with less than 5 degrees of posture change, in bouts of at least five minutes that are at least 90% quiet. Internal breaks of at most 30 seconds may join a bout; the breaks themselves do not count as rest.",
             "pairing": "Both cats use exactly the same valid five-second intervals. Each interval needs at least 4.9 seconds of sample coverage. Missing time earns no movement or rest credit.",
             "normalization": "Rest hours per period are the observed rest proportion times 24, 16, or 8 hours. Daytime overlap is proportion times 16 hours; full-day overlap is proportion times 24 hours. This scales for 80 excluded daytime seconds rather than treating them as stillness.",
+            "detailUnits": "days.movement5s contains 17,280 consecutive [peach, toast] pairs per day in mg, rounded to 0.01 mg, starting at midnight in five-second steps. Both values are null during excluded paired time. Rest run boundaries preserve the same five-second epochs.",
             "schemaUnits": "summary preserves the analysis field names and units. hourly, days.hourly, and days.timeline use mg for peach/toast and 0–1 proportions for rest and coverage. daily peachRest/toastRest and bothRestHours24h use hours per 24h; daily bothRestHours uses hours per 16h daytime. daily bothRest remains a 0–1 full-day proportion. overlap.runs cover 0–1440 clock minutes with five-second precision; state 4 explicitly preserves missing paired data. overlap.summary and overlap.hourly remain daytime statistics.",
             "restAlignment": "The different-date baseline matches each Peach date to every other Toast date at the same clock times. It is a descriptive comparison, not a randomized experiment or evidence of causation.",
             "limitations": [

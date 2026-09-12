@@ -17,3 +17,16 @@
 .legend .legend-meal:before{height:0;background:none;border-top:2px dashed var(--muted)}.activity-panel .legend-meal:before{border-color:var(--paper)}.overlap-legend .legend-toast:before,.overlap-legend .legend-peach:before{height:10px}.legend .legend-missing:before{height:10px;background:repeating-linear-gradient(135deg,var(--paper-deep),var(--paper-deep) 3px,var(--stone) 3px,var(--stone) 4px)}.meal-routine{display:grid;grid-template-columns:1fr 1.65fr;gap:65px;padding:30px 0 4px}.meal-routine h3{font-size:28px;max-width:280px}.meal-routine p{font-size:17px;color:#c5beb0;max-width:660px}.meal-routine .meal-context{font:12px/1.65 var(--sans);margin-top:12px;color:#bdb6a9}@media(max-width:800px){.meal-routine{grid-template-columns:1fr;gap:14px}.meal-routine h3{max-width:none}}
 
 .method-detail{border-top:1px solid var(--line);padding-top:30px}.method-detail h3{font-size:28px;margin-bottom:20px}.method-detail+.method-detail{margin-top:8px}@media(max-width:520px){.method-detail h3{font-size:26px}}
+
+/* Detailed charts retain a fixed height while the time axis scrolls. */
+.detail-controls{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:22px 0;font:12px Arial,Helvetica,sans-serif}
+.detail-controls label{display:flex;align-items:center;gap:9px}
+.detail-controls select{font:inherit;min-height:40px;padding:8px;color:inherit;background:transparent;border:1px solid currentColor;border-radius:4px}
+.detail-controls select option{color:#1D1C19;background:#F4F1EA}
+.detail-controls>span{opacity:.7}
+#activity-chart,#overlap-chart{overflow-x:auto;overflow-y:hidden;max-width:100%;scrollbar-width:thin}
+#activity-chart svg,#overlap-chart svg{display:block;flex:none}
+.activity-line{stroke-width:1.4}
+@media(max-width:520px){.detail-controls{gap:12px}.detail-controls>span{width:100%}.hour-control output{min-width:90px}.hour-control input{width:calc(100% - 104px)}}
+
+.chart-scroll-frame{position:relative}.fixed-chart-axis{position:absolute;top:0;left:0;pointer-events:none;font-family:Arial,Helvetica,sans-serif;z-index:1}.chart-scroll-frame #overlap-chart{margin-top:0}
