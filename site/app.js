@@ -171,26 +171,6 @@
     $("#overlap-readout").innerHTML = `<strong>${dateLabel(day.date)} · ${clock(minute)}–${clock(minute+5)}</strong> &nbsp; <span class="toast-text">Toast resting ${percentage(bin.toastRest)}</span> · <span class="peach-text">Peach ${percentage(bin.peachRest)}</span> · <strong>Both ${percentage(bin.bothRest)}</strong>${humanSleep?' <span class="human-sleep-tag">Human sleep time</span>':""}${bin.coverage<1?" · Partial recording":""}`;
   }
 
-  function renderDaily() {
-    const host=$("#daily-chart"), w=Math.max(280,host.clientWidth), h=w<500?265:310;
-    const margin={l:33,r:6,t:34,b:40}, max=90, plotH=h-margin.t-margin.b;
-    const y=value=>margin.t+plotH-value/max*plotH;
-    const cell=(w-margin.l-margin.r)/data.daily.length, bw=Math.min(36,cell*.24);
-    let contents="";
-    for (const value of [0,30,60,90]) contents+=`<line x1="${margin.l}" x2="${w-margin.r}" y1="${y(value)}" y2="${y(value)}" stroke="#D4CEC2"/><text x="${margin.l-8}" y="${y(value)+4}" fill="#666157" text-anchor="end" font-family="Arial" font-size="11">${value}</text>`;
-    contents+=`<text x="${margin.l}" y="14" fill="#666157" font-family="Arial" font-size="11">mg</text>`;
-    data.daily.forEach((day,i)=>{
-      const center=margin.l+cell*(i+.5), highlight=day.date==="2026-09-04";
-      if(highlight)contents+=`<rect x="${center-cell*.45}" y="${margin.t-13}" width="${cell*.9}" height="${plotH+22}" fill="#B58A43" opacity=".11"/>`;
-      for(const [name,offset,color] of [["peach",-bw-2,peach],["toast",2,toast]]){
-        contents+=`<rect x="${center+offset}" y="${y(day[name])}" width="${bw}" height="${y(0)-y(day[name])}" fill="${color}"><title>${dateLabel(day.date)}: ${name==='peach'?'Peach':'Toast'} ${fixed(day[name])} mg</title></rect><text x="${center+offset+bw/2}" y="${y(day[name])-9}" fill="${color}" text-anchor="middle" font-family="Arial" font-size="${w<500?10:12}">${Math.round(day[name])}</text>`;
-      }
-      const parts=dateLabel(day.date).split(" ");
-      contents+=`<text x="${center}" y="${h-17}" fill="${ink}" text-anchor="middle" font-family="Arial" font-size="${w<500?10:12}">${parts[0]} ${parts[1]}</text>`;
-    });
-    host.innerHTML=`<svg viewBox="0 0 ${w} ${h}" aria-hidden="true">${contents}</svg>`;
-  }
-
   function updateSensitivity(){
     const cutoff=Number($("#threshold-select").value);
     const rows=data.sensitivity.filter(row=>row.threshold_mg===cutoff && row.min_bout_minutes===5);
@@ -219,8 +199,8 @@
     $("#overlap-time").addEventListener("input",event=>{restBin=Number(event.target.value);updateRestReadout();});
     $("#threshold-select").addEventListener("change",updateSensitivity);
     let resizeTimer;
-    window.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{renderActivity();renderOverlap();renderDaily();},120);});
-    renderActivity();renderOverlap();renderDaily();updateHeroTrace();updateSensitivity();
+    window.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{renderActivity();renderOverlap();},120);});
+    renderActivity();renderOverlap();updateHeroTrace();updateSensitivity();
     document.documentElement.dataset.charts="ready";
   }
 
@@ -243,7 +223,7 @@
   fetch("data.json").then(response=>{if(!response.ok)throw new Error("Unable to load chart data");return response.json();})
     .then(payload=>{data=payload;bind();})
     .catch(()=>{
-      for(const selector of ["#activity-chart","#overlap-chart","#daily-chart"]){
+      for(const selector of ["#activity-chart","#overlap-chart"]){
         $(selector).innerHTML='<p class="chart-loading">The chart data could not load. <a href="data.json">Open the data</a> or reload the page.</p>';
       }
       for(const selector of ["#day-select","#hour-slider","#overlap-day","#overlap-time","#threshold-select"])$(selector).disabled=true;
