@@ -30,3 +30,5 @@
 @media(max-width:520px){.detail-controls{gap:12px}.detail-controls>span{width:100%}.hour-control output{min-width:90px}.hour-control input{width:calc(100% - 104px)}}
 
 .chart-scroll-frame{position:relative}.fixed-chart-axis{position:absolute;top:0;left:0;pointer-events:none;font-family:Arial,Helvetica,sans-serif;z-index:1}.chart-scroll-frame #overlap-chart{margin-top:0}
+
+.activity-detail-line{stroke-width:.7;opacity:.5}.activity-average-line{stroke-width:2;opacity:1}

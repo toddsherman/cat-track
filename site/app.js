@@ -5,7 +5,7 @@
   const peach = "#B64832", toast = "#31566B", paper = "#F4F1EA", ink = "#1D1C19";
   const darkPeach = "#e38e77", darkToast = "#8ab1c6";
   let data, selectedHour = 420, selectedDay = "all", restDay = 0, restBin = 9360;
-  let activityStep = 60, activityZoom = 1, restZoom = 1, activityRows;
+  let activityStep = 60, activityZoom = 1, restZoom = 1, activityRows, runningRows;
   let activityGeometry, overlapGeometry, frame;
   const fixed = (n, digits = 1) => Number(n).toFixed(digits);
   const percentage = (n) => `${Math.round(n * 100)}%`;
@@ -25,6 +25,20 @@
   };
   function aggregateActivity() {
     const days = selectedDay === "all" ? data.days : data.days.filter(day => day.date === selectedDay);
+    // A true trailing five-minute mean, always based on the five-second data.
+    // Require a full window; gaps remain gaps rather than becoming zeroes.
+    const samples = Array.from({length:17280},(_,i)=>{
+      let peach=0,toast=0,count=0;
+      for(const day of days){const pair=day.movement5s[i];if(pair[0]!==null && pair[1]!==null){peach+=pair[0];toast+=pair[1];count++;}}
+      return {peach,toast,count};
+    });
+    let peachSum=0,toastSum=0,countSum=0,missing=0;
+    runningRows=samples.map((sample,i)=>{
+      peachSum+=sample.peach;toastSum+=sample.toast;countSum+=sample.count;missing+=sample.count===0?1:0;
+      if(i>=60){const old=samples[i-60];peachSum-=old.peach;toastSum-=old.toast;countSum-=old.count;missing-=old.count===0?1:0;}
+      const valid=i>=59 && missing===0;
+      return {peach:valid?peachSum/countSum:null,toast:valid?toastSum/countSum:null};
+    });
     const size = activityStep / 5;
     activityRows = Array.from({length:86400/activityStep}, (_, bin) => {
       let p = 0, t = 0, count = 0;
@@ -35,12 +49,12 @@
       return {peach:count?p/count:null,toast:count?t/count:null,coverage:count/(size*days.length)};
     });
   }
-  function movementPath(rows,key,x,y) {
+  function movementPath(rows,key,x,y,step=activityStep) {
     let connected = false;
     return rows.map((row,i) => {
       if (row[key] === null) {connected=false;return "";}
       const command = connected ? "L" : "M"; connected=true;
-      return `${command}${x((i+.5)*activityStep/3600).toFixed(2)},${y(row[key]).toFixed(2)}`;
+      return `${command}${x((i+.5)*step/3600).toFixed(2)},${y(row[key]).toFixed(2)}`;
     }).join(" ");
   }
   function revealTime(host,x) {
@@ -68,7 +82,7 @@
     const host = $("#activity-chart"), visibleW = Math.max(280, host.clientWidth), w = visibleW * activityZoom, h = visibleW < 600 ? 255 : 340;
     const margin = {l:38, r:12, t:33, b:43};
     const plotW = w - margin.l - margin.r, plotH = h - margin.t - margin.b;
-    const top = Math.max(200, Math.ceil(Math.max(...currentRows().flatMap(r => [r.peach ?? 0, r.toast ?? 0])) / 50) * 50);
+    const top = Math.max(200, Math.ceil(Math.max(...currentRows().flatMap(r => [r.peach ?? 0, r.toast ?? 0]),...runningRows.flatMap(r => [r.peach ?? 0, r.toast ?? 0])) / 50) * 50);
     const tickStep = Math.max(50,Math.ceil(top/5/50)*50);
     const x = hour => margin.l + hour / 24 * plotW;
     const y = value => margin.t + plotH - value / top * plotH;
@@ -78,13 +92,14 @@
     for (let value = 0; value <= top; value += tickStep) {
       contents += `<line class="chart-grid" x1="${x(0)}" x2="${x(24)}" y1="${y(value)}" y2="${y(value)}"/><text class="chart-text" fill="#c5beb0" text-anchor="end" x="${margin.l-10}" y="${y(value)+4}">${Math.round(value)}</text>`;
     }
-    contents += `<text class="chart-text" x="${margin.l}" y="12" fill="#c5beb0">mg</text>`;
+
     for (let hour=0;hour<=24;hour+=activityZoom===1?6:activityZoom===4?1:.25) {
       const label = activityZoom > 1 ? clock(hour*60) : visibleW < 440 ? (hour === 0 || hour === 24 ? "12 a.m." : hour === 12 ? "12 p.m." : `${hour%12} ${hour<12?"a.m.":"p.m."}`) : hourLabel(hour);
       contents += `<text class="chart-text" text-anchor="${hour===0?"start":hour===24?"end":"middle"}" x="${x(hour)}" y="${h-11}" fill="#c5beb0">${label}</text>`;
     }
     contents += mealGuides(minute => x(minute/60), margin.t, y(0), "#c5beb0", 16);
-    contents += `<path class="activity-line" d="${movementPath(rows, "peach", x, y)}" stroke="${darkPeach}"/><path class="activity-line" d="${movementPath(rows, "toast", x, y)}" stroke="${darkToast}"/>`;
+    contents += `<path class="activity-line activity-detail-line" d="${movementPath(rows, "peach", x, y)}" stroke="${darkPeach}"/><path class="activity-line activity-detail-line" d="${movementPath(rows, "toast", x, y)}" stroke="${darkToast}"/>`;
+    contents += `<path class="activity-line activity-average-line" d="${movementPath(runningRows,"peach",x,y,5)}" stroke="${darkPeach}"/><path class="activity-line activity-average-line" d="${movementPath(runningRows,"toast",x,y,5)}" stroke="${darkToast}"/>`;
     contents += `<line id="activity-cursor" y1="${margin.t}" y2="${y(0)}" stroke="${paper}" stroke-dasharray="3 5" opacity=".55"/><circle id="peach-cursor" r="5" fill="${darkPeach}" stroke="#25241f" stroke-width="2"/><circle id="toast-cursor" r="5" fill="${darkToast}" stroke="#25241f" stroke-width="2"/><rect class="pointer-area" x="${x(0)}" y="${margin.t}" width="${plotW}" height="${plotH}" fill="transparent"/>`;
     host.innerHTML = `<svg viewBox="0 0 ${w} ${h}" aria-hidden="true">${contents}</svg>`;
     zoomChart(host.querySelector("svg"),w,h);
@@ -109,18 +124,19 @@
     const row = currentRows()[selectedHour], {x,y} = activityGeometry;
     const second = selectedHour*activityStep, middle=(second+activityStep/2)/3600;
     const label = `${preciseClock(second)}–${preciseClock(second+activityStep)}`;
+    const average=runningRows[Math.min(17279,Math.floor((selectedHour+.5)*activityStep/5))];
     for (const attr of ["x1","x2"]) $("#activity-cursor").setAttribute(attr,x(middle));
     for (const name of ["peach", "toast"]) {
       const cursor = $(`#${name}-cursor`);
-      cursor.style.display = row[name] === null ? "none" : "";
-      cursor.setAttribute("cx", x(middle)); cursor.setAttribute("cy",y(row[name] ?? 0));
+      cursor.style.display = average[name] === null ? "none" : "";
+      cursor.setAttribute("cx", x(middle)); cursor.setAttribute("cy",y(average[name] ?? 0));
     }
     $("#hour-slider").max = currentRows().length-1;
     $("#hour-slider").value = selectedHour;
     $("#hour-slider").setAttribute("aria-valuetext",label);
     $("#hour-output").textContent = preciseClock(second);
-    $("#activity-readout").innerHTML = `<strong>${label}</strong><span class="peach-text">Peach <b>${row.peach===null?'No data':fixed(row.peach)+' mg'}</b></span><span class="toast-text">Toast <b>${row.toast===null?'No data':fixed(row.toast)+' mg'}</b></span>${row.coverage<1?'<span>Incomplete paired coverage</span>':''}`;
-    $("#activity-chart").setAttribute("aria-label", `${activityStep}-second average collar movement. ${label}. Use the time slider to inspect values; zoom and scroll horizontally for detail.`);
+    $("#activity-readout").innerHTML = `<strong>${label} · 5-min running mean</strong><span class="peach-text">Peach <b>${average.peach===null?'Unavailable':fixed(average.peach)+' mg'}</b></span><span class="toast-text">Toast <b>${average.toast===null?'Unavailable':fixed(average.toast)+' mg'}</b></span>${row.coverage<1?'<span>Incomplete paired coverage</span>':''}`;
+    $("#activity-chart").setAttribute("aria-label", `Five-minute trailing mean over ${activityStep}-second detail lines. ${label}. Use the time slider to inspect values; zoom and scroll horizontally for detail.`);
   }
 
   function individualRestRuns(segments, bit) {
