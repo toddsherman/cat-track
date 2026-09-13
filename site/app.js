@@ -184,7 +184,9 @@
         for (const [start,end,status] of individualRestRuns(day.segments,bit)) {
           if (status === "other") continue;
           const fill = status === "missing" ? "url(#rest-missing-pattern)" : color;
-          contents += `<rect class="rest-interval" data-status="${status}" data-start-minute="${start}" data-end-minute="${end}" x="${x(start)}" y="${laneY}" width="${x(end)-x(start)}" height="${laneH}" fill="${fill}"/>`;
+          // Use each cat's uninterrupted run, independent of the other cat and zoom.
+          const opacity = status === "missing" ? 1 : .45 + .55*Math.min((end-start)/10,1);
+          contents += `<rect class="rest-interval" data-status="${status}" data-start-minute="${start}" data-end-minute="${end}" x="${x(start)}" y="${laneY}" width="${x(end)-x(start)}" height="${laneH}" fill="${fill}" fill-opacity="${opacity.toFixed(3)}"/>`;
         }
         contents += `</g>`;
       }
@@ -196,7 +198,7 @@
       contents += `<text class="overlap-axis-label" x="${x(hour*60)}" y="${h-8}" fill="#666157" font-family="Arial,Helvetica,sans-serif" font-size="${compact?10:12}" text-anchor="${hour===0?'start':hour===24?'end':'middle'}">${label}</text>`;
     }
     contents += `<rect id="overlap-selected-row" x="${margin.l-2}" width="${plotW+4}" height="${rowH-10}" fill="none" stroke="${ink}" stroke-width="1" opacity=".4" pointer-events="none"/><line id="overlap-cursor" y1="${margin.t}" y2="${h-margin.b}" stroke="${paper}" stroke-width="2" pointer-events="none"/><line id="overlap-cursor-outline" y1="${margin.t}" y2="${h-margin.b}" stroke="${ink}" stroke-width=".75" pointer-events="none"/>`;
-    host.innerHTML = `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Full 24-hour rest on six dates, midnight to midnight. Ochre bands mark human sleep time, 10 p.m. to 6 a.m. Each daily bar has Toast in blue on top and Peach in red below. Color means that cat is resting; pale sections mean no rest detected. Hatched sections are missing paired data. Meal guides show our usual breakfast around 7:15 a.m. and dinner around 6:30 to 7 p.m. Totals at right are shared rest per 24 hours. Use the controls below to inspect values.">${contents}</svg>`;
+    host.innerHTML = `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Full 24-hour rest on six dates, midnight to midnight. Ochre bands mark human sleep time, 10 p.m. to 6 a.m. Each daily bar has Toast in blue on top and Peach in red below. Color means that cat is resting; longer uninterrupted blocks are darker, with full color from ten minutes. Shorter blocks retain at least 45 percent opacity. Pale tracks mean no rest detected. Hatched sections are missing paired data. Meal guides show our usual breakfast around 7:15 a.m. and dinner around 6:30 to 7 p.m. Totals at right are shared rest per 24 hours. Use the controls below to inspect values.">${contents}</svg>`;
     zoomChart(host.querySelector("svg"),w,h);
     const axis = host.parentElement.querySelector(".fixed-chart-axis");
     axis.setAttribute("viewBox",`0 0 ${margin.l} ${h}`);
