@@ -14,6 +14,11 @@ const references = new Set();
 const ids = new Set();
 let portfolioLinks = 0;
 let scripts = 0;
+let analyticsScripts = 0;
+// Vercel Web Analytics is served by the hosting platform at this root-absolute
+// path, not from dist/, so it is the one script reference with no local file.
+const analyticsSrc = "/_vercel/insights/script.js";
+const text = (node) => (node.childNodes ?? []).map((child) => child.value ?? "").join("");
 function inspect(node) {
   const id = attr(node, "id");
   if (id) {
@@ -22,14 +27,19 @@ function inspect(node) {
   }
   if (node.tagName === "a" && attr(node, "href") === "https://www.todd.sh/") portfolioLinks++;
   if (node.tagName === "script") {
-    scripts++;
-    assert.equal(attr(node, "src"), "app.js", "Standalone page must not depend on todd.sh's CMS runtime");
+    const src = attr(node, "src");
+    if (src === analyticsSrc || (src === undefined && /^window\.va = /.test(text(node)))) {
+      analyticsScripts++;
+    } else {
+      scripts++;
+      assert.equal(src, "app.js", "Standalone page must load only its own script and Vercel Web Analytics");
+    }
   }
   assert.notEqual(node.tagName, "video", "The removed video must not return to the public page");
   if (node.tagName !== "base") {
     for (const name of ["src", "href"]) {
       const ref = attr(node, name);
-      if (ref) references.add(ref);
+      if (ref && ref !== analyticsSrc) references.add(ref);
     }
   }
   const srcset = attr(node, "srcset");
@@ -39,6 +49,8 @@ function inspect(node) {
 inspect(document);
 assert.equal(portfolioLinks, 2);
 assert.equal(scripts, 1);
+assert.equal(analyticsScripts, 2, "Expected the Vercel Web Analytics queue stub and loader");
+assert(!/data-sanity-|project-content-loader/.test(html), "Removed CMS hooks must not return to the page");
 const localFiles = new Set(["/catTrack/index.html", "/catTrack/data.json"]);
 for (const ref of references) {
   const url = new URL(ref, "https://example.test/catTrack/");

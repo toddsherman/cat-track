@@ -25,12 +25,11 @@ for (const entry of await fs.readdir(path.join(source, "assets"), { withFileType
   imageCount++;
 }
 
-// Canonical source also runs inside todd.sh. This deployment uses its checked-in
-// copy and sends portfolio navigation back to todd.sh instead of its own root.
+// Canonical source also runs inside todd.sh. This deployment sends portfolio
+// navigation back to todd.sh instead of its own root.
 const document = parse(await fs.readFile(path.join(output, "index.html"), "utf8"));
 const attr = (node, name) => node.attrs?.find((item) => item.name === name);
 let returnLinks = 0;
-let sharedLoaders = 0;
 let hasBase = false;
 function adapt(node) {
   if (node.tagName === "base" && attr(node, "href")?.value === "/catTrack/") hasBase = true;
@@ -38,19 +37,11 @@ function adapt(node) {
     attr(node, "href").value = "https://www.todd.sh/";
     returnLinks++;
   }
-  if (!node.childNodes) return;
-  node.childNodes = node.childNodes.filter((child) => {
-    const shared = child.tagName === "script" &&
-      attr(child, "src")?.value === "/project-content-loader.js" &&
-      attr(child, "data-project-content-id")?.value === "cat-track";
-    if (shared) sharedLoaders++;
-    return !shared;
-  });
-  for (const child of node.childNodes) adapt(child);
+  for (const child of node.childNodes ?? []) adapt(child);
 }
 adapt(document);
-if (!hasBase || returnLinks !== 2 || sharedLoaders !== 1) {
-  throw new Error(`Unexpected source conventions: base=${hasBase}, portfolio links=${returnLinks}, shared loaders=${sharedLoaders}`);
+if (!hasBase || returnLinks !== 2) {
+  throw new Error(`Unexpected source conventions: base=${hasBase}, portfolio links=${returnLinks}`);
 }
 await fs.writeFile(path.join(output, "index.html"), `${serialize(document)}\n`);
 console.log(`Built dist/catTrack: ${publicFiles.length} page files and ${imageCount} images.`);

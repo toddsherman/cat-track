@@ -65,12 +65,12 @@ The removed video, local credentials, virtual environments, build products, and 
 
 Vercel runs `npm run build` and publishes only `dist/`. Its routes serve the project at `/` and `/catTrack`; raw recordings, analysis files, and full-size source photos are available in GitHub but are not part of the website deployment.
 
-The standalone build uses checked-in copy and links the return bar to todd.sh. It removes the portfolio-only CMS loader from its generated HTML. The canonical source keeps the shared typography, palette, return bar, and fixed-copy slots used by the todd.sh portfolio.
+The standalone build links the return bar to todd.sh. The canonical source keeps the shared typography, palette, and return bar used by the todd.sh portfolio, and all page copy is checked in.
 
-To update a local todd.sh checkout and regenerate its Cat Track content seed:
+To update a local todd.sh checkout:
 
 ```sh
 node scripts/sync-todd-site.mjs "../Todd dot sh"
 ```
 
-This writes only `public/catTrack/`, the project thumbnail, and `sanity/content/cat-track.json`. The gallery registration lives in the portfolio's `app/projects.ts`. The sync command does not deploy or import content into Sanity.
+This writes only `public/catTrack/` and the project thumbnail. The gallery registration lives in the portfolio's `app/projects.ts`. The sync command does not deploy anything.
